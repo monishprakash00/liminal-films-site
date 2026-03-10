@@ -1,0 +1,75 @@
+Project Overview
+Build a single-page scrollable website for an independent production house specializing in Feature Films and TV Shows / Web Series. The website should feel like a premium cinema experience — dark, immersive, and editorial, yet clean and uncluttered. Built and deployable on Replit using React (Vite or Create React App).
+
+Visual Design Direction
+
+Aesthetic: Dark cinematic + clean minimal hybrid. Think deep blacks, near-blacks, and charcoal backgrounds with sharp white typography and subtle warm or cool accent colors (e.g. muted gold, electric blue, or dusty red — suggest one based on logo).
+Typography: Pair a strong serif display font (e.g. Playfair Display or Cormorant Garamond) for headings with a clean sans-serif (e.g. Inter or DM Sans) for body text.
+Motion: Subtle scroll-triggered fade-ins, smooth hover states on project thumbnails, and a cinematic grain/noise texture overlay on the hero section.
+Logo: Client has a logo — derive the accent color palette from it.
+Language: English only.
+
+
+Pages / Sections (Single Page)
+1. 🏠 Hero / Home
+
+Full-screen dark hero with the production house logo centered
+A cinematic background — either a looping muted video reel or a high-contrast still image
+Tagline underneath the logo (1 punchy line, e.g. "We Make Stories That Stay.")
+A single CTA button: "View Our Work" → scrolls to Portfolio
+Subtle animated noise/grain texture overlay for a film-like feel
+
+2. 👁 About Us / Our Story
+
+Two-column layout: left side is a bold pull-quote or manifesto statement, right side is a short paragraph about the studio's origin, vision, and ethos
+A horizontal rule or cinematic divider separating it from the next section
+Optionally, a moody full-bleed background image at 15–20% opacity
+
+3. 🎞 Portfolio / Projects
+
+Filterable project grid with thumbnail cards (hover reveals title + category overlay)
+Filter tags: Feature Film | Web Series | All
+Each card: project thumbnail, title, year, and type
+Clicking a card opens a modal or expanded view with: title, short synopsis, YouTube/Vimeo embed or trailer link, and credits
+Grid: 3 columns on desktop, 2 on tablet, 1 on mobile
+
+4. 👥 Team / Crew
+
+Clean card layout for 2–5 team members
+Each card: headshot (circular or square with slight border), name, role/title, and optionally a one-liner bio
+Minimal, no clutter — let the people speak
+
+5. 📬 Contact / Inquiry Form
+
+Dark section with a simple form: Name, Email, Project Type (dropdown: Feature Film / Web Series / General Inquiry), Message, and Subscribe to Newsletter checkbox
+Below the form: social media icons linking to Instagram, YouTube, LinkedIn, Twitter/X
+A subtle social media feed integration note (use Instagram embed or a static feed mockup if API isn't available)
+Submit button styled as a cinematic CTA
+
+
+Special Features
+
+Newsletter signup built into the contact form (can connect to Mailchimp or just capture email)
+Social media feed integration in the footer or contact section (Instagram grid embed or link cards)
+Fully mobile responsive
+Smooth scroll navigation with a sticky top navbar (transparent on hero, solid dark on scroll)
+Sticky navbar links: About | Work | Team | Contact
+
+
+Tech Stack for Replit
+
+Framework: React (Vite)
+Styling: Tailwind CSS
+Animations: Framer Motion (scroll fade-ins, hover effects)
+Modal/Lightbox: Custom React modal or react-modal
+Form: Controlled React form (connect to Formspree or EmailJS for actual sending)
+Fonts: Google Fonts (Cormorant Garamond + Inter)
+Icons: Lucide React or React Icons
+
+
+Tone & Copy Style
+
+Confident, cinematic, and understated
+Target audience: Brands & Advertisers + Independent Artists & Musicians
+Copy should feel like it belongs in a film festival catalogue — not a tech startup
+Avoid buzzwords; lean into craft, vision, and storytelling language
