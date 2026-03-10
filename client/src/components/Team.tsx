@@ -22,6 +22,26 @@ const team = [
 ];
 
 export function Team() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+    },
+  };
+
   return (
     <section id="team" className="py-24 bg-card/30">
       <div className="container mx-auto px-6 md:px-12">
@@ -32,34 +52,71 @@ export function Team() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-4">The Visionaries</h2>
-          <div className="w-12 h-px bg-accent mx-auto"></div>
+          <motion.div 
+            className="w-12 h-px bg-accent mx-auto"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            style={{ originX: 0.5 }}
+          ></motion.div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
           {team.map((member, index) => (
             <motion.div 
               key={member.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2, duration: 0.8 }}
+              variants={itemVariants}
               className="flex flex-col items-center text-center group"
             >
-              <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden mb-6 border border-border p-1">
+              <motion.div 
+                className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden mb-6 border border-border p-1"
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+              >
                 <div className="w-full h-full rounded-full overflow-hidden relative grayscale group-hover:grayscale-0 transition-all duration-700">
-                  <img 
+                  <motion.img 
                     src={member.image} 
                     alt={member.name} 
-                    className="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-700"
+                    className="w-full h-full object-cover"
+                    initial={{ scale: 1.1 }}
+                    whileHover={{ scale: 1 }}
+                    transition={{ duration: 0.7 }}
                   />
-                  <div className="absolute inset-0 bg-background/20 group-hover:bg-transparent transition-colors duration-700"></div>
+                  <motion.div 
+                    className="absolute inset-0 bg-background/20 group-hover:bg-transparent transition-colors duration-700"
+                    initial={{ opacity: 0.2 }}
+                    whileHover={{ opacity: 0 }}
+                  ></motion.div>
                 </div>
-              </div>
-              <h3 className="text-xl font-serif text-foreground mb-1">{member.name}</h3>
-              <p className="text-xs uppercase tracking-widest text-muted-foreground">{member.role}</p>
+              </motion.div>
+              <motion.h3 
+                className="text-xl font-serif text-foreground mb-1"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 + index * 0.1 }}
+              >
+                {member.name}
+              </motion.h3>
+              <motion.p 
+                className="text-xs uppercase tracking-widest text-muted-foreground"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.35 + index * 0.1 }}
+              >
+                {member.role}
+              </motion.p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
