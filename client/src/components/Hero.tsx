@@ -68,14 +68,12 @@ export function Hero() {
         </motion.div>
 
         <motion.div variants={itemVariants}>
-          <div className="space-y-2 mb-10">
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-light tracking-wide">
-              Realised Through Image & Sound.
-            </p>
-            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto font-light tracking-wide">
-              An independent production house exploring the narrative across different visual forms.
-            </p>
-          </div>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-light tracking-wide mb-10">
+            Realised Through <span className="text-accent italic">Image & Sound.</span>
+          </p>
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto font-light tracking-wide">
+            An independent production house exploring the narrative across different visual mediums.
+          </p>
         </motion.div>
 
         <motion.div

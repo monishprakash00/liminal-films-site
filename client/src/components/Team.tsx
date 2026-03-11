@@ -5,18 +5,28 @@ import team3 from "../assets/images/team-3.png";
 
 const team = [
   {
-    name: "Elena Vance",
-    role: "Director / Founder",
+    name: "Monish Parimala Prakash",
+    role: "Founder / Writer / Director",
     image: team1,
   },
   {
-    name: "Marcus Cole",
-    role: "Head of Cinematography",
+    name: "Rithwik Sreekumar",
+    role: "Music Director",
     image: team2,
   },
   {
-    name: "Sarah Jenkins",
-    role: "Executive Producer",
+    name: "Abhijith Suresh Menon",
+    role: "Marketing Strategist",
+    image: team1,
+  },
+  {
+    name: "Vaishnavi Patel",
+    role: "Social Media Head",
+    image: team2,
+  },
+  {
+    name: "Manali Sharma",
+    role: "Graphic Designer",
     image: team3,
   }
 ];
@@ -63,7 +73,7 @@ export function Team() {
         </motion.div>
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 max-w-7xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -76,7 +86,7 @@ export function Team() {
               className="flex flex-col items-center text-center group"
             >
               <motion.div 
-                className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden mb-6 border border-border p-1"
+                className="w-40 h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden mb-6 border border-border p-1"
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
               >

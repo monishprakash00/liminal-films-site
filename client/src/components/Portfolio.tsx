@@ -8,7 +8,7 @@ import port2 from "../assets/images/portfolio-2.png";
 import port3 from "../assets/images/portfolio-3.png";
 import port4 from "../assets/images/portfolio-4.png";
 
-type ProjectType = "Feature Film" | "Web Series";
+type ProjectType = "Feature Film" | "Music Video";
 
 interface Project {
   id: number;
@@ -28,7 +28,7 @@ const projects: Project[] = [
     type: "Feature Film",
     image: port1,
     synopsis: "A neo-noir thriller following a disillusioned detective navigating the underbelly of a neon-drenched metropolis.",
-    director: "Elena Vance",
+    director: "Monish Parimala Prakash",
   },
   {
     id: 2,
@@ -37,16 +37,16 @@ const projects: Project[] = [
     type: "Feature Film",
     image: port2,
     synopsis: "A hauntingly beautiful drama set in the remote misty highlands, exploring themes of grief, isolation, and redemption.",
-    director: "Marcus Cole",
+    director: "Monish Parimala Prakash",
   },
   {
     id: 3,
     title: "Neon Shadows",
     year: "2023",
-    type: "Web Series",
+    type: "Music Video",
     image: port3,
-    synopsis: "An anthology series uncovering the hidden, intertwined lives of city dwellers during the darkest hours of the night.",
-    director: "Sarah Jenkins",
+    synopsis: "A visually stunning music video with cinematic storytelling and dynamic visual effects.",
+    director: "Monish Parimala Prakash",
   },
   {
     id: 4,
@@ -55,7 +55,7 @@ const projects: Project[] = [
     type: "Feature Film",
     image: port4,
     synopsis: "An abstract, surreal journey of an astronaut grappling with memories brought to life by a mysterious celestial body.",
-    director: "Elena Vance",
+    director: "Monish Parimala Prakash",
   }
 ];
 
@@ -107,7 +107,7 @@ export function Portfolio() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="flex gap-6 text-sm uppercase tracking-widest font-medium"
           >
-            {["All", "Feature Film"].map((cat, i) => (
+            {["All", "Feature Film", "Music Video"].map((cat, i) => (
               <motion.button
                 key={cat}
                 onClick={() => setFilter(cat as ProjectType | "All")}
