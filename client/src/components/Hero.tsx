@@ -24,16 +24,16 @@ export function Hero() {
       </motion.div>
 
       {/* Content Container */}
-      <div className="relative z-10 container mx-auto px-6 md:px-12 flex items-center justify-start">
+      <div className="relative z-10 container mx-auto px-6 md:px-12 flex items-center justify-start py-20">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="max-w-3xl"
+          className="max-w-3xl space-y-8"
         >
           {/* Main Heading */}
           <motion.h1 
-            className="text-6xl md:text-7xl lg:text-8xl font-serif text-foreground mb-8 tracking-tight leading-tight"
+            className="text-6xl md:text-7xl lg:text-8xl font-serif text-foreground tracking-tight leading-tight"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
@@ -53,7 +53,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="text-3xl md:text-4xl lg:text-5xl font-serif text-muted-foreground mb-10 tracking-tight leading-tight"
+            className="text-3xl md:text-4xl lg:text-5xl font-serif text-muted-foreground tracking-tight leading-tight"
           >
             Built Around Story. <br/>
             <span className="text-accent italic">Realised Through Image & Sound.</span>
@@ -64,7 +64,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="text-base text-muted-foreground/80 font-light leading-relaxed max-w-xl mb-12"
+            className="text-base text-muted-foreground/80 font-light leading-relaxed max-w-xl"
           >
             An independent production house exploring the narrative across different visual mediums.
           </motion.p>

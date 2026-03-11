@@ -53,7 +53,7 @@ export function Team() {
   };
 
   return (
-    <section id="team" className="py-24 bg-card/30">
+    <section id="team" className="py-40 bg-card/30">
       <div className="container mx-auto px-6 md:px-12">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

@@ -40,7 +40,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-background relative overflow-hidden">
+    <section id="contact" className="py-40 bg-background relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <motion.div 
           className="flex flex-col lg:flex-row gap-16 md:gap-24"

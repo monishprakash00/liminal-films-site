@@ -86,7 +86,7 @@ export function Portfolio() {
   };
 
   return (
-    <section id="work" className="py-24 bg-background">
+    <section id="work" className="py-40 bg-background">
       <div className="container mx-auto px-6 md:px-12">
         
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
