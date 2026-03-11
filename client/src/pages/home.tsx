@@ -4,7 +4,7 @@ import { About } from "@/components/About";
 import { Portfolio } from "@/components/Portfolio";
 import { Team } from "@/components/Team";
 import { Contact } from "@/components/Contact";
-import filmBg from "@/assets/images/film-bg.png";
+import filmBg from "@/assets/images/film-production-bg.png";
 
 export default function Home() {
   return (
