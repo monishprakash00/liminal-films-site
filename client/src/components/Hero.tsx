@@ -4,105 +4,99 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
 export function Hero() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 1, ease: [0.16, 1, 0.3, 1] },
-    },
-  };
-
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-      {/* Background with Parallax */}
+    <section className="relative h-screen w-full flex items-center overflow-hidden">
+      {/* Background Image */}
       <motion.div 
         className="absolute inset-0 z-0"
-        initial={{ scale: 1.05 }}
+        initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
-        transition={{ duration: 2.5, ease: "easeOut" }}
+        transition={{ duration: 3, ease: "easeOut" }}
       >
-        <motion.div 
-          className="w-full h-full"
+        <img 
+          src={heroBg} 
+          alt="Cinematic background" 
+          className="w-full h-full object-cover"
+        />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+      </motion.div>
+
+      {/* Content Container */}
+      <div className="relative z-10 container mx-auto px-6 md:px-12 flex items-center justify-start">
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="max-w-3xl"
         >
-          <img 
-            src={heroBg} 
-            alt="Cinematic background" 
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
-        <div className="absolute inset-0 bg-background/80 md:bg-background/60 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
-      </motion.div>
-
-      <motion.div 
-        className="relative z-10 container mx-auto px-6 text-center mt-20"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <motion.div variants={itemVariants}>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-foreground mb-12 tracking-tight leading-tight">
-            Shaped by Artists. <br/>
-            Built Around Story. <br/>
+          {/* Main Heading */}
+          <motion.h1 
+            className="text-6xl md:text-7xl lg:text-8xl font-serif text-foreground mb-8 tracking-tight leading-tight"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          >
+            Shaped by <br/>
             <motion.span 
-              className="text-accent italic inline-block"
-              animate={{ y: [0, -8, 0] }}
+              className="text-accent italic"
+              animate={{ x: [0, 4, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
-              Realised Through Image & Sound.
+              Artists.
             </motion.span>
-          </h1>
-        </motion.div>
+          </motion.h1>
 
-        <motion.div variants={itemVariants}>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto font-light tracking-wide mb-10">
-            An independent production house exploring the narrative across different visual mediums.
-          </p>
-        </motion.div>
-
-        <motion.div
-          variants={itemVariants}
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-        >
-          <Button 
-            asChild 
-            variant="outline" 
-            className="rounded-none border-accent/50 text-accent hover:bg-accent hover:text-accent-foreground px-8 py-6 text-xs uppercase tracking-widest transition-all duration-500 group relative overflow-hidden"
+          {/* Subheading */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="space-y-6"
           >
-            <motion.a 
-              href="#work"
-              className="relative"
-              whileHover={{ letterSpacing: "0.05em" }}
-            >
-              <span className="relative z-10">View Our Work</span>
-              <motion.div
-                className="absolute inset-0 bg-accent/20"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: "100%" }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
-              />
-            </motion.a>
-          </Button>
-        </motion.div>
-      </motion.div>
+            <p className="text-lg md:text-xl text-muted-foreground font-light tracking-wide">
+              Built Around Story. Realised Through Image & Sound.
+            </p>
+            <p className="text-base text-muted-foreground/80 font-light leading-relaxed max-w-xl">
+              An independent production house exploring the narrative across different visual mediums.
+            </p>
+          </motion.div>
 
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="pt-10"
+          >
+            <Button 
+              asChild 
+              variant="outline" 
+              className="rounded-none border-accent/50 text-accent hover:bg-accent hover:text-accent-foreground px-8 py-6 text-xs uppercase tracking-widest transition-all duration-500 relative overflow-hidden"
+            >
+              <motion.a 
+                href="#work"
+                className="relative"
+                whileHover={{ letterSpacing: "0.08em" }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <span className="relative z-10">View Our Work</span>
+                <motion.div
+                  className="absolute inset-0 bg-accent/20"
+                  initial={{ x: "-100%" }}
+                  whileHover={{ x: "100%" }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                />
+              </motion.a>
+            </Button>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Scroll Indicator */}
       <motion.div 
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 text-muted-foreground"
+        className="absolute bottom-10 right-12 z-10 text-muted-foreground"
         animate={{ y: [0, 12, 0] }}
         transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
         whileHover={{ scale: 1.2 }}
@@ -116,6 +110,15 @@ export function Hero() {
           </motion.div>
         </a>
       </motion.div>
+
+      {/* Decorative Line */}
+      <motion.div
+        className="absolute left-0 top-1/2 w-1 h-24 bg-gradient-to-b from-transparent via-accent to-transparent"
+        initial={{ scaleY: 0 }}
+        animate={{ scaleY: 1 }}
+        transition={{ duration: 1.2, delay: 0.8, ease: "easeOut" }}
+        style={{ originY: 0.5 }}
+      />
     </section>
   );
 }
