@@ -48,27 +48,33 @@ export function Hero() {
             </motion.span>
           </motion.h1>
 
-          {/* Subheading */}
-          <motion.div
+          {/* Secondary Heading */}
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="space-y-6"
+            className="text-3xl md:text-4xl lg:text-5xl font-serif text-muted-foreground mb-10 tracking-tight leading-tight"
           >
-            <p className="text-lg md:text-xl text-muted-foreground font-light tracking-wide">
-              Built Around Story. Realised Through Image & Sound.
-            </p>
-            <p className="text-base text-muted-foreground/80 font-light leading-relaxed max-w-xl">
-              An independent production house exploring the narrative across different visual mediums.
-            </p>
-          </motion.div>
+            Built Around Story. <br/>
+            <span className="text-accent italic">Realised Through Image & Sound.</span>
+          </motion.h2>
+
+          {/* Descriptive Text */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="text-base text-muted-foreground/80 font-light leading-relaxed max-w-xl mb-12"
+          >
+            An independent production house exploring the narrative across different visual mediums.
+          </motion.p>
 
           {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="pt-10"
+            className="flex justify-center"
           >
             <Button 
               asChild 
