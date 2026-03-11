@@ -56,21 +56,26 @@ export function Hero() {
       >
         <motion.div variants={itemVariants}>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-foreground mb-6 tracking-tight leading-none">
-            We Make Stories <br/>
+            Shaped by Artists. <br/>
             <motion.span 
               className="text-accent italic inline-block"
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
-              That Stay.
+              Built Around Story.
             </motion.span>
           </h1>
         </motion.div>
 
         <motion.div variants={itemVariants}>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-light tracking-wide">
-            An independent production house specializing in Feature Films, Web Series, and Unforgettable Cinematic Experiences.
-          </p>
+          <div className="space-y-2 mb-10">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-light tracking-wide">
+              Realised Through Image & Sound.
+            </p>
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto font-light tracking-wide">
+              An independent production house exploring the narrative across different visual forms.
+            </p>
+          </div>
         </motion.div>
 
         <motion.div

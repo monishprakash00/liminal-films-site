@@ -100,8 +100,8 @@ export function Contact() {
               transition={{ delay: 0.4 }}
             >
               <p className="text-sm font-medium text-foreground mb-2">LIMINAL FILMS</p>
-              <p className="text-sm text-muted-foreground">104 Cinematic Way, Suite 400</p>
-              <p className="text-sm text-muted-foreground">Los Angeles, CA 90028</p>
+              <p className="text-sm text-muted-foreground">Bangalore - 560076</p>
+              <p className="text-sm text-muted-foreground">Karnataka, India</p>
             </motion.div>
           </motion.div>
 

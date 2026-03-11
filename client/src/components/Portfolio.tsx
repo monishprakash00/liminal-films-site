@@ -107,7 +107,7 @@ export function Portfolio() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="flex gap-6 text-sm uppercase tracking-widest font-medium"
           >
-            {["All", "Feature Film", "Web Series"].map((cat, i) => (
+            {["All", "Feature Film"].map((cat, i) => (
               <motion.button
                 key={cat}
                 onClick={() => setFilter(cat as ProjectType | "All")}

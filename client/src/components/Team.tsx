@@ -51,7 +51,7 @@ export function Team() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-4">The Visionaries</h2>
+          <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-4">The Team</h2>
           <motion.div 
             className="w-12 h-px bg-accent mx-auto"
             initial={{ scaleX: 0 }}
