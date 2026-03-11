@@ -20,7 +20,7 @@ export default function Home() {
       
       <footer className="py-8 text-center border-t border-border bg-background relative z-10">
         <p className="text-xs uppercase tracking-widest text-muted-foreground">
-          &copy; {new Date().getFullYear()} Auteur Studios. All Rights Reserved.
+          &copy; {new Date().getFullYear()} Liminal Films. All Rights Reserved.
         </p>
       </footer>
     </main>

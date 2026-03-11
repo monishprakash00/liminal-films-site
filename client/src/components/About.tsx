@@ -48,7 +48,7 @@ export function About() {
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              Born from a collective of passionate storytellers, AUTEUR was founded with a singular vision: to create cinema that lingers in the mind long after the credits roll.
+              Born from a collective of passionate storytellers, LIMINAL FILMS was founded with a singular vision: to create cinema that lingers in the mind long after the credits roll.
             </motion.p>
             <motion.p
               initial={{ opacity: 0 }}

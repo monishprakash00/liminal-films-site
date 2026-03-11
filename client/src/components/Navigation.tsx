@@ -30,7 +30,7 @@ export function Navigation() {
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         <a href="#" className="text-2xl font-serif font-bold tracking-widest text-foreground uppercase">
-          AUTEUR<span className="text-accent">.</span>
+          LIMINAL<span className="text-accent">.</span>
         </a>
         
         <nav className="hidden md:flex items-center gap-8">
