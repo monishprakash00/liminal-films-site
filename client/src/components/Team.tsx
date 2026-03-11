@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import teamFounder from "../assets/images/team-founder.jpg";
+import teamFounder from "../assets/images/team-founder-hd.png";
 import team1 from "../assets/images/team-1.png";
 import team2 from "../assets/images/team-2.png";
 import team3 from "../assets/images/team-3.png";
