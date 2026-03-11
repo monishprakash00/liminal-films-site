@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import teamFounder from "../assets/images/team-founder-real.jpg";
+import teamMusicDirector from "../assets/images/team-music-director.jpg";
 import team1 from "../assets/images/team-1.png";
 import team2 from "../assets/images/team-2.png";
 import team3 from "../assets/images/team-3.png";
@@ -13,7 +14,7 @@ const team = [
   {
     name: "Rithwik Sreekumar",
     role: "Music Director",
-    image: team2,
+    image: teamMusicDirector,
   },
   {
     name: "Abhijith Suresh Menon",
