@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import teamFounder from "../assets/images/team-founder-hd.png";
+import teamFounder from "../assets/images/team-founder-real.jpg";
 import team1 from "../assets/images/team-1.png";
 import team2 from "../assets/images/team-2.png";
 import team3 from "../assets/images/team-3.png";
@@ -87,23 +87,23 @@ export function Team() {
               className="flex flex-col items-center text-center group"
             >
               <motion.div 
-                className="w-40 h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden mb-6 border border-border p-1"
-                whileHover={{ y: -8 }}
+                className="w-40 h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden mb-6 border border-border p-1 group cursor-pointer"
+                whileHover={{ y: -12, scale: 1.05 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
               >
-                <div className="w-full h-full rounded-full overflow-hidden relative grayscale group-hover:grayscale-0 transition-all duration-700">
+                <div className="w-full h-full rounded-full overflow-hidden relative">
                   <motion.img 
                     src={member.image} 
                     alt={member.name} 
-                    className="w-full h-full object-cover"
-                    initial={{ scale: 1.1 }}
-                    whileHover={{ scale: 1 }}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                    initial={{ scale: 1 }}
+                    whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.7 }}
                   />
                   <motion.div 
-                    className="absolute inset-0 bg-background/20 group-hover:bg-transparent transition-colors duration-700"
-                    initial={{ opacity: 0.2 }}
-                    whileHover={{ opacity: 0 }}
+                    className="absolute inset-0 bg-accent/10 group-hover:bg-accent/0 transition-colors duration-700"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
                   ></motion.div>
                 </div>
               </motion.div>
