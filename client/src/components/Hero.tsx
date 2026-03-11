@@ -55,22 +55,20 @@ export function Hero() {
         animate="visible"
       >
         <motion.div variants={itemVariants}>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-foreground mb-6 tracking-tight leading-none">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-foreground mb-12 tracking-tight leading-tight">
             Shaped by Artists. <br/>
+            Built Around Story. <br/>
             <motion.span 
               className="text-accent italic inline-block"
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
-              Built Around Story.
+              Realised Through Image & Sound.
             </motion.span>
           </h1>
         </motion.div>
 
         <motion.div variants={itemVariants}>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-light tracking-wide mb-10">
-            Realised Through <span className="text-accent italic">Image & Sound.</span>
-          </p>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto font-light tracking-wide">
             An independent production house exploring the narrative across different visual mediums.
           </p>
