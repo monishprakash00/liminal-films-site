@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import team1 from "../assets/images/team-1.png";
+import teamFounder from "../assets/images/team-founder.jpg";
 import team2 from "../assets/images/team-2.png";
 import team3 from "../assets/images/team-3.png";
 
@@ -7,7 +7,7 @@ const team = [
   {
     name: "Monish Parimala Prakash",
     role: "Founder / Writer / Director",
-    image: team1,
+    image: teamFounder,
   },
   {
     name: "Rithwik Sreekumar",
