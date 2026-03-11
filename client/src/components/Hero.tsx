@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import heroBg from "../assets/images/hero-bg.png";
+import heroBg from "../assets/images/hero-bg-new.png";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
