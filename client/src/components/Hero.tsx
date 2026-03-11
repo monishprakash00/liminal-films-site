@@ -55,9 +55,9 @@ export function Hero() {
         animate="visible"
       >
         <motion.div variants={itemVariants}>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-foreground mb-12 tracking-tight leading-tight">
-            Shaped by Artists. <br/>
-            Built Around Story. <br/>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif mb-12 tracking-tight leading-tight">
+            <span className="text-accent">Shaped by Artists.</span> <br/>
+            <span className="text-foreground">Built Around Story.</span> <br/>
             <motion.span 
               className="text-accent italic inline-block"
               animate={{ y: [0, -8, 0] }}
