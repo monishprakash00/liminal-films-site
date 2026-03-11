@@ -56,8 +56,7 @@ export function Hero() {
       >
         <motion.div variants={itemVariants}>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-foreground mb-12 tracking-tight leading-tight">
-            Shaped by Artists. <br/>
-            Built Around Story. <br/>
+            Shaped by Artists. Built Around Story. <br/>
             <motion.span 
               className="text-accent italic inline-block"
               animate={{ y: [0, -8, 0] }}
@@ -68,16 +67,11 @@ export function Hero() {
           </h1>
         </motion.div>
 
-        <motion.div variants={itemVariants}>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto font-light tracking-wide">
-            An independent production house exploring the narrative across different visual mediums.
-          </p>
-        </motion.div>
-
         <motion.div
           variants={itemVariants}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
+          className="mb-20"
         >
           <Button 
             asChild 
@@ -98,6 +92,12 @@ export function Hero() {
               />
             </motion.a>
           </Button>
+        </motion.div>
+
+        <motion.div variants={itemVariants}>
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto font-light tracking-wide">
+            An independent production house exploring the narrative across different visual mediums.
+          </p>
         </motion.div>
       </motion.div>
 
