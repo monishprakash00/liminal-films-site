@@ -68,6 +68,12 @@ export function Hero() {
           </h1>
         </motion.div>
 
+        <motion.div variants={itemVariants}>
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto font-light tracking-wide mb-10">
+            An independent production house exploring the narrative across different visual mediums.
+          </p>
+        </motion.div>
+
         <motion.div
           variants={itemVariants}
           whileHover={{ scale: 1.02 }}
@@ -92,12 +98,6 @@ export function Hero() {
               />
             </motion.a>
           </Button>
-        </motion.div>
-
-        <motion.div variants={itemVariants}>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto font-light tracking-wide">
-            An independent production house exploring the narrative across different visual mediums.
-          </p>
         </motion.div>
       </motion.div>
 
