@@ -56,7 +56,8 @@ export function Hero() {
       >
         <motion.div variants={itemVariants}>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-foreground mb-12 tracking-tight leading-tight">
-            Shaped by Artists. Built Around Story. <br/>
+            Shaped by Artists. <br/>
+            Built Around Story. <br/>
             <motion.span 
               className="text-accent italic inline-block"
               animate={{ y: [0, -8, 0] }}
@@ -71,7 +72,6 @@ export function Hero() {
           variants={itemVariants}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className="mb-20"
         >
           <Button 
             asChild 
