@@ -1,32 +1,24 @@
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
-import { About } from "@/components/About";
+import { Manifesto } from "@/components/Manifesto";
 import { Portfolio } from "@/components/Portfolio";
 import { Team } from "@/components/Team";
 import { Contact } from "@/components/Contact";
-import filmmakingBg from "@/assets/images/film-noir-bg.png";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="bg-background min-h-screen relative" style={{ backgroundImage: `url(${filmmakingBg})`, backgroundAttachment: 'fixed', backgroundSize: 'cover' }}>
+    <main className="bg-background min-h-screen text-foreground selection:bg-primary selection:text-primary-foreground relative overflow-hidden">
       {/* Global Grain Overlay */}
       <div className="grain-overlay"></div>
-      <div className="absolute inset-0 bg-background/40 pointer-events-none"></div>
       
-      <div className="relative z-10">
-        <Navigation />
-        <Hero />
-        <About />
-        <Portfolio />
-        <Team />
-        <Contact />
-      </div>
-      
-      <footer className="py-8 text-center border-t border-border bg-background relative z-10">
-        <p className="text-xs uppercase tracking-widest text-muted-foreground">
-          &copy; {new Date().getFullYear()} Liminal Films. All Rights Reserved.
-        </p>
-      </footer>
+      <Navigation />
+      <Hero />
+      <Manifesto />
+      <Portfolio />
+      <Team />
+      <Contact />
+      <Footer />
     </main>
   );
 }

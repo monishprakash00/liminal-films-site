@@ -1,0 +1,15 @@
+LIMINAL FILMS — Website Build Prompt
+Build a cinematic, single-scroll website for LIMINAL FILMS, an independent production house based in Bangalore & Mumbai, founded 2024. Domain: liminalfilms.in.
+Tech: React (Vite) + Tailwind CSS + Framer Motion + React Router. Deploy on Replit.
+Visual Identity: Near-black backgrounds. Monochromatic palette — no colour, only light and shadow. Single accent: cold white or charcoal silver. Typography: DM Sans (primary) + Cormorant Garamond (editorial/manifesto moments). Grain/noise texture overlay at 8–12% opacity using SVG feTurbulence or CSS pseudo-element. Custom cursor — minimal ring that morphs on hover over project cards. All transitions: dissolve/fade with Framer Motion. Scroll-triggered reveals throughout.
+Sections (single scroll, sticky transparent nav → solid dark on scroll):
+
+Hero — Fullscreen muted looping YouTube embed (no controls). LIMINAL FILMS logo centered. Tagline beneath: "Shaped by artists & Built around story. Realised through image and sound." No CTA.
+Manifesto — Sparse, poetic, third person. Use this copy verbatim: "Some films end when the credits roll. These do not. LIMINAL FILMS makes work that lives in the body — in the silence after, in the questions that follow you home. Every story is a threshold. Every frame, a passage. You enter one person. You leave another. That is the only measure that matters." Large serif type, generous spacing, dark background.
+Work — Filterable thumbnail grid. Filters: Feature Film / Short Film / Music Video. Three projects: (a) The Boy and the River — Feature Film, 2025; (b) Whispers in the Dark — Short Film, 2019; (c) The Girl with the Bluest Eyes — Short Film, 2018. Each card: film still placeholder, title, type, year. Hover: title overlays with subtle fade. Click: navigates to dedicated project page (React Router). Project page contains: title, type, year, full-width film still, YouTube embed, placeholder synopsis paragraph.
+Team — 6 members in a clean grid. Circular BW portrait, name, role only. No bios visible on main scroll. Clicking name or photo navigates to a dedicated individual page (React Router, hidden from main scroll). Each member page: large BW portrait, name, role, full bio. Members: Monish Parimala Prakash (Founder / Writer / Director), Abhijit Suresh Menon (Marketing Strategist), Rithwik Sreekumar (Music Director), Manas Bhattacharyya (Director of Photography), Shruti Pallati (Producer), Vaishnavi Patel (Social Media Head). Placeholder bios for all except Monish and Abhijit.
+Contact — Minimal. Email link: monish@liminalfilms.in. Instagram icon → @liminal_films. YouTube icon → liminal_films. No form.
+Footer — LIMINAL FILMS · Bangalore & Mumbai · © 2024. Minimal.
+
+Mobile: Fully responsive. Mobile experience as rich as desktop. Single column stack. Grain texture retained. Custom cursor disabled on touch devices.
+No awards section at launch. No newsletter. No password protection. No blog.

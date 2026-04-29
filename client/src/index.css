@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: 'Inter', sans-serif;
+  --font-sans: 'DM Sans', sans-serif;
   --font-serif: 'Cormorant Garamond', serif;
 
   --color-background: hsl(var(--background));
@@ -30,34 +30,34 @@
 
 :root {
   /* Dark mode by default for cinematic feel */
-  --background: 0 0% 4%;
-  --foreground: 0 0% 98%;
+  --background: 0 0% 3%;
+  --foreground: 0 0% 90%;
 
-  --card: 0 0% 6%;
-  --card-foreground: 0 0% 98%;
+  --card: 0 0% 5%;
+  --card-foreground: 0 0% 90%;
 
-  --popover: 0 0% 6%;
-  --popover-foreground: 0 0% 98%;
+  --popover: 0 0% 5%;
+  --popover-foreground: 0 0% 90%;
 
-  /* Muted Gold Accent */
-  --primary: 43 74% 49%;
-  --primary-foreground: 0 0% 9%;
+  /* Charcoal Silver / Cold White Accent */
+  --primary: 0 0% 85%;
+  --primary-foreground: 0 0% 5%;
 
   --secondary: 0 0% 12%;
-  --secondary-foreground: 0 0% 98%;
+  --secondary-foreground: 0 0% 90%;
 
   --muted: 0 0% 15%;
   --muted-foreground: 0 0% 65%;
 
-  --accent: 43 74% 49%;
-  --accent-foreground: 0 0% 9%;
+  --accent: 0 0% 85%;
+  --accent-foreground: 0 0% 5%;
 
   --destructive: 0 62% 30%;
   --destructive-foreground: 0 0% 98%;
 
   --border: 0 0% 15%;
   --input: 0 0% 15%;
-  --ring: 43 74% 49%;
+  --ring: 0 0% 85%;
   
   --radius: 0rem; /* Sharp edges for editorial look */
 }
@@ -65,6 +65,7 @@
 @layer base {
   * {
     @apply border-border;
+    cursor: none !important;
   }
   body {
     @apply font-sans antialiased bg-background text-foreground;
@@ -72,6 +73,10 @@
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif tracking-tight;
+  }
+  
+  a, button, [role="button"] {
+    cursor: none !important;
   }
 }
 
@@ -84,7 +89,7 @@
   height: 100vh;
   pointer-events: none;
   z-index: 50;
-  opacity: 0.04;
+  opacity: 0.10;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
@@ -95,7 +100,7 @@ html {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
   background: hsl(var(--background)); 
@@ -105,4 +110,16 @@ html {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--accent)); 
+}
+
+/* Custom Cursor Hide */
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+@media (max-width: 768px) {
+  * {
+    cursor: auto !important;
+  }
 }
