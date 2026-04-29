@@ -37,7 +37,7 @@ export function Navigation() {
     >
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
         <Link href="/">
-          <span className="font-sans text-xl tracking-[0.2em] text-foreground font-light hover:opacity-70 transition-opacity uppercase cursor-pointer">
+          <span className="font-display text-xl tracking-[0.2em] text-foreground hover:opacity-70 transition-opacity uppercase cursor-pointer">
             Liminal Films
           </span>
         </Link>
