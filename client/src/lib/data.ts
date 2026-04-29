@@ -58,18 +58,11 @@ export const team: TeamMember[] = [
     bio: "Monish Parimala Prakash is a visionary director and writer whose work focuses on the emotional undercurrents of the human experience. With a background in both fine arts and classical storytelling, Monish bridges the gap between commercial viability and arthouse aesthetics."
   },
   {
-    id: "abhijit",
-    name: "Abhijit Suresh Menon",
-    role: "Marketing Strategist",
-    image: "/src/assets/images/team-1.png",
-    bio: "Abhijit brings over a decade of experience in film distribution and marketing strategy. He has successfully navigated the complex landscape of independent cinema, ensuring that LIMINAL FILMS reaches the audiences it deserves."
-  },
-  {
-    id: "rithwik",
-    name: "Rithwik Sreekumar",
-    role: "Music Director",
-    image: "/src/assets/images/team-music-director.jpg",
-    bio: "A composer known for his evocative and immersive soundscapes, Rithwik understands that music is the invisible character in every film. His scores are integral to the LIMINAL FILMS identity."
+    id: "shruti",
+    name: "Shruti Pallati",
+    role: "Producer",
+    image: "/src/assets/images/team-3.png",
+    bio: "Shruti is the backbone of the production house, translating creative vision into tangible reality. Her meticulous planning and relentless drive ensure that every project is executed to perfection."
   },
   {
     id: "manas",
@@ -79,11 +72,18 @@ export const team: TeamMember[] = [
     bio: "Manas perceives the world through light and shadow. His cinematography is characterized by its raw authenticity and poetic framing, making him a sought-after talent in independent cinema."
   },
   {
-    id: "shruti",
-    name: "Shruti Pallati",
-    role: "Producer",
-    image: "/src/assets/images/team-3.png",
-    bio: "Shruti is the backbone of the production house, translating creative vision into tangible reality. Her meticulous planning and relentless drive ensure that every project is executed to perfection."
+    id: "rithwik",
+    name: "Rithwik Sreekumar",
+    role: "Music Director",
+    image: "/src/assets/images/team-music-director.jpg",
+    bio: "A composer known for his evocative and immersive soundscapes, Rithwik understands that music is the invisible character in every film. His scores are integral to the LIMINAL FILMS identity."
+  },
+  {
+    id: "abhijit",
+    name: "Abhijit Suresh Menon",
+    role: "Marketing Strategist",
+    image: "/src/assets/images/team-1.png",
+    bio: "Abhijit brings over a decade of experience in film distribution and marketing strategy. He has successfully navigated the complex landscape of independent cinema, ensuring that LIMINAL FILMS reaches the audiences it deserves."
   },
   {
     id: "vaishnavi",

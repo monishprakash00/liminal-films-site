@@ -18,7 +18,7 @@ export function Team() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-y-20 gap-x-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 gap-y-20 gap-x-12 max-w-4xl mx-auto">
           {team.map((member, index) => (
             <Link key={member.id} href={`/team/${member.id}`}>
               <motion.a 
