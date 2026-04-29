@@ -23,7 +23,7 @@ export function Hero() {
         transition={{ duration: 2, ease: "easeOut" }}
       >
         <motion.h1 
-          className="text-4xl md:text-6xl lg:text-7xl font-sans tracking-[0.2em] font-light text-foreground mb-8 uppercase"
+          className="text-5xl md:text-7xl lg:text-8xl font-display tracking-[0.25em] font-light text-foreground mb-12 uppercase"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, delay: 0.5 }}
@@ -32,7 +32,7 @@ export function Hero() {
         </motion.h1>
 
         <motion.p 
-          className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto font-light tracking-widest uppercase leading-loose"
+          className="text-sm md:text-base text-muted-foreground/80 max-w-2xl mx-auto font-sans tracking-[0.25em] uppercase leading-loose"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, delay: 1 }}
