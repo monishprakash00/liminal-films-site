@@ -1,11 +1,20 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { Link } from "wouter";
 import { team } from "@/lib/data";
 
 export function Team() {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+  
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+
   return (
-    <section id="team" className="py-40 relative z-10">
-      <div className="container mx-auto px-6 md:px-12">
+    <section ref={ref} id="team" className="py-40 relative z-10">
+      <motion.div className="container mx-auto px-6 md:px-12" style={{ y }}>
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -45,7 +54,7 @@ export function Team() {
             </Link>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Link } from "wouter";
 import { projects, ProjectType } from "@/lib/data";
 
@@ -8,9 +8,17 @@ export function Portfolio() {
 
   const filteredProjects = projects.filter(p => filter === "All" || p.type === filter);
 
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+  
+  const y = useTransform(scrollYProgress, [0, 1], [150, -150]);
+
   return (
-    <section id="work" className="py-40 relative z-10">
-      <div className="container mx-auto px-6 md:px-12">
+    <section ref={ref} id="work" className="py-40 relative z-10">
+      <motion.div className="container mx-auto px-6 md:px-12" style={{ y }}>
         
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <motion.h2 
@@ -79,7 +87,7 @@ export function Portfolio() {
             ))}
           </AnimatePresence>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }

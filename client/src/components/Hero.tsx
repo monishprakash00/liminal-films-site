@@ -1,10 +1,15 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export function Hero() {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 1000], [0, 300]);
+  const opacity = useTransform(scrollY, [0, 500], [1, 0]);
+
   return (
     <section className="relative h-screen w-full flex items-center justify-center">
       <motion.div 
         className="relative z-10 container mx-auto px-6 text-center flex flex-col items-center justify-center h-full"
+        style={{ y, opacity }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, ease: "easeOut" }}

@@ -1,9 +1,22 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export function Manifesto() {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+  
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
+
   return (
-    <section id="manifesto" className="py-40 relative z-10 flex items-center min-h-[80vh]">
-      <div className="container mx-auto px-6 md:px-12 max-w-4xl relative z-10">
+    <section ref={ref} id="manifesto" className="py-40 relative z-10 flex items-center min-h-[80vh]">
+      <motion.div 
+        className="container mx-auto px-6 md:px-12 max-w-4xl relative z-10"
+        style={{ y, opacity }}
+      >
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -18,7 +31,7 @@ export function Manifesto() {
             Every story is a threshold. Every frame, a passage. You enter one person. You leave another. That is the only measure that matters.
           </h2>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }
