@@ -7,6 +7,7 @@
   --font-sans: 'DM Sans', sans-serif;
   --font-serif: 'Cormorant Garamond', serif;
   --font-display: 'Cinzel', serif;
+  --font-sub: 'Syne', sans-serif;
 
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
