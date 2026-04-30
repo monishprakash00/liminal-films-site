@@ -25,7 +25,7 @@ export const projects: Project[] = [
     title: "The Boy and the River",
     year: "2025",
     type: "Feature Film",
-    image: "/src/assets/images/portfolio-1.png",
+    image: "/src/assets/images/the-boy-and-the-river.png",
     synopsis: "A hauntingly beautiful drama exploring themes of grief, isolation, and redemption. Set against a timeless landscape, this feature film follows a young protagonist on an unforgettable journey of self-discovery.",
     videoId: "ScMzIvxBSi4"
   },
