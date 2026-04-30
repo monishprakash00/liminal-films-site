@@ -1,5 +1,5 @@
-import { useState, useRef } from "react";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import { projects, ProjectType } from "@/lib/data";
 
@@ -8,17 +8,15 @@ export function Portfolio() {
 
   const filteredProjects = projects.filter(p => filter === "All" || p.type === filter);
 
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
-  
-  const y = useTransform(scrollYProgress, [0, 1], [150, -150]);
-
   return (
-    <section ref={ref} id="work" className="py-40 relative z-10">
-      <motion.div className="container mx-auto px-6 md:px-12" style={{ y }}>
+    <section id="work" className="py-40 relative z-10">
+      <motion.div 
+        initial={{ opacity: 0, y: 150, filter: "blur(10px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: false, margin: "-10%" }}
+        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+        className="container mx-auto px-6 md:px-12"
+      >
         
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <motion.h2 
@@ -58,32 +56,34 @@ export function Portfolio() {
         >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, i) => (
-              <Link key={project.id} href={`/project/${project.id}`}>
-                <motion.a
-                  layout
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.8, delay: i * 0.1 }}
-                  className="group relative cursor-pointer overflow-hidden block aspect-[4/5] project-card"
-                >
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover grayscale brightness-75 group-hover:brightness-100 group-hover:grayscale-0 transition-all duration-1000 ease-out transform group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-1000"></div>
-                  
-                  <div className="absolute inset-0 p-8 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                    <p className="text-white/70 text-xs tracking-[0.2em] uppercase mb-2">
-                      {project.type} · {project.year}
-                    </p>
-                    <h3 className="text-2xl font-serif text-white">
-                      {project.title}
-                    </h3>
-                  </div>
-                </motion.a>
-              </Link>
+              <div key={project.id}>
+                <Link href={`/project/${project.id}`}>
+                  <motion.a
+                    layout
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.8, delay: i * 0.1 }}
+                    className="group relative cursor-pointer overflow-hidden block aspect-[4/5] project-card"
+                  >
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover grayscale brightness-75 group-hover:brightness-100 group-hover:grayscale-0 transition-all duration-1000 ease-out transform group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-1000"></div>
+                    
+                    <div className="absolute inset-0 p-8 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                      <p className="text-white/70 text-xs tracking-[0.2em] uppercase mb-2">
+                        {project.type} · {project.year}
+                      </p>
+                      <h3 className="text-2xl font-serif text-white">
+                        {project.title}
+                      </h3>
+                    </div>
+                  </motion.a>
+                </Link>
+              </div>
             ))}
           </AnimatePresence>
         </motion.div>

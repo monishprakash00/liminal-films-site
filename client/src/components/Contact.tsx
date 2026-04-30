@@ -1,18 +1,15 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 export function Contact() {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
-  
-  const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
-
   return (
-    <section ref={ref} id="contact" className="py-40 relative z-10">
-      <motion.div className="container mx-auto px-6 md:px-12 text-center max-w-2xl" style={{ y }}>
+    <section id="contact" className="py-40 relative z-10">
+      <motion.div 
+        initial={{ opacity: 0, y: 150, filter: "blur(10px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: false, margin: "-10%" }}
+        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+        className="container mx-auto px-6 md:px-12 text-center max-w-2xl"
+      >
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

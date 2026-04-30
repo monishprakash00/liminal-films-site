@@ -10,9 +10,9 @@ export function Hero() {
       <motion.div 
         className="relative z-10 container mx-auto px-6 text-center flex flex-col items-center justify-center h-full"
         style={{ y, opacity }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2, ease: "easeOut" }}
+        initial={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
+        animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+        transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
       >
         <motion.h1 
           className="text-5xl md:text-7xl lg:text-8xl font-display tracking-[0.25em] font-light text-foreground mb-12 uppercase"

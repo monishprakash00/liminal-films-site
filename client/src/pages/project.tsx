@@ -1,5 +1,5 @@
 import { useRoute } from "wouter";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { projects } from "@/lib/data";
@@ -9,6 +9,8 @@ export default function ProjectPage() {
   const projectId = params?.id;
   
   const project = projects.find(p => p.id === projectId);
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 1000], [0, 300]);
 
   if (!project) {
     return (
@@ -19,46 +21,61 @@ export default function ProjectPage() {
   }
 
   return (
-    <main className="bg-background min-h-screen text-foreground pt-24">
+    <main className="bg-background min-h-screen text-foreground pt-24 relative overflow-hidden">
+      {/* Background with Parallax */}
+      <motion.div 
+        className="fixed inset-0 z-0 pointer-events-none"
+        style={{ y }}
+      >
+        <img 
+          src={project.image} 
+          alt={project.title} 
+          className="w-full h-full object-cover scale-[1.1] grayscale opacity-10 blur-[2px]"
+        />
+        <div className="absolute inset-0 bg-background/80"></div>
+      </motion.div>
+
       {/* Global Grain Overlay */}
       <div className="grain-overlay"></div>
       
-      <Navigation />
+      <div className="relative z-10">
+        <Navigation />
 
-      <article className="container mx-auto px-6 md:px-12 py-20">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="max-w-4xl mx-auto space-y-12"
-        >
-          <div className="text-center space-y-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-              {project.type} · {project.year}
-            </p>
-            <h1 className="text-4xl md:text-6xl font-serif leading-tight">
-              {project.title}
-            </h1>
-          </div>
+        <article className="container mx-auto px-6 md:px-12 py-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="max-w-4xl mx-auto space-y-12"
+          >
+            <div className="text-center space-y-4">
+              <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                {project.type} · {project.year}
+              </p>
+              <h1 className="text-4xl md:text-6xl font-serif leading-tight">
+                {project.title}
+              </h1>
+            </div>
 
-          <div className="aspect-video w-full bg-black relative">
-            <iframe 
-              className="w-full h-full absolute inset-0"
-              src={`https://www.youtube.com/embed/${project.videoId}`} 
-              title={project.title}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
+            <div className="aspect-video w-full bg-black relative shadow-2xl">
+              <iframe 
+                className="w-full h-full absolute inset-0"
+                src={`https://www.youtube.com/embed/${project.videoId}?autoplay=0&rel=0`} 
+                title={project.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
 
-          <div className="prose prose-invert prose-lg max-w-none prose-p:font-light prose-p:leading-relaxed prose-p:text-muted-foreground">
-            <p>{project.synopsis}</p>
-          </div>
-        </motion.div>
-      </article>
+            <div className="prose prose-invert prose-lg max-w-none prose-p:font-light prose-p:leading-relaxed prose-p:text-muted-foreground">
+              <p>{project.synopsis}</p>
+            </div>
+          </motion.div>
+        </article>
 
-      <Footer />
+        <Footer />
+      </div>
     </main>
   );
 }
