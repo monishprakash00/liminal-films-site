@@ -9,7 +9,7 @@ export function Portfolio() {
   const filteredProjects = projects.filter(p => filter === "All" || p.type === filter);
 
   return (
-    <section id="work" className="py-40 bg-background relative z-10">
+    <section id="work" className="py-40 relative z-10">
       <div className="container mx-auto px-6 md:px-12">
         
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">

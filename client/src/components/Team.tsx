@@ -4,7 +4,7 @@ import { team } from "@/lib/data";
 
 export function Team() {
   return (
-    <section id="team" className="py-40 bg-background relative z-10">
+    <section id="team" className="py-40 relative z-10">
       <div className="container mx-auto px-6 md:px-12">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

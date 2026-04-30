@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-40 bg-background relative z-10">
+    <section id="contact" className="py-40 relative z-10">
       <div className="container mx-auto px-6 md:px-12 text-center max-w-2xl">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
