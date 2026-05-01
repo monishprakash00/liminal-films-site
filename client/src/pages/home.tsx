@@ -32,9 +32,6 @@ export default function Home() {
         <div className="absolute inset-0 bg-background/60 pointer-events-none"></div>
       </motion.div>
       
-      {/* Global Grain Overlay */}
-      <div className="grain-overlay"></div>
-      
       <div className="relative z-10">
         <Navigation />
         <Hero />

@@ -34,9 +34,6 @@ export default function ProjectPage() {
         />
         <div className="absolute inset-0 bg-background/80"></div>
       </motion.div>
-
-      {/* Global Grain Overlay */}
-      <div className="grain-overlay"></div>
       
       <div className="relative z-10">
         <Navigation />
