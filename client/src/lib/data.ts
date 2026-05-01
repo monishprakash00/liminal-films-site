@@ -82,7 +82,7 @@ export const team: TeamMember[] = [
     id: "abhijit",
     name: "Abhijit Suresh Menon",
     role: "Marketing Strategist",
-    image: "/src/assets/images/team-abhijit.jpg",
+    image: "/src/assets/images/team-1.png",
     bio: "Abhijit brings over a decade of experience in film distribution and marketing strategy. He has successfully navigated the complex landscape of independent cinema, ensuring that LIMINAL FILMS reaches the audiences it deserves."
   },
   {
