@@ -146,3 +146,12 @@ html.lenis, html.lenis body {
     cursor: auto !important;
   }
 }
+
+/* Hide YouTube iframe controls that leak through */
+.youtube-container {
+  pointer-events: none !important;
+}
+
+iframe[title="Background Video"] {
+  pointer-events: none !important;
+}
