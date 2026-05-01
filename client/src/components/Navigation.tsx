@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { motion } from "framer-motion";
+import logo from "@assets/Lone_Tree_white_1777612235352.png";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,9 +38,9 @@ export function Navigation() {
     >
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
         <Link href="/">
-          <span className="font-sans text-xl tracking-[0.2em] text-foreground font-light hover:opacity-70 transition-opacity uppercase cursor-pointer">
-            Liminal Films
-          </span>
+          <div className="cursor-pointer hover:opacity-70 transition-opacity">
+            <img src={logo} alt="Liminal Films" className="h-12 w-auto object-contain" />
+          </div>
         </Link>
 
         <div className="hidden md:flex items-center space-x-12 text-[10px] uppercase tracking-[0.2em]">
