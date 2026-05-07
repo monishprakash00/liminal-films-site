@@ -37,22 +37,25 @@ export default function Home() {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
           >
-            <motion.video 
-              src={introVideo}
-              autoPlay
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-              onEnded={() => setIntroState('fading')}
-              initial={{ opacity: 1 }}
-              animate={{ opacity: introState === 'fading' ? 0 : 1 }}
-              transition={{ duration: 1.5 }}
-              onAnimationComplete={(definition) => {
-                if (definition.opacity === 0 && introState === 'fading') {
-                  setIntroState('done');
-                }
-              }}
-            />
+            <div className="relative w-[50vw] h-[50vh] sm:w-[50vw] sm:h-[50vh]">
+              <motion.video 
+                src={introVideo}
+                autoPlay
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+                onEnded={() => setIntroState('fading')}
+                initial={{ opacity: 1 }}
+                animate={{ opacity: introState === 'fading' ? 0 : 1 }}
+                transition={{ duration: 1.5 }}
+                onAnimationComplete={(definition) => {
+                  if (definition.opacity === 0 && introState === 'fading') {
+                    setIntroState('done');
+                  }
+                }}
+              />
+              <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_50px_50px_black] sm:shadow-[inset_0_0_100px_100px_black]"></div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -67,7 +70,7 @@ export default function Home() {
             animate={{ opacity: 0.4 }}
             transition={{ duration: 2 }}
           >
-            <div className="relative w-[50vw] h-[50vh]">
+            <div className="relative w-[25vw] h-[25vh]">
               <video 
                 autoPlay 
                 loop 
@@ -77,7 +80,7 @@ export default function Home() {
               >
                 <source src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-sky-in-a-dark-32669-large.mp4" type="video/mp4" />
               </video>
-              <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_80px_80px_black] sm:shadow-[inset_0_0_120px_120px_black]"></div>
+              <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_40px_40px_black] sm:shadow-[inset_0_0_60px_60px_black]"></div>
               <div className="absolute inset-0 bg-background/60 pointer-events-none"></div>
             </div>
           </motion.div>
