@@ -24,7 +24,7 @@ export function Hero() {
         </motion.h1>
 
         <motion.p 
-          className="text-sm md:text-base text-muted-foreground/80 max-w-4xl mx-auto font-sub tracking-[0.25em] uppercase leading-loose"
+          className="text-[10.5px] md:text-[12px] text-muted-foreground/80 max-w-4xl mx-auto font-sub tracking-[0.25em] uppercase leading-loose"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, delay: 1 }}
