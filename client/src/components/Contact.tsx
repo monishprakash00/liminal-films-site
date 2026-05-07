@@ -26,10 +26,10 @@ export function Contact() {
 
           <div className="space-y-6">
             <a 
-              href="mailto:monish@liminalfilms.in" 
+              href="mailto:enquiry@liminalfilms.in" 
               className="block text-2xl md:text-4xl font-serif text-foreground hover:text-primary transition-colors duration-500"
             >
-              monish@liminalfilms.in
+              enquiry@liminalfilms.in
             </a>
             
             <div className="flex items-center justify-center gap-8 pt-8">
