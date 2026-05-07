@@ -15,7 +15,7 @@ export function Hero() {
         transition={{ duration: 2, ease: "easeOut" }}
       >
         <motion.h1 
-          className="text-[27px] sm:text-[43px] md:text-[65px] lg:text-[86px] font-display tracking-[0.25em] font-light text-foreground mb-12 uppercase whitespace-nowrap overflow-visible"
+          className="text-[27px] sm:text-[43px] md:text-[65px] lg:text-[86px] font-display tracking-[0.25em] font-light text-foreground mb-6 uppercase whitespace-nowrap overflow-visible"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, delay: 0.5 }}
