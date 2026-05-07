@@ -67,7 +67,7 @@ export default function Home() {
             animate={{ opacity: 0.4 }}
             transition={{ duration: 2 }}
           >
-            <div className="relative w-[75vw] h-[75vh]">
+            <div className="relative w-[50vw] h-[50vh]">
               <video 
                 autoPlay 
                 loop 
@@ -77,7 +77,7 @@ export default function Home() {
               >
                 <source src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-sky-in-a-dark-32669-large.mp4" type="video/mp4" />
               </video>
-              <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_100px_100px_black] sm:shadow-[inset_0_0_150px_150px_black]"></div>
+              <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_80px_80px_black] sm:shadow-[inset_0_0_120px_120px_black]"></div>
               <div className="absolute inset-0 bg-background/60 pointer-events-none"></div>
             </div>
           </motion.div>
