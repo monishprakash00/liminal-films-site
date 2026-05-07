@@ -44,7 +44,7 @@ export default function Home() {
       <AnimatePresence>
         {introState !== 'done' && (
           <motion.div 
-            className="fixed inset-0 z-[100] bg-black flex items-center justify-center"
+            className="fixed inset-0 z-[100] bg-black flex items-center justify-center pointer-events-none"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
@@ -54,7 +54,7 @@ export default function Home() {
               autoPlay
               muted
               playsInline
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover pointer-events-none"
               onEnded={() => setIntroState('fading')}
               initial={{ opacity: 1 }}
               animate={{ opacity: introState === 'fading' ? 0 : 1 }}
@@ -69,7 +69,7 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      {introState === 'done' && (
+      {(introState === 'fading' || introState === 'done') && (
         <motion.div 
           className="relative z-10"
           initial={{ opacity: 0 }}
