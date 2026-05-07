@@ -39,7 +39,7 @@ export default function TeamMemberPage() {
         <Navigation />
 
         <article className="container mx-auto px-6 md:px-12 pt-4 pb-20 min-h-[80vh] flex flex-col items-center justify-center">
-          <div className="w-full max-w-4xl mx-auto mb-12">
+          <div className="w-full max-w-5xl mx-auto mb-12">
             <Link href="/" className="inline-flex items-center gap-2 group">
               <motion.div className="w-8 h-[1px] bg-foreground/50 group-hover:w-12 group-hover:bg-foreground transition-all duration-500" />
               <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground group-hover:text-foreground transition-colors duration-500">Back</span>
@@ -50,7 +50,7 @@ export default function TeamMemberPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="w-full max-w-4xl mx-auto flex flex-col items-center gap-12"
+            className="w-full max-w-5xl mx-auto flex flex-col items-center gap-12"
           >
             <div className="w-48 h-48 md:w-[288px] md:h-[288px] rounded-full overflow-hidden shrink-0 bg-secondary shadow-2xl relative">
               <div className="absolute inset-0 bg-black/20 z-10"></div>
@@ -63,7 +63,7 @@ export default function TeamMemberPage() {
               />
             </div>
 
-            <div className="space-y-8 text-center max-w-3xl">
+            <div className="space-y-8 text-center max-w-4xl">
               <div>
                 <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
                   {member.role.split('\n').map((line, i) => (
