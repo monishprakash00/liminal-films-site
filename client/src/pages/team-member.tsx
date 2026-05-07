@@ -60,7 +60,7 @@ export default function TeamMemberPage() {
               <div>
                 <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
                   {member.role.split('\n').map((line, i) => (
-                    <span key={i} className={i === 1 ? "block normal-case italic font-serif text-[11px] mt-1.5 tracking-normal text-muted-foreground/80" : "block"}>
+                    <span key={i} className={i === 1 ? "block normal-case italic font-serif text-[14px] md:text-[16px] mt-1.5 tracking-normal text-muted-foreground/90" : "block"}>
                       {line}
                     </span>
                   ))}

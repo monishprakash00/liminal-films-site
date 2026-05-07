@@ -51,7 +51,7 @@ export function Team() {
                 </h3>
                 <div className="text-[10px] md:text-xs uppercase tracking-widest text-muted-foreground">
                   {member.role.split('\n').map((line, i) => (
-                    <span key={i} className={i === 1 ? "block normal-case italic font-serif text-[10px] md:text-[11px] mt-1 tracking-normal text-muted-foreground/80" : "block"}>
+                    <span key={i} className={i === 1 ? "block normal-case italic font-serif text-[12px] md:text-[14px] mt-1 tracking-normal text-muted-foreground/90" : "block"}>
                       {line}
                     </span>
                   ))}
