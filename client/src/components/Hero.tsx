@@ -29,7 +29,7 @@ export function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, delay: 1 }}
         >
-          Shaped by artists. Built around story.<br />
+          Shaped by artists . Built around story<br />
           Realised through image and sound.
         </motion.p>
       </motion.div>
