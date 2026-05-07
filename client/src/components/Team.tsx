@@ -49,9 +49,13 @@ export function Team() {
                 <h3 className="text-base md:text-lg font-sans tracking-wide text-foreground mb-2 group-hover:text-primary transition-colors">
                   {member.name}
                 </h3>
-                <p className="text-[10px] md:text-xs uppercase tracking-widest text-muted-foreground whitespace-pre-line">
-                  {member.role}
-                </p>
+                <div className="text-[10px] md:text-xs uppercase tracking-widest text-muted-foreground">
+                  {member.role.split('\n').map((line, i) => (
+                    <span key={i} className={i === 1 ? "block normal-case italic font-serif text-[10px] md:text-[11px] mt-1 tracking-normal text-muted-foreground/80" : "block"}>
+                      {line}
+                    </span>
+                  ))}
+                </div>
               </motion.div>
             </Link>
           ))}

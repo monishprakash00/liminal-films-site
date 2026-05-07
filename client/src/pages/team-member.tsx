@@ -58,9 +58,13 @@ export default function TeamMemberPage() {
 
             <div className="space-y-8 text-center max-w-3xl">
               <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4 whitespace-pre-line">
-                  {member.role}
-                </p>
+                <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+                  {member.role.split('\n').map((line, i) => (
+                    <span key={i} className={i === 1 ? "block normal-case italic font-serif text-[11px] mt-1.5 tracking-normal text-muted-foreground/80" : "block"}>
+                      {line}
+                    </span>
+                  ))}
+                </div>
                 <h1 className="text-4xl md:text-6xl font-serif leading-tight">
                   {member.name}
                 </h1>
