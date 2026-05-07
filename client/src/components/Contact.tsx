@@ -34,7 +34,9 @@ export function Contact() {
             
             <div className="flex items-center justify-center gap-8 pt-8">
               <a 
-                href="#" 
+                href="https://www.instagram.com/liminal_films/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-xs uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors duration-300"
               >
                 Instagram
