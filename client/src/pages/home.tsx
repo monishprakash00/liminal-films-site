@@ -28,6 +28,33 @@ export default function Home() {
   }, [introState]);
 
   useEffect(() => {
+    if (introState === 'playing') {
+      let timeoutId: NodeJS.Timeout;
+
+      const handleUserInteraction = () => {
+        setIntroState('fading');
+      };
+
+      // Add a slight delay before enabling the skip functionality
+      // so it doesn't trigger immediately if the user's mouse is already moving
+      timeoutId = setTimeout(() => {
+        window.addEventListener('mousemove', handleUserInteraction, { once: true });
+        window.addEventListener('click', handleUserInteraction, { once: true });
+        window.addEventListener('keydown', handleUserInteraction, { once: true });
+        window.addEventListener('touchstart', handleUserInteraction, { once: true });
+      }, 1000);
+
+      return () => {
+        clearTimeout(timeoutId);
+        window.removeEventListener('mousemove', handleUserInteraction);
+        window.removeEventListener('click', handleUserInteraction);
+        window.removeEventListener('keydown', handleUserInteraction);
+        window.removeEventListener('touchstart', handleUserInteraction);
+      };
+    }
+  }, [introState]);
+
+  useEffect(() => {
     if (introState !== 'done') {
       window.scrollTo(0, 0);
       document.body.style.overflow = 'hidden';
