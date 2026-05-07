@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "wouter";
 
 export function Contact() {
   const ref = useRef<HTMLElement>(null);
@@ -25,12 +26,12 @@ export function Contact() {
           </h2>
 
           <div className="space-y-6">
-            <a 
-              href="mailto:enquiry@liminalfilms.in" 
+            <Link 
+              href="/contact" 
               className="block text-2xl md:text-4xl font-serif text-foreground hover:text-primary transition-colors duration-500"
             >
               enquiry@liminalfilms.in
-            </a>
+            </Link>
             
             <div className="flex items-center justify-center gap-8 pt-8">
               <a 

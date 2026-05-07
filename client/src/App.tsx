@@ -7,6 +7,7 @@ import { CustomCursor } from "@/components/CustomCursor";
 import Home from "@/pages/home";
 import ProjectPage from "@/pages/project";
 import TeamMemberPage from "@/pages/team-member";
+import ContactPage from "@/pages/contact";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -18,6 +19,7 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/project/:id" component={ProjectPage} />
         <Route path="/team/:id" component={TeamMemberPage} />
+        <Route path="/contact" component={ContactPage} />
         <Route component={NotFound} />
       </Switch>
     </div>
