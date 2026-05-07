@@ -43,7 +43,7 @@ export const projects: Project[] = [
     title: "The Girl with the Bluest Eyes",
     year: "2018",
     type: "Short Film",
-    image: "/src/assets/images/girl-bluest-eyes.png",
+    image: "/src/assets/images/tgwtbe.png",
     synopsis: "A visually stunning narrative short exploring identity and belonging. Told through striking monochrome cinematography with subtle highlights, it stands as a testament to visual storytelling.",
     videoId: "QJDP8onM3_Y"
   }
