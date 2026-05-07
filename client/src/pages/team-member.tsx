@@ -58,7 +58,7 @@ export default function TeamMemberPage() {
 
             <div className="space-y-8 text-center max-w-3xl">
               <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
+                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4 whitespace-pre-line">
                   {member.role}
                 </p>
                 <h1 className="text-4xl md:text-6xl font-serif leading-tight">

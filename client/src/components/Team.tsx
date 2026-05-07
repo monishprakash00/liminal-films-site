@@ -49,7 +49,7 @@ export function Team() {
                 <h3 className="text-base md:text-lg font-sans tracking-wide text-foreground mb-2 group-hover:text-primary transition-colors">
                   {member.name}
                 </h3>
-                <p className="text-[10px] md:text-xs uppercase tracking-widest text-muted-foreground">
+                <p className="text-[10px] md:text-xs uppercase tracking-widest text-muted-foreground whitespace-pre-line">
                   {member.role}
                 </p>
               </motion.div>
