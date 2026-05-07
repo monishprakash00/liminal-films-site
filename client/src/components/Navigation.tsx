@@ -33,7 +33,7 @@ export function Navigation() {
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 w-full z-50 transition-colors duration-500 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border/50 py-4 md:py-6" : "bg-transparent py-6 md:py-8"
+        isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border/50 py-3 md:py-4" : "bg-transparent py-4 md:py-6"
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 grid grid-cols-3 items-center">
@@ -59,7 +59,7 @@ export function Navigation() {
             <img 
               src={logo} 
               alt="Liminal Films" 
-              className="h-16 md:h-20 w-auto object-contain transition-all duration-500"
+              className="h-12 md:h-[60px] w-auto object-contain transition-all duration-500"
             />
           </div>
         </Link>
