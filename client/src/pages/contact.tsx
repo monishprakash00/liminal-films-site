@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { Navigation } from "@/components/Navigation";
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -21,22 +22,26 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-background min-h-screen text-foreground pt-32 pb-24 px-6 md:px-12 flex flex-col items-center">
-      <Link href="/" className="absolute top-8 left-6 md:left-12 z-50 group flex items-center gap-2 mix-blend-difference">
-        <motion.div 
-          className="w-8 h-[1px] bg-foreground/50 group-hover:w-12 group-hover:bg-foreground transition-all duration-500"
-        />
-        <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground group-hover:text-foreground transition-colors duration-500">
-          Back
-        </span>
-      </Link>
+    <div className="bg-background min-h-screen text-foreground pt-40 pb-24 px-6 md:px-12 flex flex-col items-center">
+      <Navigation />
 
       <motion.div 
-        className="w-full max-w-3xl mx-auto"
+        className="w-full max-w-3xl mx-auto mt-12"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
+        <div className="mb-12">
+          <Link href="/" className="inline-flex items-center gap-2 group">
+            <motion.div 
+              className="w-8 h-[1px] bg-foreground/50 group-hover:w-12 group-hover:bg-foreground transition-all duration-500"
+            />
+            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground group-hover:text-foreground transition-colors duration-500">
+              Back
+            </span>
+          </Link>
+        </div>
+
         <div className="text-center mb-16 md:mb-24">
           <h1 className="text-5xl md:text-7xl lg:text-[100px] font-serif text-foreground leading-[0.9] mb-8">
             Get <span className="text-muted-foreground italic">in touch</span>

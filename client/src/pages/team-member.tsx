@@ -21,16 +21,7 @@ export default function TeamMemberPage() {
   }
 
   return (
-    <main className="bg-background min-h-screen text-foreground pt-24 relative overflow-hidden">
-      <Link href="/" className="absolute top-8 left-6 md:left-12 z-50 group flex items-center gap-2 mix-blend-difference">
-        <motion.div 
-          className="w-8 h-[1px] bg-foreground/50 group-hover:w-12 group-hover:bg-foreground transition-all duration-500"
-        />
-        <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground group-hover:text-foreground transition-colors duration-500">
-          Back
-        </span>
-      </Link>
-
+    <main className="bg-background min-h-screen text-foreground pt-32 md:pt-40 relative overflow-hidden">
       {/* Background with Parallax */}
       <motion.div 
         className="fixed inset-0 z-0 pointer-events-none"
@@ -47,7 +38,14 @@ export default function TeamMemberPage() {
       <div className="relative z-10">
         <Navigation />
 
-        <article className="container mx-auto px-6 md:px-12 py-20 min-h-[80vh] flex items-center justify-center">
+        <article className="container mx-auto px-6 md:px-12 py-20 min-h-[80vh] flex flex-col items-center justify-center">
+          <div className="w-full max-w-4xl mx-auto mb-12">
+            <Link href="/" className="inline-flex items-center gap-2 group">
+              <motion.div className="w-8 h-[1px] bg-foreground/50 group-hover:w-12 group-hover:bg-foreground transition-all duration-500" />
+              <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground group-hover:text-foreground transition-colors duration-500">Back</span>
+            </Link>
+          </div>
+
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
