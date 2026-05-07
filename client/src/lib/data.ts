@@ -68,7 +68,7 @@ export const team: TeamMember[] = [
     id: "manas",
     name: "Manas Bhattacharyya",
     role: "Director of Photography",
-    image: "/src/assets/images/team-2.png",
+    image: "/src/assets/images/manas.jpg",
     bio: "A distinguished alumnus of the SRFTI cinematography department, class of 2006, Manas not only topped his class but also garnered multiple scholarships, an indication to his extraordinary talent. His journey in the Bollywood industry began as an Assistant Cinematographer, contributing to notable films such as \"Laga Chunari Mein Daag\" (YRF), \"Antardwand\" (YRF), and \"Aamir\" (UTV).\n\nManas gained valuable experience working with renowned cinematographers such as K. U. Mohanan, Alphonse Roy, and Sushil Rajpal. As a Cinematographer, Manas has worked on feature films including the upcoming \"Mukti\" (Jio Studio) starring Jaideep Ahlawat and \"Naqaab\" (MX Player) featuring Mallika Sherawat and Esha Gupta. His films have been selected for prestigious international festivals such as the Berlin International Film Festival, Toronto International Film Festival, Raindance International Film Festival, Tokyo International Film Festival, and Busan International Film Festival.\n\nBeyond the camera, Manas excels as a DI grading artist, revered in Kolkata for his impeccable color grading skills. His artistry is evident in critically acclaimed films like Gautam Ghose's 'Sankhachil' (National Film Award), Atanu Ghosh's 'Mayurakshi' (National Film Award), Haobam Paban Kumar's 'Lady of the Lake' (National Film Award and UNESCO Award), and 'Jole Dobe Na' (official selection in Berlin Film Festival). Based in both Mumbai and Kolkata, Manas Bhattacharyya continues to create captivating visuals for films, ad films, and more."
   },
   {
