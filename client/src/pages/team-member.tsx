@@ -77,7 +77,7 @@ export default function TeamMemberPage() {
                 </h1>
               </div>
 
-              <div className="prose prose-invert prose-lg max-w-none prose-p:font-light prose-p:leading-relaxed prose-p:text-muted-foreground text-center">
+              <div className="prose prose-invert prose-lg max-w-none prose-p:font-light prose-p:leading-relaxed prose-p:text-muted-foreground text-center space-y-6">
                 {member.bio.split('\n\n').map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
