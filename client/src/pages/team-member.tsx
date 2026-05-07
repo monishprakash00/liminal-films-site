@@ -1,4 +1,4 @@
-import { useRoute } from "wouter";
+import { useRoute, Link } from "wouter";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -22,6 +22,15 @@ export default function TeamMemberPage() {
 
   return (
     <main className="bg-background min-h-screen text-foreground pt-24 relative overflow-hidden">
+      <Link href="/" className="absolute top-8 left-6 md:left-12 z-50 group flex items-center gap-2 mix-blend-difference">
+        <motion.div 
+          className="w-8 h-[1px] bg-foreground/50 group-hover:w-12 group-hover:bg-foreground transition-all duration-500"
+        />
+        <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground group-hover:text-foreground transition-colors duration-500">
+          Back
+        </span>
+      </Link>
+
       {/* Background with Parallax */}
       <motion.div 
         className="fixed inset-0 z-0 pointer-events-none"

@@ -10,7 +10,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import introVideo from "@/assets/videos/intro2.mp4";
 
 export default function Home() {
-  const [introState, setIntroState] = useState<'playing' | 'fading' | 'done'>('playing');
+  const [introState, setIntroState] = useState<'playing' | 'fading' | 'done'>(() => {
+    if (typeof window !== 'undefined' && sessionStorage.getItem('introPlayed')) {
+      return 'done';
+    }
+    return 'playing';
+  });
+
+  useEffect(() => {
+    if (introState === 'done') {
+      sessionStorage.setItem('introPlayed', 'true');
+    }
+  }, [introState]);
 
   useEffect(() => {
     if (introState !== 'done') {
