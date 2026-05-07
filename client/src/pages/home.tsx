@@ -61,22 +61,25 @@ export default function Home() {
         <>
           {/* Fixed Native Video Background */}
           <motion.div 
-            className="fixed inset-0 z-0 pointer-events-none"
+            className="fixed inset-0 z-0 pointer-events-none flex items-center justify-center bg-black"
             style={{ y: videoY, opacity: videoOpacity }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.4 }}
             transition={{ duration: 2 }}
           >
-            <video 
-              autoPlay 
-              loop 
-              muted 
-              playsInline
-              className="w-full h-full object-cover scale-105"
-            >
-              <source src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-sky-in-a-dark-32669-large.mp4" type="video/mp4" />
-            </video>
-            <div className="absolute inset-0 bg-background/60 pointer-events-none"></div>
+            <div className="relative w-[75vw] h-[75vh]">
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="w-full h-full object-cover"
+              >
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-sky-in-a-dark-32669-large.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_100px_100px_black] sm:shadow-[inset_0_0_150px_150px_black]"></div>
+              <div className="absolute inset-0 bg-background/60 pointer-events-none"></div>
+            </div>
           </motion.div>
           
           <div className="relative z-10">
