@@ -22,7 +22,7 @@ export function Manifesto() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center space-y-12"
+          className="text-center space-y-6"
         >
           <h2 className="text-lg md:text-2xl lg:text-3xl font-serif text-foreground leading-relaxed md:leading-relaxed font-light">
             LIMINAL FILMS makes work that is grounded, human, and uncompromising.
