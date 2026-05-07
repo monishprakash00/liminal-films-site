@@ -36,7 +36,7 @@ export const projects: Project[] = [
     type: "Short Film",
     image: "/src/assets/images/portfolio-2.png",
     synopsis: "A psychological thriller short film that delves into the fragile nature of memory. When the past begins to bleed into the present, the line between reality and illusion becomes irrevocably blurred.",
-    videoId: "ScMzIvxBSi4"
+    videoId: "9MUcWUqQ88E"
   },
   {
     id: "bluest-eyes",
