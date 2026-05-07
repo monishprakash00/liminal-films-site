@@ -8,7 +8,6 @@ export interface Project {
   image: string;
   synopsis: string;
   videoId: string;
-  tint?: string;
 }
 
 export interface TeamMember {
@@ -46,8 +45,7 @@ export const projects: Project[] = [
     type: "Short Film",
     image: "/src/assets/images/girl-bluest-eyes.png",
     synopsis: "A visually stunning narrative short exploring identity and belonging. Told through striking monochrome cinematography with subtle highlights, it stands as a testament to visual storytelling.",
-    videoId: "QJDP8onM3_Y",
-    tint: "bg-slate-800/40 mix-blend-overlay" // Muted dark sombre tone
+    videoId: "QJDP8onM3_Y"
   }
 ];
 

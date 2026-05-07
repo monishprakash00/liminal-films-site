@@ -70,13 +70,9 @@ export function Portfolio() {
                   <img 
                     src={project.image} 
                     alt={project.title} 
-                    className="w-full h-full object-cover grayscale-[0.8] sepia-[0.3] contrast-[0.9] brightness-[0.6] group-hover:brightness-[0.85] group-hover:grayscale-[0.5] transition-all duration-1000 ease-out transform group-hover:scale-105"
+                    className="w-full h-full object-cover grayscale brightness-75 group-hover:brightness-100 group-hover:grayscale-0 transition-all duration-1000 ease-out transform group-hover:scale-105"
                   />
-                  {/* Optional colour grading tint layer */}
-                  {project.tint && (
-                    <div className={`absolute inset-0 ${project.tint} pointer-events-none transition-opacity duration-1000 group-hover:opacity-75`}></div>
-                  )}
-                  <div className="absolute inset-0 bg-black/50 group-hover:bg-black/20 transition-colors duration-1000"></div>
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-1000"></div>
                   
                   <div className="absolute inset-0 p-8 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                     <p className="text-white/70 text-xs tracking-[0.2em] uppercase mb-2">
