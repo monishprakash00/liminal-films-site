@@ -42,7 +42,7 @@ export default function ContactPage() {
             Get <span className="text-muted-foreground italic">in touch</span>
           </h1>
           <p className="text-sm md:text-base text-muted-foreground/60 font-sub tracking-[0.25em] uppercase mx-auto max-w-md leading-loose">
-            We collaborate with visionaries to create cinematic experiences.
+            Great work doesn't happen alone
           </p>
         </div>
 
