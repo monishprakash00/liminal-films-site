@@ -34,7 +34,7 @@ export const projects: Project[] = [
     title: "Whispers in the Dark",
     year: "2019",
     type: "Short Film",
-    image: "/src/assets/images/witd.png",
+    image: "/src/assets/images/witd2.png",
     synopsis: "A psychological thriller short film that delves into the fragile nature of memory. When the past begins to bleed into the present, the line between reality and illusion becomes irrevocably blurred.",
     videoId: "9MUcWUqQ88E"
   },
