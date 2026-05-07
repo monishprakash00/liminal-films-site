@@ -5,7 +5,7 @@ import logo from "@assets/Lone_Tree_white_1777612235352.png";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
   const isHomePage = location === "/";
 
   useEffect(() => {
@@ -17,13 +17,30 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    if (isHomePage) {
-      e.preventDefault();
-      const element = document.getElementById(targetId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+  const handleNavClick = (targetId: string, path: string) => {
+    if (location === path) {
+      if (targetId) {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
+      return;
+    }
+
+    setLocation(path);
+    
+    if (targetId) {
+      setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
@@ -39,43 +56,39 @@ export function Navigation() {
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center relative min-h-[40px]">
         <div className="hidden md:flex items-center space-x-12 text-[10px] uppercase tracking-[0.2em] flex-1">
           <a 
-            href={isHomePage ? "#manifesto" : "/"} 
-            onClick={(e) => handleNavClick(e, "manifesto")}
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            onClick={() => handleNavClick("manifesto", "/")}
+            className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
           >
             Manifesto
           </a>
           <a 
-            href={isHomePage ? "#work" : "/"} 
-            onClick={(e) => handleNavClick(e, "work")}
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            onClick={() => handleNavClick("work", "/")}
+            className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
           >
             Work
           </a>
         </div>
 
-        <Link href="/">
-          <div className="cursor-pointer hover:opacity-70 transition-opacity absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 flex items-center justify-center whitespace-nowrap">
+        <a onClick={() => handleNavClick("", "/")} className="cursor-pointer">
+          <div className="hover:opacity-70 transition-opacity absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 flex items-center justify-center whitespace-nowrap">
             <img 
               src={logo} 
               alt="Liminal Films" 
               className="h-12 md:h-[60px] w-auto object-contain transition-all duration-500"
             />
           </div>
-        </Link>
+        </a>
 
         <div className="hidden md:flex items-center space-x-12 text-[10px] uppercase tracking-[0.2em] flex-1 justify-end">
           <a 
-            href={isHomePage ? "#team" : "/"} 
-            onClick={(e) => handleNavClick(e, "team")}
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            onClick={() => handleNavClick("team", "/")}
+            className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
           >
             Team
           </a>
           <a 
-            href={isHomePage ? "#contact" : "/"} 
-            onClick={(e) => handleNavClick(e, "contact")}
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            onClick={() => handleNavClick("", "/contact")}
+            className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
           >
             Contact
           </a>
