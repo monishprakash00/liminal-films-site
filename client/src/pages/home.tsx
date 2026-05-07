@@ -67,7 +67,7 @@ export default function Home() {
                 }}
                 initial={{ opacity: 1 }}
                 animate={{ opacity: introState === 'fading' ? 0 : 1 }}
-                transition={{ duration: 1.5 }}
+                transition={{ duration: 2.5 }}
                 onAnimationComplete={(definition) => {
                   if (definition.opacity === 0 && introState === 'fading') {
                     setIntroState('done');
