@@ -41,12 +41,6 @@ export function Contact() {
               >
                 Instagram
               </a>
-              <a 
-                href="#" 
-                className="text-xs uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors duration-300"
-              >
-                YouTube
-              </a>
             </div>
           </div>
         </motion.div>
