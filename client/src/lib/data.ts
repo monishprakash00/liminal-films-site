@@ -61,7 +61,7 @@ export const team: TeamMember[] = [
     id: "shruti",
     name: "Shruti Pallati",
     role: "Producer\nFeature Films",
-    image: "/src/assets/images/team-3.png",
+    image: "/src/assets/images/shruti.jpeg",
     bio: "Shruti is a filmmaker with nearly five years of experience assisting across television commercials, Films, and Web series. She began her career in TVCs before moving into long-form storytelling, building a strong understanding of both fast-paced commercial sets and narrative-driven projects.\n\nShe is known for translating directorial vision into precise on-set execution, combining commercial sensibility with cinematic storytelling. Her work reflects a balance of structure, creativity, and attention to detail.\n\nOff set, Shruti is usually in a movie theatre, watching (and rewatching) films partly for inspiration, and partly because she genuinely can't stay away from the big screen."
   },
   {
