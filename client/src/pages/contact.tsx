@@ -21,7 +21,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-background min-h-screen text-foreground flex flex-col md:flex-row relative">
+    <div className="bg-background min-h-screen text-foreground pt-32 pb-24 px-6 md:px-12 flex flex-col items-center">
       <Link href="/" className="absolute top-8 left-6 md:left-12 z-50 group flex items-center gap-2 mix-blend-difference">
         <motion.div 
           className="w-8 h-[1px] bg-foreground/50 group-hover:w-12 group-hover:bg-foreground transition-all duration-500"
@@ -31,44 +31,30 @@ export default function ContactPage() {
         </span>
       </Link>
 
-      {/* Left Side - Typography & Branding */}
       <motion.div 
-        className="w-full md:w-1/2 p-12 md:p-24 flex flex-col justify-center border-b md:border-b-0 md:border-r border-foreground/10 pt-32 md:pt-24"
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
+        className="w-full max-w-3xl mx-auto"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
-        <h1 className="text-5xl md:text-7xl lg:text-[100px] font-serif text-foreground leading-[0.9] mb-8">
-          Get<br />
-          <span className="text-muted-foreground italic">in touch</span>
-        </h1>
-        <p className="text-sm md:text-base text-muted-foreground/60 font-sub tracking-[0.25em] uppercase max-w-sm leading-loose">
-          We collaborate with visionaries to create cinematic experiences.
-        </p>
-        
-        <div className="mt-auto pt-24 hidden md:block">
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Direct</p>
-          <a href="mailto:enquiry@liminalfilms.in" className="text-xl font-serif hover:text-primary transition-colors">
-            enquiry@liminalfilms.in
-          </a>
+        <div className="text-center mb-16 md:mb-24">
+          <h1 className="text-5xl md:text-7xl lg:text-[100px] font-serif text-foreground leading-[0.9] mb-8">
+            Get<br />
+            <span className="text-muted-foreground italic">in touch</span>
+          </h1>
+          <p className="text-sm md:text-base text-muted-foreground/60 font-sub tracking-[0.25em] uppercase mx-auto max-w-md leading-loose">
+            We collaborate with visionaries to create cinematic experiences.
+          </p>
         </div>
-      </motion.div>
 
-      {/* Right Side - Form */}
-      <motion.div 
-        className="w-full md:w-1/2 p-12 md:p-24 flex flex-col justify-center bg-black/40"
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-      >
         {isSubmitted ? (
           <motion.div 
-            className="flex flex-col items-center justify-center text-center h-full"
+            className="text-center py-20 border border-foreground/10 p-12 bg-black/20"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
           >
             <h3 className="text-4xl font-serif mb-6 italic text-muted-foreground">Thank you</h3>
-            <p className="text-muted-foreground/80 uppercase tracking-[0.15em] text-sm max-w-sm leading-loose">
+            <p className="text-muted-foreground/80 uppercase tracking-[0.15em] text-sm max-w-sm mx-auto leading-loose">
               We have received your message and will be in touch shortly.
             </p>
             <Button 
@@ -80,7 +66,7 @@ export default function ContactPage() {
             </Button>
           </motion.div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-12 max-w-md mx-auto w-full">
+          <form onSubmit={handleSubmit} className="space-y-12 max-w-xl mx-auto w-full">
             <div className="space-y-3 group">
               <label htmlFor="name" className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground group-focus-within:text-foreground transition-colors">Name</label>
               <Input 
@@ -111,11 +97,11 @@ export default function ContactPage() {
               />
             </div>
             
-            <div className="pt-8">
+            <div className="pt-8 text-center">
               <Button 
                 type="submit" 
                 disabled={isSubmitting}
-                className="w-full bg-foreground text-background hover:bg-foreground/90 rounded-none py-8 uppercase tracking-[0.3em] text-xs transition-all duration-500 hover:tracking-[0.4em]"
+                className="bg-foreground text-background hover:bg-foreground/90 rounded-none py-8 px-16 uppercase tracking-[0.3em] text-xs transition-all duration-500 hover:tracking-[0.4em]"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
