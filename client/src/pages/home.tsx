@@ -58,7 +58,7 @@ export default function Home() {
                 onTimeUpdate={(e) => {
                   const video = e.currentTarget;
                   // Start fading a bit earlier than the very end
-                  if (video.duration - video.currentTime <= 0.8 && introState === 'playing') {
+                  if (video.duration - video.currentTime <= 1.5 && introState === 'playing') {
                     setIntroState('fading');
                   }
                 }}
