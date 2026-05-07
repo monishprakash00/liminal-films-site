@@ -24,16 +24,16 @@ export function Manifesto() {
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
           className="text-center space-y-12"
         >
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-serif text-foreground leading-relaxed md:leading-relaxed font-light">
+          <h2 className="text-lg md:text-2xl lg:text-3xl font-sans text-foreground leading-relaxed md:leading-relaxed font-light">
             LIMINAL FILMS makes work that is grounded, human, and uncompromising.
           </h2>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-serif text-foreground leading-relaxed md:leading-relaxed font-light">
+          <h2 className="text-lg md:text-2xl lg:text-3xl font-sans text-foreground leading-relaxed md:leading-relaxed font-light">
             Liminal means a threshold. The point beyond which you are no longer the same person. That's what we're trying to make, work that changes you. The kind that stays long after it's over.
           </h2>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-serif text-foreground leading-relaxed md:leading-relaxed font-light">
+          <h2 className="text-lg md:text-2xl lg:text-3xl font-sans text-foreground leading-relaxed md:leading-relaxed font-light">
             Every story is a threshold. Every frame, a passage. You enter one person. You leave another. That is the only measure that matters.
           </h2>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-serif text-foreground leading-relaxed md:leading-relaxed font-light">
+          <h2 className="text-lg md:text-2xl lg:text-3xl font-sans text-foreground leading-relaxed md:leading-relaxed font-light">
             We believe the best work comes from genuine collaboration and an unrelenting commitment to story. Every project begins with character. Everything else follows. We are independent by choice, and entirely unbothered by that.
           </h2>
         </motion.div>
