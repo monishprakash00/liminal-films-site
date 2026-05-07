@@ -13,7 +13,7 @@ export default function Home() {
   const [introState, setIntroState] = useState<'playing' | 'fading' | 'done'>('playing');
   const { scrollY } = useScroll();
   const videoY = useTransform(scrollY, [0, 5000], [0, 300]);
-  const videoOpacity = useTransform(scrollY, [0, 1000], [0.4, 0.1]);
+  const videoOpacity = useTransform(scrollY, [0, 1000], [1, 0.4]);
 
   useEffect(() => {
     if (introState !== 'done') {
@@ -67,7 +67,7 @@ export default function Home() {
             className="fixed inset-0 z-0 pointer-events-none flex items-center justify-center bg-black"
             style={{ y: videoY, opacity: videoOpacity }}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 0.4 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 2 }}
           >
             <div className="relative w-[25vw] h-[25vh]">
@@ -81,7 +81,7 @@ export default function Home() {
                 <source src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-sky-in-a-dark-32669-large.mp4" type="video/mp4" />
               </video>
               <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_40px_40px_black] sm:shadow-[inset_0_0_60px_60px_black]"></div>
-              <div className="absolute inset-0 bg-background/60 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-background/0 pointer-events-none"></div>
             </div>
           </motion.div>
           
