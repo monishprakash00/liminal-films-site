@@ -84,12 +84,5 @@ export const team: TeamMember[] = [
     role: "Marketing Strategist",
     image: "/src/assets/images/abhijit.jpeg",
     bio: "Abhijit brings over a decade of experience in film distribution and marketing strategy. He has successfully navigated the complex landscape of independent cinema, ensuring that LIMINAL FILMS reaches the audiences it deserves."
-  },
-  {
-    id: "vaishnavi",
-    name: "Vaishnavi Patel",
-    role: "Social Media Head",
-    image: "/src/assets/images/team-1.png",
-    bio: "Vaishnavi crafts the digital narrative for LIMINAL FILMS, building communities and engaging audiences globally. Her strategies amplify the reach and resonance of every release."
   }
 ];
