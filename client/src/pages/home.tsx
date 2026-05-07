@@ -8,6 +8,7 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import introVideo from "@/assets/videos/intro.mp4";
+import heroBgVideo from "@/assets/videos/hero-bg.mp4";
 
 export default function Home() {
   const [introState, setIntroState] = useState<'playing' | 'fading' | 'done'>('playing');
@@ -64,25 +65,22 @@ export default function Home() {
         <>
           {/* Fixed Native Video Background */}
           <motion.div 
-            className="fixed inset-0 z-0 pointer-events-none flex items-center justify-center bg-black"
+            className="fixed inset-0 z-0 pointer-events-none bg-black"
             style={{ y: videoY, opacity: videoOpacity }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 2 }}
           >
-            <div className="relative w-[25vw] h-[25vh]">
-              <video 
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-                className="w-full h-full object-cover"
-              >
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-sky-in-a-dark-32669-large.mp4" type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_40px_40px_black] sm:shadow-[inset_0_0_60px_60px_black]"></div>
-              <div className="absolute inset-0 bg-background/0 pointer-events-none"></div>
-            </div>
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="w-full h-full object-cover scale-105"
+            >
+              <source src={heroBgVideo} type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-background/0 pointer-events-none"></div>
           </motion.div>
           
           <div className="relative z-10">
