@@ -21,7 +21,7 @@ export default function TeamMemberPage() {
   }
 
   return (
-    <main className="bg-background min-h-screen text-foreground pt-32 md:pt-40 relative overflow-hidden">
+    <main className="bg-background min-h-screen text-foreground pt-20 relative overflow-hidden">
       {/* Background with Parallax */}
       <motion.div 
         className="fixed inset-0 z-0 pointer-events-none"
@@ -38,7 +38,7 @@ export default function TeamMemberPage() {
       <div className="relative z-10">
         <Navigation />
 
-        <article className="container mx-auto px-6 md:px-12 py-20 min-h-[80vh] flex flex-col items-center justify-center">
+        <article className="container mx-auto px-6 md:px-12 pt-4 pb-20 min-h-[80vh] flex flex-col items-center justify-center">
           <div className="w-full max-w-4xl mx-auto mb-12">
             <Link href="/" className="inline-flex items-center gap-2 group">
               <motion.div className="w-8 h-[1px] bg-foreground/50 group-hover:w-12 group-hover:bg-foreground transition-all duration-500" />

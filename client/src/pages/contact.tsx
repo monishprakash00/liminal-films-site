@@ -22,11 +22,11 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-background min-h-screen text-foreground pt-40 pb-24 px-6 md:px-12 flex flex-col items-center">
+    <div className="bg-background min-h-screen text-foreground pt-24 pb-24 px-6 md:px-12 flex flex-col items-center">
       <Navigation />
 
       <motion.div 
-        className="w-full max-w-3xl mx-auto mt-12"
+        className="w-full max-w-3xl mx-auto mt-0"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
