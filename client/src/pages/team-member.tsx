@@ -38,14 +38,14 @@ export default function TeamMemberPage() {
       <div className="relative z-10">
         <Navigation />
 
-        <article className="container mx-auto px-6 md:px-12 py-20 min-h-[80vh] flex items-center">
+        <article className="container mx-auto px-6 md:px-12 py-20 min-h-[80vh] flex items-center justify-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="w-full max-w-5xl mx-auto flex flex-col md:flex-row gap-12 md:gap-24 items-center md:items-start"
+            className="w-full max-w-4xl mx-auto flex flex-col items-center gap-12"
           >
-            <div className="w-64 h-64 md:w-96 md:h-96 rounded-full overflow-hidden shrink-0 bg-secondary shadow-2xl relative">
+            <div className="w-48 h-48 md:w-[288px] md:h-[288px] rounded-full overflow-hidden shrink-0 bg-secondary shadow-2xl relative">
               <div className="absolute inset-0 bg-black/20 z-10"></div>
               <img 
                 src={member.image} 
@@ -54,7 +54,7 @@ export default function TeamMemberPage() {
               />
             </div>
 
-            <div className="space-y-8 text-center md:text-left">
+            <div className="space-y-8 text-center max-w-3xl">
               <div>
                 <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
                   {member.role}
@@ -64,8 +64,10 @@ export default function TeamMemberPage() {
                 </h1>
               </div>
 
-              <div className="prose prose-invert prose-lg max-w-none prose-p:font-light prose-p:leading-relaxed prose-p:text-muted-foreground">
-                <p>{member.bio}</p>
+              <div className="prose prose-invert prose-lg max-w-none prose-p:font-light prose-p:leading-relaxed prose-p:text-muted-foreground text-center">
+                {member.bio.split('\n\n').map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
               </div>
             </div>
           </motion.div>
