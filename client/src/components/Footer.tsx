@@ -13,8 +13,6 @@ export function Footer() {
         >
           <span>LIMINAL FILMS</span>
           <span className="hidden md:inline">·</span>
-          <span>Bangalore & Mumbai</span>
-          <span className="hidden md:inline">·</span>
           <span>© {new Date().getFullYear()}</span>
         </motion.div>
       </div>
