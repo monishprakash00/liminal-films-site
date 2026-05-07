@@ -58,7 +58,7 @@ export default function Home() {
                 onTimeUpdate={(e) => {
                   const video = e.currentTarget;
                   // Start fading a bit earlier than the very end
-                  if (video.duration - video.currentTime <= 2.5 && introState === 'playing') {
+                  if (video.duration - video.currentTime <= 5.0 && introState === 'playing') {
                     setIntroState('fading');
                   }
                 }}
@@ -67,7 +67,7 @@ export default function Home() {
                 }}
                 initial={{ opacity: 1 }}
                 animate={{ opacity: introState === 'fading' ? 0 : 1 }}
-                transition={{ duration: 2.5 }}
+                transition={{ duration: 5.0 }}
                 onAnimationComplete={(definition) => {
                   if (definition.opacity === 0 && introState === 'fading') {
                     setIntroState('done');
