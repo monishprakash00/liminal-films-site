@@ -41,7 +41,9 @@ export function Team() {
                   <img 
                     src={member.image} 
                     alt={member.name} 
-                    className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:scale-110"
+                    className={`w-full h-full object-cover grayscale transition-all duration-1000 group-hover:scale-110 ${
+                      member.id === 'manas' ? 'object-[center_20%]' : ''
+                    }`}
                   />
                 </div>
                 <h3 className="text-base md:text-lg font-sans tracking-wide text-foreground mb-2 group-hover:text-primary transition-colors">

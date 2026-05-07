@@ -50,7 +50,9 @@ export default function TeamMemberPage() {
               <img 
                 src={member.image} 
                 alt={member.name} 
-                className="w-full h-full object-cover grayscale"
+                className={`w-full h-full object-cover grayscale ${
+                  member.id === 'manas' ? 'object-[center_20%]' : ''
+                }`}
               />
             </div>
 
