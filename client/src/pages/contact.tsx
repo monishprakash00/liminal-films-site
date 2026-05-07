@@ -39,8 +39,7 @@ export default function ContactPage() {
       >
         <div className="text-center mb-16 md:mb-24">
           <h1 className="text-5xl md:text-7xl lg:text-[100px] font-serif text-foreground leading-[0.9] mb-8">
-            Get<br />
-            <span className="text-muted-foreground italic">in touch</span>
+            Get <span className="text-muted-foreground italic">in touch</span>
           </h1>
           <p className="text-sm md:text-base text-muted-foreground/60 font-sub tracking-[0.25em] uppercase mx-auto max-w-md leading-loose">
             We collaborate with visionaries to create cinematic experiences.
@@ -59,7 +58,7 @@ export default function ContactPage() {
             </p>
             <Button 
               variant="outline" 
-              className="mt-12 rounded-none border-foreground/20 hover:bg-foreground/10 hover:text-foreground text-xs tracking-[0.2em] uppercase px-8 py-6"
+              className="mt-12 rounded-full border-foreground/20 hover:bg-foreground/10 hover:text-foreground text-xs tracking-[0.2em] uppercase px-8 py-6"
               onClick={() => setIsSubmitted(false)}
             >
               SEND ANOTHER
@@ -101,7 +100,7 @@ export default function ContactPage() {
               <Button 
                 type="submit" 
                 disabled={isSubmitting}
-                className="bg-foreground text-background hover:bg-foreground/90 rounded-none py-8 px-16 uppercase tracking-[0.3em] text-xs transition-all duration-500 hover:tracking-[0.4em]"
+                className="bg-foreground text-background hover:bg-foreground/90 rounded-full py-6 px-10 uppercase tracking-[0.2em] text-xs transition-all duration-500 hover:tracking-[0.3em]"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
