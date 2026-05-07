@@ -49,22 +49,31 @@ export default function Home() {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
           >
-            <motion.video 
-              src={introVideo}
-              autoPlay
-              muted
-              playsInline
-              className="w-full h-full object-cover pointer-events-none"
-              onEnded={() => setIntroState('fading')}
-              initial={{ opacity: 1 }}
-              animate={{ opacity: introState === 'fading' ? 0 : 1 }}
-              transition={{ duration: 1.5 }}
-              onAnimationComplete={(definition) => {
-                if (definition.opacity === 0 && introState === 'fading') {
-                  setIntroState('done');
-                }
-              }}
-            />
+              <motion.video 
+                src={introVideo}
+                autoPlay
+                muted
+                playsInline
+                className="w-full h-full object-cover pointer-events-none"
+                onTimeUpdate={(e) => {
+                  const video = e.currentTarget;
+                  // Start fading a bit earlier than the very end
+                  if (video.duration - video.currentTime <= 0.8 && introState === 'playing') {
+                    setIntroState('fading');
+                  }
+                }}
+                onEnded={() => {
+                  if (introState === 'playing') setIntroState('fading');
+                }}
+                initial={{ opacity: 1 }}
+                animate={{ opacity: introState === 'fading' ? 0 : 1 }}
+                transition={{ duration: 1.5 }}
+                onAnimationComplete={(definition) => {
+                  if (definition.opacity === 0 && introState === 'fading') {
+                    setIntroState('done');
+                  }
+                }}
+              />
           </motion.div>
         )}
       </AnimatePresence>
