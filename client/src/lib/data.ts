@@ -45,7 +45,7 @@ export const projects: Project[] = [
     type: "Short Film",
     image: "/src/assets/images/portfolio-3.png",
     synopsis: "A visually stunning narrative short exploring identity and belonging. Told through striking monochrome cinematography with subtle highlights, it stands as a testament to visual storytelling.",
-    videoId: "ScMzIvxBSi4"
+    videoId: "QJDP8onM3_Y"
   }
 ];
 
