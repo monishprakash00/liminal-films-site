@@ -42,7 +42,7 @@ export function Team() {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 className="flex flex-col items-center text-center group cursor-pointer w-32 md:w-40 lg:w-48"
               >
-                <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden mb-6 bg-secondary">
+                <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden mb-6 bg-secondary shadow-[0_10px_30px_rgba(0,0,0,0.8)] border border-white/5 group-hover:border-white/20 group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.9)] group-hover:-translate-y-2 transition-all duration-700">
                   <img 
                     src={member.image} 
                     alt={member.name} 
