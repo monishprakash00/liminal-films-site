@@ -58,7 +58,7 @@ export const team: TeamMember[] = [
     name: "Monish Parimala Prakash",
     role: "Founder / Writer / Director",
     image: "/src/assets/images/team-founder-real.jpg",
-    bio: "Monish Parimala Prakash is a visionary director and writer whose work focuses on the emotional undercurrents of the human experience. With a background in both fine arts and classical storytelling, Monish bridges the gap between commercial viability and arthouse aesthetics."
+    bio: "Monish Parimala Prakash is an emerging filmmaker dedicated to bold, character-driven cinema that blends emotional depth with inventive storytelling. Passionate about supporting distinctive voices, he thrives on projects that challenge traditional narrative forms and embrace visual experimentation.\n\nHis debut feature film, The Boy and the River, is a genre-defying blend of science fiction, thriller, and psychological drama, marking a striking entry into independent filmmaking. The Boy and the River represents the culmination of years of creative dedication and marks the beginning of his journey as a bold, boundary-pushing voice in contemporary visual art.\n\nWith a focus on nurturing creative collaboration, Monish Parimala Prakash aims to develop work that resonate globally while retaining a deeply personal core, championing stories that linger in the mind long after the credits roll."
   },
   {
     id: "shruti",
