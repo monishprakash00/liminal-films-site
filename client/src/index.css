@@ -89,11 +89,10 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4) 0%, transparent 40%);
   pointer-events: none;
-  z-index: 50;
-  mix-blend-mode: screen;
-  animation: drift 20s infinite alternate ease-in-out;
+  z-index: 40;
+  animation: drift 10s infinite alternate ease-in-out;
   transform-origin: center;
 }
 

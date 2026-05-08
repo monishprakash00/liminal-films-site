@@ -40,7 +40,7 @@ export default function Home() {
   }, [introState]);
 
   return (
-    <main className="bg-background min-h-screen text-foreground selection:bg-primary selection:text-primary-foreground relative overflow-hidden">
+    <main className="min-h-screen text-foreground selection:bg-primary selection:text-primary-foreground relative overflow-hidden bg-transparent">
       <AnimatePresence>
         {introState !== 'done' && (
           <motion.div 
