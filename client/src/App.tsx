@@ -54,7 +54,6 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <div className="grain-overlay" />
         <CustomCursor />
         <Toaster />
         <Router />
