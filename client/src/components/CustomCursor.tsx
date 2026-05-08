@@ -1,10 +1,26 @@
 import { useEffect, useState } from "react";
 import { motion, useSpring, useMotionValue } from "framer-motion";
+import { useLocation } from "wouter";
 
 export function CustomCursor() {
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isIntroDone, setIsIntroDone] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [location] = useLocation();
+
+  useEffect(() => {
+    if (location !== "/") {
+      setIsIntroDone(true);
+    }
+  }, [location]);
+
+  useEffect(() => {
+    const handleIntroDone = () => setIsIntroDone(true);
+    window.addEventListener("intro-done", handleIntroDone);
+    
+    return () => window.removeEventListener("intro-done", handleIntroDone);
+  }, []);
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
@@ -61,7 +77,7 @@ export function CustomCursor() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-8 h-8 pointer-events-none z-[100] mix-blend-difference text-primary"
+      className={`fixed top-0 left-0 w-8 h-8 pointer-events-none z-[100] mix-blend-difference text-primary transition-opacity duration-1000 ease-in-out ${isIntroDone ? 'opacity-100' : 'opacity-0'}`}
       style={{
         x: cursorXSpring,
         y: cursorYSpring,
