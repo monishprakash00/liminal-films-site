@@ -37,7 +37,7 @@ export const projects: Project[] = [
     type: "Short Film",
     genre: "Psychological Thriller",
     image: "/src/assets/images/witd3.png",
-    synopsis: "A psychological thriller short film that delves into the fragile nature of memory. When the past begins to bleed into the present, the line between reality and illusion becomes irrevocably blurred.",
+    synopsis: "Logan is twenty-four, overworked, and holding everything together by a thread. His grandmother is his only family. His medication is the only thing keeping him tethered to reality.\n\nWhen his insurance lapses, the thread snaps.\n\nWithout money, without help, and without anyone who notices, Logan's affliction pulls him further from the world around him. His voices grow louder and hallucinations, deeper. Somewhere in the space between what is real and what isn't, something irreversible happens.\n\nWhispers in the Dark is a film about what falls through the cracks, and what it costs.",
     videoId: "9MUcWUqQ88E"
   },
   {
