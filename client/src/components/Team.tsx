@@ -51,7 +51,7 @@ export function Team() {
                     }`}
                   />
                 </div>
-                <h3 className="text-base md:text-lg font-sans tracking-wide text-foreground mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-lg md:text-xl font-serif tracking-wide text-foreground mb-2 group-hover:text-primary transition-colors">
                   {member.name}
                 </h3>
                 <div className="text-[10px] md:text-xs uppercase tracking-widest text-muted-foreground w-full">
