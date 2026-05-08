@@ -25,6 +25,9 @@ export default function Home() {
     if (introState === 'done') {
       hasIntroPlayed = true;
     }
+    if (introState === 'fading' || introState === 'done') {
+      window.dispatchEvent(new Event('intro-done'));
+    }
   }, [introState]);
 
   useEffect(() => {
