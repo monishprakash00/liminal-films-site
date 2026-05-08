@@ -61,33 +61,38 @@ export function CustomCursor() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-8 h-8 pointer-events-none z-[100] drop-shadow-xl"
+      className="fixed top-0 left-0 w-8 h-8 pointer-events-none z-[100] mix-blend-difference text-primary"
       style={{
         x: cursorXSpring,
         y: cursorYSpring,
       }}
       animate={{
         scale: isHovering ? 1.5 : 1,
-        rotate: isHovering ? 15 : 0
+        rotate: isHovering ? 90 : 0
       }}
       transition={{ duration: 0.3 }}
     >
-      <svg viewBox="0 0 100 100" className="w-full h-full" fill="none">
-        {/* Canister Body (Aluminum) */}
-        <path d="M 20,35 L 20,75 A 30,12 0 0,0 80,75 L 80,35" fill="#a0a0a0" stroke="#777" strokeWidth="2"/>
-        <ellipse cx="50" cy="35" rx="30" ry="12" fill="#b0b0b0" stroke="#888" strokeWidth="2"/>
+      <svg viewBox="0 0 100 100" className="w-full h-full" fill="currentColor">
+        {/* Main Solid Circle */}
+        <circle cx="50" cy="50" r="45" fill="currentColor"/>
         
-        {/* Lid (Black plastic top) */}
-        <path d="M 18,25 L 18,35 A 32,13 0 0,0 82,35 L 82,25" fill="#222" stroke="#111" strokeWidth="2"/>
-        <ellipse cx="50" cy="25" rx="32" ry="13" fill="#333" stroke="#444" strokeWidth="2"/>
+        {/* Center hole */}
+        <circle cx="50" cy="50" r="4" fill="black" />
         
-        {/* Inner lid details */}
-        <ellipse cx="50" cy="25" rx="20" ry="8" fill="#222" stroke="#444" strokeWidth="1"/>
-        <ellipse cx="50" cy="25" rx="5" ry="2" fill="#444" />
-        
-        {/* Highlight for metallic volume */}
-        <path d="M 28,42 L 28,70" stroke="rgba(255,255,255,0.5)" strokeWidth="4" strokeLinecap="round" />
-        <path d="M 72,42 L 72,70" stroke="rgba(0,0,0,0.2)" strokeWidth="4" strokeLinecap="round" />
+        {/* 6 small holes around center */}
+        <circle cx="50" cy="41" r="3" fill="black" />
+        <circle cx="57.8" cy="45.5" r="3" fill="black" />
+        <circle cx="57.8" cy="54.5" r="3" fill="black" />
+        <circle cx="50" cy="59" r="3" fill="black" />
+        <circle cx="42.2" cy="54.5" r="3" fill="black" />
+        <circle cx="42.2" cy="45.5" r="3" fill="black" />
+
+        {/* 5 large cutouts */}
+        <circle cx="50" cy="21" r="14" fill="black" />
+        <circle cx="77.6" cy="41" r="14" fill="black" />
+        <circle cx="67" cy="73.5" r="14" fill="black" />
+        <circle cx="33" cy="73.5" r="14" fill="black" />
+        <circle cx="22.4" cy="41" r="14" fill="black" />
       </svg>
     </motion.div>
   );
