@@ -3,7 +3,7 @@ import tgwtbe from "@/assets/images/tgwtbe.png";
 import witd3 from "@/assets/images/witd3.png";
 import monish from "@/assets/images/team-founder-real.jpg";
 import shruti from "@/assets/images/shruti.jpeg";
-import manas from "@/assets/images/manas.jpg";
+import manas from "@/assets/images/manas-new.jpg";
 import rithwik from "@/assets/images/team-music-director.jpg";
 import abhijit from "@/assets/images/abhijit.jpeg";
 
