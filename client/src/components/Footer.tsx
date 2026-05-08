@@ -11,7 +11,7 @@ export function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          <span>LIMINAL FILMS</span>
+          <span>LIMINAL FILMS LLP</span>
           <span className="hidden md:inline">·</span>
           <span>© {new Date().getFullYear()}</span>
         </motion.div>
