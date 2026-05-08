@@ -54,6 +54,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <div className="ambient-spotlight" />
         <CustomCursor />
         <Toaster />
         <Router />
