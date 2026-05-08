@@ -75,7 +75,7 @@ export default function ProjectPage() {
               ></iframe>
             </div>
 
-            <div className="prose prose-invert prose-lg max-w-none prose-p:font-light prose-p:leading-relaxed prose-p:text-muted-foreground">
+            <div className="prose prose-invert prose-lg max-w-none text-center prose-p:font-light prose-p:leading-relaxed prose-p:text-muted-foreground mx-auto">
               {project.synopsis.split('\n').map((paragraph, index) => (
                 paragraph.trim() && <p key={index}>{paragraph}</p>
               ))}
