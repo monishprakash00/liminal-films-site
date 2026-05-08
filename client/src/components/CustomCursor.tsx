@@ -67,7 +67,7 @@ export function CustomCursor() {
         y: cursorYSpring,
       }}
       animate={{
-        scale: isHovering ? 1.5 : 1,
+        scale: isHovering ? 1.15 : 1,
         rotate: isHovering ? 90 : 0
       }}
       transition={{ duration: 0.3 }}
