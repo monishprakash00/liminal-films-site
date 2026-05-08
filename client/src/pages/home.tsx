@@ -11,7 +11,7 @@ import introVideo from "@/assets/videos/intro2.mp4";
 
 const getInitialIntroState = () => {
   try {
-    if (localStorage.getItem('liminal_intro_played') === 'true') {
+    if (sessionStorage.getItem('liminal_intro_played') === 'true') {
       return 'done';
     }
   } catch (e) {
@@ -25,7 +25,7 @@ export default function Home() {
 
   useEffect(() => {
     try {
-      localStorage.setItem('liminal_intro_played', 'true');
+      sessionStorage.setItem('liminal_intro_played', 'true');
     } catch (e) {
       // Ignore
     }
