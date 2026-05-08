@@ -47,7 +47,7 @@ export const projects: Project[] = [
     type: "Short Film",
     genre: "Drama",
     image: "/src/assets/images/tgwtbe.png",
-    synopsis: "A visually stunning narrative short exploring identity and belonging. Told through striking monochrome cinematography with subtle highlights, it stands as a testament to visual storytelling.",
+    synopsis: "Noah lives under the control of a man who has owned him since childhood. Taken off the streets, given shelter, then quietly sold to strangers. Now grown, he moves through his days without will or want. The only thing still his is the cello his mother taught him.\n\nWhen Eli brings a young girl into their world, something shifts in Noah. Quietly. Irreversibly. In her, Noah sees himself.\n\nWhispers in the Dark is a film about fear, captivity, and the quiet courage of finally standing up.",
     videoId: "QJDP8onM3_Y"
   }
 ];
