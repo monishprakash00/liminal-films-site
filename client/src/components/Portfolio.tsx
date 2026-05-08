@@ -65,7 +65,7 @@ export function Portfolio() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.8, delay: i * 0.1 }}
-                  className="group relative cursor-pointer overflow-hidden block aspect-[4/5] project-card"
+                  className="group relative cursor-pointer overflow-hidden block aspect-[4/5] project-card shadow-[0_10px_30px_rgba(0,0,0,0.8)] border border-white/5 hover:border-white/20 hover:shadow-[0_20px_40px_rgba(0,0,0,0.9)] hover:-translate-y-2 transition-all duration-700"
                 >
                   <img 
                     src={project.image} 
