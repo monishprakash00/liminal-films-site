@@ -13,7 +13,12 @@ export function AmbientSpotlight() {
   }, [location]);
 
   useEffect(() => {
-    const handleIntroDone = () => setIsVisible(true);
+    const handleIntroDone = () => {
+      // Delay the spotlight fade-in until after the page elements have appeared
+      setTimeout(() => {
+        setIsVisible(true);
+      }, 1000); // 1 second delay
+    };
     window.addEventListener("intro-done", handleIntroDone);
     
     // Also trigger if it was already played (handled by Home unmounting/remounting)
