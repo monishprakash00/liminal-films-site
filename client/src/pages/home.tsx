@@ -10,20 +10,28 @@ import { motion, AnimatePresence } from "framer-motion";
 import introVideo from "@/assets/videos/intro2.mp4";
 
 // Track if the intro has played during this session.
-// This will persist while navigating between pages, but will reset on a full page refresh.
-let hasIntroPlayed = false;
-
-export default function Home() {
-  const [introState, setIntroState] = useState<'playing' | 'fading' | 'done'>(() => {
-    if (hasIntroPlayed) {
+// This will persist while navigating between pages and across reloads in the same tab.
+const getInitialIntroState = () => {
+  try {
+    if (sessionStorage.getItem('introPlayed') === 'true') {
       return 'done';
     }
-    return 'playing';
-  });
+  } catch (e) {
+    // Ignore sessionStorage errors
+  }
+  return 'playing';
+};
+
+export default function Home() {
+  const [introState, setIntroState] = useState<'playing' | 'fading' | 'done'>(getInitialIntroState);
 
   useEffect(() => {
     if (introState === 'done') {
-      hasIntroPlayed = true;
+      try {
+        sessionStorage.setItem('introPlayed', 'true');
+      } catch (e) {
+        // Ignore
+      }
     }
     if (introState === 'fading' || introState === 'done') {
       window.dispatchEvent(new Event('intro-done'));
