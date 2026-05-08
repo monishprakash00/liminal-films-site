@@ -4,7 +4,7 @@ import witd3 from "@/assets/images/witd3.png";
 import monish from "@/assets/images/team-founder-real.jpg";
 import shruti from "@/assets/images/shruti.jpeg";
 import manas from "@/assets/images/manas-new.jpg";
-import rithwik from "@/assets/images/team-music-director.jpg";
+import rithwik from "@/assets/images/rithwik-new.png";
 import abhijit from "@/assets/images/abhijit.jpeg";
 
 export type ProjectType = "Feature Film" | "Short Film" | "Music Video";
