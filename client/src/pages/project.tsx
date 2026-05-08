@@ -54,7 +54,7 @@ export default function ProjectPage() {
           >
             <div className="text-center space-y-4">
               <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                {project.type} · {project.year}
+                {project.type} · {project.year} · {project.genre}
               </p>
               <h1 className="text-4xl md:text-6xl font-serif leading-tight">
                 {project.title}

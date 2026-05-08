@@ -76,7 +76,7 @@ export function Portfolio() {
                   
                   <div className="absolute inset-0 p-8 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                     <p className="text-white/70 text-xs tracking-[0.2em] uppercase mb-2">
-                      {project.type} · {project.year}
+                      {project.type} · {project.year} · {project.genre}
                     </p>
                     <h3 className="text-2xl font-serif text-white">
                       {project.title}

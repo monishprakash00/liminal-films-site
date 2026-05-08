@@ -5,6 +5,7 @@ export interface Project {
   title: string;
   year: string;
   type: ProjectType;
+  genre: string;
   image: string;
   synopsis: string;
   videoId: string;
@@ -18,13 +19,13 @@ export interface TeamMember {
   bio: string;
 }
 
-// Re-use some existing images if available, otherwise assume paths
 export const projects: Project[] = [
   {
     id: "boy-and-river",
     title: "The Boy and the River",
     year: "2025",
     type: "Feature Film",
+    genre: "Psychological Drama",
     image: "/src/assets/images/the-boy-and-the-river.png",
     synopsis: "A hauntingly beautiful drama exploring themes of grief, isolation, and redemption. Set against a timeless landscape, this feature film follows a young protagonist on an unforgettable journey of self-discovery.",
     videoId: "ScMzIvxBSi4"
@@ -34,6 +35,7 @@ export const projects: Project[] = [
     title: "Whispers in the Dark",
     year: "2019",
     type: "Short Film",
+    genre: "Psychological Thriller",
     image: "/src/assets/images/witd3.png",
     synopsis: "A psychological thriller short film that delves into the fragile nature of memory. When the past begins to bleed into the present, the line between reality and illusion becomes irrevocably blurred.",
     videoId: "9MUcWUqQ88E"
@@ -43,6 +45,7 @@ export const projects: Project[] = [
     title: "The Girl with the Bluest Eyes",
     year: "2018",
     type: "Short Film",
+    genre: "Drama",
     image: "/src/assets/images/tgwtbe.png",
     synopsis: "A visually stunning narrative short exploring identity and belonging. Told through striking monochrome cinematography with subtle highlights, it stands as a testament to visual storytelling.",
     videoId: "QJDP8onM3_Y"
