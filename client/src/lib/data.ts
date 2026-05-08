@@ -31,16 +31,6 @@ export const projects: Project[] = [
     videoId: "ScMzIvxBSi4"
   },
   {
-    id: "whispers-dark",
-    title: "Whispers in the Dark",
-    year: "2019",
-    type: "Short Film",
-    genre: "Psychological Thriller",
-    image: "/src/assets/images/witd3.png",
-    synopsis: "Logan is twenty-four, overworked, and holding everything together by a thread. His grandmother is his only family. His medication is the only thing keeping him tethered to reality.\n\nWhen his insurance lapses, the thread snaps.\n\nWithout money, without help, and without anyone who notices, Logan's affliction pulls him further from the world around him. His voices grow louder and hallucinations, deeper. Somewhere in the space between what is real and what isn't, something irreversible happens.\n\nWhispers in the Dark is a film about what falls through the cracks, and what it costs.",
-    videoId: "9MUcWUqQ88E"
-  },
-  {
     id: "bluest-eyes",
     title: "The Girl with the Bluest Eyes",
     year: "2018",
@@ -49,6 +39,16 @@ export const projects: Project[] = [
     image: "/src/assets/images/tgwtbe.png",
     synopsis: "Noah lives under the control of a man who has owned him since childhood. Taken off the streets, given shelter, then quietly sold to strangers. Now grown, he moves through his days without will or want. The only thing still his is the cello his mother taught him.\n\nWhen Eli brings a young girl into their world, something shifts in Noah. Quietly. Irreversibly. In her, Noah sees himself. Whispers in the Dark is a film about fear, captivity, and the quiet courage of finally standing up.",
     videoId: "QJDP8onM3_Y"
+  },
+  {
+    id: "whispers-dark",
+    title: "Whispers in the Dark",
+    year: "2019",
+    type: "Short Film",
+    genre: "Psychological Thriller",
+    image: "/src/assets/images/witd3.png",
+    synopsis: "Logan is twenty-four, overworked, and holding everything together by a thread. His grandmother is his only family. His medication is the only thing keeping him tethered to reality.\n\nWhen his insurance lapses, the thread snaps.\n\nWithout money, without help, and without anyone who notices, Logan's affliction pulls him further from the world around him. His voices grow louder and hallucinations, deeper. Somewhere in the space between what is real and what isn't, something irreversible happens.\n\nWhispers in the Dark is a film about what falls through the cracks, and what it costs.",
+    videoId: "9MUcWUqQ88E"
   }
 ];
 
