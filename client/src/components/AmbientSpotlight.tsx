@@ -3,27 +3,8 @@ import { useLocation } from "wouter";
 
 export function AmbientSpotlight() {
   const spotlightRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [location] = useLocation();
-
-  useEffect(() => {
-    if (location !== "/") {
-      setIsVisible(true);
-    }
-  }, [location]);
-
-  useEffect(() => {
-    const handleIntroDone = () => {
-      // Delay the spotlight fade-in until after the page elements have appeared
-      setTimeout(() => {
-        setIsVisible(true);
-      }, 1000); // 1 second delay
-    };
-    window.addEventListener("intro-done", handleIntroDone);
-    
-    // Also trigger if it was already played (handled by Home unmounting/remounting)
-    return () => window.removeEventListener("intro-done", handleIntroDone);
-  }, []);
 
   useEffect(() => {
     let animationFrameId: number;
