@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { Manifesto } from "@/components/Manifesto";
@@ -10,27 +10,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import introVideo from "@/assets/videos/intro2.mp4";
 
 const getInitialIntroState = () => {
-  try {
-    if (sessionStorage.getItem('introPlayed') === 'true') {
-      return 'done';
-    }
-  } catch (e) {
-    // Ignore sessionStorage errors
-  }
-  return 'playing';
+  return 'playing'; // Always play the intro on first load or refresh
 };
 
 export default function Home() {
   const [introState, setIntroState] = useState<'playing' | 'fading' | 'done'>(getInitialIntroState);
 
   useEffect(() => {
-    if (introState === 'done') {
-      try {
-        sessionStorage.setItem('introPlayed', 'true');
-      } catch (e) {
-        // Ignore
-      }
-    }
     if (introState === 'fading' || introState === 'done') {
       window.dispatchEvent(new Event('intro-done'));
     }

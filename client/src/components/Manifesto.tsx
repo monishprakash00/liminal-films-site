@@ -14,7 +14,7 @@ export function Manifesto() {
   return (
     <section ref={ref} id="manifesto" className="py-40 relative z-10 flex items-center min-h-[80vh]">
       <motion.div 
-        className="container mx-auto px-6 md:px-12 max-w-5xl relative z-10"
+        className="container mx-auto px-8 md:px-16 lg:px-24 max-w-4xl relative z-10"
         style={{ y, opacity }}
       >
         <motion.div 
@@ -22,7 +22,7 @@ export function Manifesto() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center space-y-6"
+          className="text-center space-y-12"
         >
           <h2 className="text-lg md:text-2xl lg:text-3xl font-serif text-foreground leading-normal md:leading-normal font-light">
             LIMINAL FILMS makes work that is grounded, human, and uncompromising.
