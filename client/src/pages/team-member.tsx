@@ -30,7 +30,7 @@ export default function TeamMemberPage() {
         <img 
           src={member.image} 
           alt={member.name} 
-          className="w-full h-full object-cover scale-[1.1] grayscale opacity-[0.07] blur-md"
+          className="w-full h-full object-cover scale-[1.1] opacity-[0.07] blur-md"
         />
         <div className="absolute inset-0 bg-background/80"></div>
       </motion.div>
@@ -57,7 +57,7 @@ export default function TeamMemberPage() {
               <img 
                 src={member.image} 
                 alt={member.name} 
-                className={`w-full h-full object-cover grayscale ${
+                className={`w-full h-full object-cover ${
                   member.id === 'manas' ? 'object-[center_20%]' : ''
                 }`}
               />
