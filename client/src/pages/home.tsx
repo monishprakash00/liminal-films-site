@@ -9,8 +9,6 @@ import { Footer } from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import introVideo from "@/assets/videos/intro2.mp4";
 
-// Track if the intro has played during this session.
-// This will persist while navigating between pages and across reloads in the same tab.
 const getInitialIntroState = () => {
   try {
     if (sessionStorage.getItem('introPlayed') === 'true') {

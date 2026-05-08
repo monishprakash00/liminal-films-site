@@ -28,7 +28,12 @@ export function Team() {
         </motion.div>
 
         <div className="flex flex-wrap justify-center gap-8 md:gap-12 lg:gap-16 max-w-7xl mx-auto">
-          {team.map((member, index) => (
+          {team
+            .sort((a, b) => {
+              const order = ['shruti', 'manas', 'monish', 'rithwik', 'abhijit'];
+              return order.indexOf(a.id) - order.indexOf(b.id);
+            })
+            .map((member, index) => (
             <Link key={member.id} href={`/team/${member.id}`}>
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
