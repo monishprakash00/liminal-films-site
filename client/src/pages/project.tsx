@@ -76,7 +76,9 @@ export default function ProjectPage() {
             </div>
 
             <div className="prose prose-invert prose-lg max-w-none prose-p:font-light prose-p:leading-relaxed prose-p:text-muted-foreground">
-              <p>{project.synopsis}</p>
+              {project.synopsis.split('\n').map((paragraph, index) => (
+                paragraph.trim() && <p key={index}>{paragraph}</p>
+              ))}
             </div>
           </motion.div>
         </article>
