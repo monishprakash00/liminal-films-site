@@ -9,6 +9,21 @@ import { Footer } from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
+  useEffect(() => {
+    // Handle scrolling to hash after component mounts and page transition completes
+    const timer = setTimeout(() => {
+      const hash = window.location.hash;
+      if (hash && hash !== '#') {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }, 550); // Wait for the 0.5s framer-motion transition
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <main className="min-h-screen text-foreground selection:bg-primary selection:text-primary-foreground relative overflow-hidden bg-transparent">
       <motion.div 

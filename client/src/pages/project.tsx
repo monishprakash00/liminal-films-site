@@ -1,4 +1,4 @@
-import { useRoute, Link } from "wouter";
+import { useRoute, Link, useLocation } from "wouter";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -6,7 +6,14 @@ import { projects } from "@/lib/data";
 
 export default function ProjectPage() {
   const [, params] = useRoute("/project/:id");
+  const [, setLocation] = useLocation();
   const projectId = params?.id;
+
+  const handleBack = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.location.hash = "work";
+    setLocation("/");
+  };
   
   const project = projects.find(p => p.id === projectId);
   const { scrollY } = useScroll();
@@ -40,10 +47,10 @@ export default function ProjectPage() {
 
         <article className="container mx-auto px-6 md:px-12 pt-4 pb-20">
           <div className="max-w-4xl mx-auto mb-12">
-            <Link href="/#work" className="inline-flex items-center gap-2 group">
+            <a href="/#work" onClick={handleBack} className="inline-flex items-center gap-2 group">
               <motion.div className="w-8 h-[1px] bg-foreground/50 group-hover:w-12 group-hover:bg-foreground transition-all duration-500" />
               <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground group-hover:text-foreground transition-colors duration-500">Back</span>
-            </Link>
+            </a>
           </div>
 
           <motion.div 

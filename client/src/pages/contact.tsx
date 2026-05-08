@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -7,8 +7,16 @@ import { Button } from "@/components/ui/button";
 import { Navigation } from "@/components/Navigation";
 
 export default function ContactPage() {
+  const [, setLocation] = useLocation();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleBack = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.location.hash = "";
+    setLocation("/");
+    setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 600);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,14 +40,14 @@ export default function ContactPage() {
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
         <div className="mb-12">
-          <Link href="/#" className="inline-flex items-center gap-2 group">
+          <a href="/" onClick={handleBack} className="inline-flex items-center gap-2 group">
             <motion.div 
               className="w-8 h-[1px] bg-foreground/50 group-hover:w-12 group-hover:bg-foreground transition-all duration-500"
             />
             <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground group-hover:text-foreground transition-colors duration-500">
               Back
             </span>
-          </Link>
+          </a>
         </div>
 
         <div className="text-center mb-16 md:mb-24">
