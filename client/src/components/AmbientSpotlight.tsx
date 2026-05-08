@@ -38,7 +38,7 @@ export function AmbientSpotlight() {
       currentY += (targetY - currentY) * 0.05;
 
       if (spotlightRef.current) {
-        spotlightRef.current.style.background = `radial-gradient(circle 1125px at ${currentX}px ${currentY}px, rgba(255, 255, 255, 0.075) 0%, transparent 50%)`;
+        spotlightRef.current.style.background = `radial-gradient(circle 1125px at ${currentX}px ${currentY}px, rgba(255, 255, 255, 0.125) 0%, transparent 50%)`;
       }
       animationFrameId = requestAnimationFrame(animate);
     };
