@@ -10,13 +10,26 @@ import { motion, AnimatePresence } from "framer-motion";
 import introVideo from "@/assets/videos/intro2.mp4";
 
 const getInitialIntroState = () => {
-  return 'playing'; // Always play the intro on first load or refresh
+  try {
+    if (localStorage.getItem('liminal_intro_played') === 'true') {
+      return 'done';
+    }
+  } catch (e) {
+    // Ignore errors
+  }
+  return 'playing';
 };
 
 export default function Home() {
   const [introState, setIntroState] = useState<'playing' | 'fading' | 'done'>(getInitialIntroState);
 
   useEffect(() => {
+    try {
+      localStorage.setItem('liminal_intro_played', 'true');
+    } catch (e) {
+      // Ignore
+    }
+    
     if (introState === 'fading' || introState === 'done') {
       window.dispatchEvent(new Event('intro-done'));
     }
