@@ -80,7 +80,7 @@ export default function ProjectPage() {
                 paragraph.trim() ? (
                   <p key={index}>{paragraph}</p>
                 ) : (
-                  <div key={index} className="h-4 sm:h-8" />
+                  <div key={index} className="h-1 sm:h-2" />
                 )
               ))}
             </div>
