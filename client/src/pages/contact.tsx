@@ -32,7 +32,7 @@ export default function ContactPage() {
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
         <div className="mb-12">
-          <Link href="/" className="inline-flex items-center gap-2 group">
+          <Link href="/#" className="inline-flex items-center gap-2 group">
             <motion.div 
               className="w-8 h-[1px] bg-foreground/50 group-hover:w-12 group-hover:bg-foreground transition-all duration-500"
             />
