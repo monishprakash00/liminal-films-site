@@ -64,6 +64,10 @@ export function BokehBackground() {
     };
 
     const handleGlobalClick = (e: MouseEvent) => {
+      // ONLY allow clicking if user is currently near the top of the page (Hero/About sections)
+      const isInteractiveArea = window.scrollY < window.innerHeight * 1.5;
+      if (!isInteractiveArea) return;
+
       // Ignore if clicking on actual links or buttons in the foreground
       if ((e.target as HTMLElement).closest('a, button, [role="button"], .cursor-pointer')) {
         return;
@@ -119,7 +123,11 @@ export function BokehBackground() {
 
         // Hover detection via distance calculation instead of CSS :hover
         const hoverRadius = 150;
-        orb.isHovered = dist < hoverRadius;
+        
+        // ONLY allow hovering/interaction if user is currently near the top of the page (Hero/About sections)
+        const isInteractiveArea = window.scrollY < window.innerHeight * 1.5;
+        
+        orb.isHovered = isInteractiveArea && dist < hoverRadius;
         if (orb.isHovered) currentlyHovered = true;
 
         // Target values based on hover
