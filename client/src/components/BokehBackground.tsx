@@ -87,8 +87,8 @@ export function BokehBackground() {
         const distance = Math.sqrt(dx * dx + dy * dy);
         
         // Spotlight interaction parameters
-        const interactionRadius = 400; // How far the mouse pushes particles
-        const pushStrength = 0.02;     // How hard it pushes them
+        const interactionRadius = 500; // How far the mouse pushes particles
+        const pushStrength = 0.15;     // How hard it pushes them (increased for more repulsion)
         
         if (distance < interactionRadius) {
           // Push particles away from the center of the spotlight

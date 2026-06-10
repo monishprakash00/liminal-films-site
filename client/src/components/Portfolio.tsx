@@ -70,7 +70,7 @@ export function Portfolio() {
                   <img 
                     src={project.image} 
                     alt={project.title} 
-                    className="w-full h-full object-cover grayscale brightness-75 group-hover:brightness-100 group-hover:grayscale-0 transition-all duration-1000 ease-out transform group-hover:scale-105"
+                    className="w-full h-full object-cover brightness-75 group-hover:brightness-100 transition-all duration-1000 ease-out transform group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-1000"></div>
                   
