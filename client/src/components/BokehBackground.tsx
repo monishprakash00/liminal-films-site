@@ -86,8 +86,18 @@ export function BokehBackground() {
         const contactEl = document.getElementById('contact-content');
         if (contactEl) {
           const cRect = contactEl.getBoundingClientRect();
-          if (x > cRect.left - 25 && x < cRect.right + 25 && 
-              y > cRect.top - 25 && y < cRect.bottom + 25) {
+          // Wider margins to encompass "CONTACT", email link, and Instagram comfortably
+          if (x > cRect.left - 150 && x < cRect.right + 150 && 
+              y > cRect.top - 120 && y < cRect.bottom + 120) {
+            interactive = false;
+          }
+        }
+        
+        // Exclude Portfolio/Selected Works section so orbs don't block project tiles
+        const portfolioEl = document.getElementById('work');
+        if (portfolioEl) {
+          const pRect = portfolioEl.getBoundingClientRect();
+          if (y > pRect.top && y < pRect.bottom) {
             interactive = false;
           }
         }
@@ -97,12 +107,15 @@ export function BokehBackground() {
         const contactFormEl = document.getElementById('contact-form-container');
         if (contactFormEl) {
           const rect = contactFormEl.getBoundingClientRect();
-          return !(x > rect.left - 50 && x < rect.right + 50 && 
-                   y > rect.top - 50 && y < rect.bottom + 50);
+          return !(x > rect.left - 200 && x < rect.right + 200 && 
+                   y > rect.top - 150 && y < rect.bottom + 150);
         }
         return !(Math.abs(x - window.innerWidth / 2) < 400 && Math.abs(y - window.innerHeight / 2) < 350);
+      } else if (location.startsWith('/project/')) {
+        // Disable orb interactions on the Project Details pages
+        return false;
       }
-      return false; // Disable on project detail pages, etc.
+      return false; // Disable on any other unspecified pages
     };
 
     const handleMouseMove = (e: MouseEvent) => {
