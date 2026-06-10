@@ -21,19 +21,29 @@ export function BokehBackground() {
   const [, setLocation] = useLocation();
   const orbsContainerRef = useRef<HTMLDivElement>(null);
   
-  // Initialize the 3 projects as floating orbs, starting near the center
-  const projectOrbs = useRef(projects.map(p => ({
-    id: p.id,
-    project: p,
-    x: (typeof window !== 'undefined' ? window.innerWidth : 1000) * (0.2 + Math.random() * 0.6),
-    y: (typeof window !== 'undefined' ? window.innerHeight : 1000) * (0.2 + Math.random() * 0.6),
-    vx: (Math.random() - 0.5) * 0.5,
-    vy: (Math.random() - 0.5) * 0.5,
-    scale: 0.2, // Start small
-    opacity: 0.15,
-    blur: 20,
-    isHovered: false
-  })));
+  // Initialize the 3 projects as floating orbs, starting spread out
+  const projectOrbs = useRef(projects.map((p, index) => {
+    // Distinct starting zones (Top-left, Top-right, Bottom-center) to prevent clumping
+    const zones = [
+      { x: 0.25, y: 0.35 },
+      { x: 0.75, y: 0.35 },
+      { x: 0.50, y: 0.65 }
+    ];
+    const zone = zones[index % zones.length];
+
+    return {
+      id: p.id,
+      project: p,
+      x: (typeof window !== 'undefined' ? window.innerWidth : 1000) * (zone.x + (Math.random() - 0.5) * 0.1),
+      y: (typeof window !== 'undefined' ? window.innerHeight : 1000) * (zone.y + (Math.random() - 0.5) * 0.1),
+      vx: (Math.random() - 0.5) * 0.5,
+      vy: (Math.random() - 0.5) * 0.5,
+      scale: 0.2, // Start small
+      opacity: 0.15,
+      blur: 20,
+      isHovered: false
+    };
+  }));
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -114,22 +124,30 @@ export function BokehBackground() {
       mouseX += (targetMouseX - mouseX) * 0.05;
       mouseY += (targetMouseY - mouseY) * 0.05;
 
-      // Update project orbs
-      let currentlyHovered = false;
-      
+      // Find which orb is closest to mouse (only allow ONE to be hovered)
+      let closestHoverIndex = -1;
+      let minDistance = 150; // This is our hover radius
+
+      const isInteractiveArea = window.scrollY < window.innerHeight * 1.5;
+
       projectOrbs.current.forEach((orb, i) => {
         const dx = orb.x - mouseX;
         const dy = orb.y - mouseY;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
-        // Hover detection via distance calculation instead of CSS :hover
-        const hoverRadius = 150;
+        if (isInteractiveArea && dist < minDistance) {
+          minDistance = dist;
+          closestHoverIndex = i;
+        }
+      });
+
+      let currentlyHovered = closestHoverIndex !== -1;
+      
+      projectOrbs.current.forEach((orb, i) => {
+        const dx = orb.x - mouseX;
+        const dy = orb.y - mouseY;
         
-        // ONLY allow hovering/interaction if user is currently near the top of the page (Hero/About sections)
-        const isInteractiveArea = window.scrollY < window.innerHeight * 1.5;
-        
-        orb.isHovered = isInteractiveArea && dist < hoverRadius;
-        if (orb.isHovered) currentlyHovered = true;
+        orb.isHovered = (i === closestHoverIndex);
 
         // Target values based on hover
         const targetScale = orb.isHovered ? 1 : 0.2;
