@@ -31,35 +31,36 @@
 }
 
 :root {
-  /* Dark mode by default for cinematic feel */
-  --background: 0 0% 3%;
-  --foreground: 0 0% 90%;
+  /* Subtle, deep cinematic slate/charcoal for depth instead of pure black */
+  --background: 225 15% 3%;
+  --background-center: 225 15% 8%;
+  --foreground: 225 10% 90%;
 
-  --card: 0 0% 5%;
-  --card-foreground: 0 0% 90%;
+  --card: 225 15% 6%;
+  --card-foreground: 225 10% 90%;
 
-  --popover: 0 0% 5%;
-  --popover-foreground: 0 0% 90%;
+  --popover: 225 15% 6%;
+  --popover-foreground: 225 10% 90%;
 
   /* Charcoal Silver / Cold White Accent */
-  --primary: 0 0% 85%;
-  --primary-foreground: 0 0% 5%;
+  --primary: 225 10% 85%;
+  --primary-foreground: 225 20% 5%;
 
-  --secondary: 0 0% 12%;
-  --secondary-foreground: 0 0% 90%;
+  --secondary: 225 15% 12%;
+  --secondary-foreground: 225 10% 90%;
 
-  --muted: 0 0% 15%;
-  --muted-foreground: 0 0% 65%;
+  --muted: 225 15% 15%;
+  --muted-foreground: 225 10% 65%;
 
-  --accent: 0 0% 85%;
-  --accent-foreground: 0 0% 5%;
+  --accent: 225 10% 85%;
+  --accent-foreground: 225 20% 5%;
 
   --destructive: 0 62% 30%;
   --destructive-foreground: 0 0% 98%;
 
-  --border: 0 0% 15%;
-  --input: 0 0% 15%;
-  --ring: 0 0% 85%;
+  --border: 225 15% 15%;
+  --input: 225 15% 15%;
+  --ring: 225 10% 85%;
   
   --radius: 0rem; /* Sharp edges for editorial look */
 }
@@ -70,7 +71,10 @@
     cursor: none !important;
   }
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased text-foreground;
+    background: radial-gradient(circle at 50% 0%, hsl(var(--background-center)) 0%, hsl(var(--background)) 80%);
+    background-attachment: fixed;
+    min-height: 100vh;
   }
   
   h1, h2, h3, h4, h5, h6 {

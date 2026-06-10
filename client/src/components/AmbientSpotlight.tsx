@@ -24,7 +24,10 @@ export function AmbientSpotlight() {
       currentY += (targetY - currentY) * 0.05;
 
       if (spotlightRef.current) {
-        spotlightRef.current.style.background = `radial-gradient(circle 1125px at ${currentX}px ${currentY}px, rgba(255, 255, 255, 0.125) 0%, transparent 50%)`;
+        spotlightRef.current.style.background = `
+          radial-gradient(circle 1125px at ${currentX}px ${currentY}px, rgba(200, 215, 235, 0.08) 0%, transparent 50%),
+          radial-gradient(circle 800px at ${window.innerWidth - currentX}px ${window.innerHeight - currentY}px, rgba(150, 170, 200, 0.04) 0%, transparent 60%)
+        `;
       }
       animationFrameId = requestAnimationFrame(animate);
     };
