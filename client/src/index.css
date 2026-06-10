@@ -32,8 +32,8 @@
 
 :root {
   /* Deeper dark twilight bluish-black / midnight blue */
-  --background: 228 50% 1.5%;
-  --background-center: 228 45% 4%;
+  --background: 228 30% 0.5%;
+  --background-center: 228 30% 1.5%;
   --foreground: 225 10% 90%;
 
   --card: 225 15% 6%;
