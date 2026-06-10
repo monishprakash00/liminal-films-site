@@ -24,8 +24,8 @@ export function BokehBackground() {
   const projectOrbs = useRef(projects.map(p => ({
     id: p.id,
     project: p,
-    x: (typeof window !== 'undefined' ? window.innerWidth : 1000) * (0.3 + Math.random() * 0.4),
-    y: (typeof window !== 'undefined' ? window.innerHeight : 1000) * (0.3 + Math.random() * 0.4),
+    x: (typeof window !== 'undefined' ? window.innerWidth : 1000) * (0.2 + Math.random() * 0.6),
+    y: (typeof window !== 'undefined' ? window.innerHeight : 1000) * (0.2 + Math.random() * 0.6),
     vx: (Math.random() - 0.5) * 0.5,
     vy: (Math.random() - 0.5) * 0.5,
     scale: 0.2, // Start small
@@ -142,9 +142,9 @@ export function BokehBackground() {
            orb.x += orb.vx;
            orb.y += orb.vy;
 
-           // Soft boundary to keep them in the center-ish space
-           const marginX = canvas.width * 0.25;
-           const marginY = canvas.height * 0.25;
+           // Soft boundary to keep them in the center-ish space (60%)
+           const marginX = canvas.width * 0.20;
+           const marginY = canvas.height * 0.20;
            
            if (orb.x < marginX) orb.vx += 0.015;
            if (orb.x > canvas.width - marginX) orb.vx -= 0.015;
