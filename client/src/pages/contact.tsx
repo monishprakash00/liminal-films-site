@@ -35,6 +35,7 @@ export default function ContactPage() {
 
       <motion.div 
         className="w-full max-w-3xl mx-auto mt-0"
+        id="contact-form-container"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}

@@ -19,7 +19,8 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="space-y-12"
+          className="space-y-12 inline-flex flex-col items-center"
+          id="contact-content"
         >
           <h2 className="text-xs tracking-[0.3em] uppercase text-muted-foreground">
             Contact

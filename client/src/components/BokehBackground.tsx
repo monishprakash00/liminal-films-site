@@ -69,22 +69,49 @@ export function BokehBackground() {
     let targetMouseY = mouseY;
     let isAnyProjectHovered = false;
 
+    const checkInteractiveArea = (x: number, y: number) => {
+      if (location === '/') {
+        let interactive = true;
+        
+        // Exclude Team section so orbs don't block team member interactions
+        const teamEl = document.getElementById('team');
+        if (teamEl) {
+          const tRect = teamEl.getBoundingClientRect();
+          if (y > tRect.top && y < tRect.bottom) {
+            interactive = false;
+          }
+        }
+        
+        // Exclude Contact text area to allow clicking the email link
+        const contactEl = document.getElementById('contact-content');
+        if (contactEl) {
+          const cRect = contactEl.getBoundingClientRect();
+          if (x > cRect.left - 25 && x < cRect.right + 25 && 
+              y > cRect.top - 25 && y < cRect.bottom + 25) {
+            interactive = false;
+          }
+        }
+        
+        return interactive;
+      } else if (location === '/contact') {
+        const contactFormEl = document.getElementById('contact-form-container');
+        if (contactFormEl) {
+          const rect = contactFormEl.getBoundingClientRect();
+          return !(x > rect.left - 50 && x < rect.right + 50 && 
+                   y > rect.top - 50 && y < rect.bottom + 50);
+        }
+        return !(Math.abs(x - window.innerWidth / 2) < 400 && Math.abs(y - window.innerHeight / 2) < 350);
+      }
+      return false; // Disable on project detail pages, etc.
+    };
+
     const handleMouseMove = (e: MouseEvent) => {
       targetMouseX = e.clientX;
       targetMouseY = e.clientY;
     };
 
     const handleGlobalClick = (e: MouseEvent) => {
-      // ONLY allow clicking if user is currently near the top of the page (Hero/About sections)
-      let isInteractiveArea = false;
-      if (location === '/') {
-        isInteractiveArea = window.scrollY < window.innerHeight * 1.5;
-      } else if (location === '/contact') {
-        const inExclusionZone = Math.abs(e.clientX - window.innerWidth / 2) < 450 && Math.abs(e.clientY - window.innerHeight / 2) < 450;
-        isInteractiveArea = !inExclusionZone;
-      }
-      
-      if (!isInteractiveArea) return;
+      if (!checkInteractiveArea(e.clientX, e.clientY)) return;
 
       // Ignore if clicking on actual links or buttons in the foreground
       if ((e.target as HTMLElement).closest('a, button, [role="button"], .cursor-pointer')) {
@@ -135,13 +162,7 @@ export function BokehBackground() {
       let closestHoverIndex = -1;
       let minDistance = 150; // This is our hover radius
 
-      let isInteractiveArea = false;
-      if (location === '/') {
-        isInteractiveArea = window.scrollY < window.innerHeight * 1.5;
-      } else if (location === '/contact') {
-        const inExclusionZone = Math.abs(mouseX - canvas.width / 2) < 450 && Math.abs(mouseY - canvas.height / 2) < 450;
-        isInteractiveArea = !inExclusionZone;
-      }
+      const isInteractiveArea = checkInteractiveArea(mouseX, mouseY);
 
       projectOrbs.current.forEach((orb, i) => {
         const dx = orb.x - mouseX;
