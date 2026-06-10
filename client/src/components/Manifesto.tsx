@@ -14,7 +14,7 @@ export function Manifesto() {
   return (
     <section ref={ref} id="manifesto" className="py-40 relative z-10 flex items-center min-h-[80vh]">
       <motion.div 
-        className="container mx-auto px-6 md:px-8 max-w-4xl relative z-10"
+        className="container mx-auto px-6 md:px-8 max-w-[70rem] relative z-10"
         style={{ y, opacity }}
       >
         <motion.div 
