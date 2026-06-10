@@ -20,12 +20,12 @@ export function BokehBackground() {
   const [, setLocation] = useLocation();
   const orbsContainerRef = useRef<HTMLDivElement>(null);
   
-  // Initialize the 3 projects as floating orbs
+  // Initialize the 3 projects as floating orbs, starting near the center
   const projectOrbs = useRef(projects.map(p => ({
     id: p.id,
     project: p,
-    x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
-    y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
+    x: (typeof window !== 'undefined' ? window.innerWidth : 1000) * (0.3 + Math.random() * 0.4),
+    y: (typeof window !== 'undefined' ? window.innerHeight : 1000) * (0.3 + Math.random() * 0.4),
     vx: (Math.random() - 0.5) * 0.5,
     vy: (Math.random() - 0.5) * 0.5,
     scale: 0.2, // Start small
@@ -142,11 +142,21 @@ export function BokehBackground() {
            orb.x += orb.vx;
            orb.y += orb.vy;
 
-           // Wrap around
-           if (orb.x < -300) orb.x = canvas.width + 300;
-           if (orb.x > canvas.width + 300) orb.x = -300;
-           if (orb.y < -300) orb.y = canvas.height + 300;
-           if (orb.y > canvas.height + 300) orb.y = -300;
+           // Soft boundary to keep them in the center-ish space
+           const marginX = canvas.width * 0.25;
+           const marginY = canvas.height * 0.25;
+           
+           if (orb.x < marginX) orb.vx += 0.015;
+           if (orb.x > canvas.width - marginX) orb.vx -= 0.015;
+           if (orb.y < marginY) orb.vy += 0.015;
+           if (orb.y > canvas.height - marginY) orb.vy -= 0.015;
+
+           // Speed limit to keep motion elegant
+           const maxSpeed = 0.6;
+           if (orb.vx > maxSpeed) orb.vx = maxSpeed;
+           if (orb.vx < -maxSpeed) orb.vx = -maxSpeed;
+           if (orb.vy > maxSpeed) orb.vy = maxSpeed;
+           if (orb.vy < -maxSpeed) orb.vy = -maxSpeed;
         }
 
         // Apply visual updates to DOM elements directly for 60fps performance
