@@ -45,9 +45,7 @@ export function Team() {
                       <img 
                         src={member.image} 
                         alt={member.name} 
-                        className={`w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 opacity-60 brightness-50 group-hover:opacity-100 group-hover:brightness-110 ${
-                          ['monish', 'shruti', 'manas'].includes(member.id) ? 'saturate-[2.5] group-hover:saturate-[3] contrast-[1.1]' : 'saturate-100 group-hover:saturate-[1.2]'
-                        }`}
+                        className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 opacity-70 saturate-0 brightness-75 group-hover:opacity-100 group-hover:saturate-100 group-hover:brightness-100"
                       />
                     </div>
                     <h3 className="text-xl md:text-2xl font-serif tracking-wide text-foreground mb-2 group-hover:text-primary transition-colors">
@@ -86,9 +84,7 @@ export function Team() {
                         <img 
                           src={member.image} 
                           alt={member.name} 
-                          className={`w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 opacity-60 brightness-50 group-hover:opacity-100 group-hover:brightness-110 ${
-                            ['monish', 'shruti', 'manas'].includes(member.id) ? 'saturate-[2.5] group-hover:saturate-[3] contrast-[1.1]' : 'saturate-100 group-hover:saturate-[1.2]'
-                          } ${member.id === 'manas' ? 'object-[center_20%]' : ''}`}
+                          className={`w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 opacity-70 saturate-0 brightness-75 group-hover:opacity-100 group-hover:saturate-100 group-hover:brightness-100 ${member.id === 'manas' ? 'object-[center_20%]' : ''}`}
                         />
                       </div>
                       <h3 className="text-base md:text-lg font-serif tracking-wide text-foreground mb-2 group-hover:text-primary transition-colors">
@@ -126,9 +122,7 @@ export function Team() {
                         <img 
                           src={member.image} 
                           alt={member.name} 
-                          className={`w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 opacity-60 brightness-50 group-hover:opacity-100 group-hover:brightness-110 ${
-                            ['monish', 'shruti', 'manas'].includes(member.id) ? 'saturate-[2.5] group-hover:saturate-[3] contrast-[1.1]' : 'saturate-100 group-hover:saturate-[1.2]'
-                          }`}
+                          className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 opacity-70 saturate-0 brightness-75 group-hover:opacity-100 group-hover:saturate-100 group-hover:brightness-100"
                         />
                       </div>
                       <h3 className="text-base md:text-lg font-serif tracking-wide text-foreground mb-2 group-hover:text-primary transition-colors">
