@@ -46,7 +46,8 @@ export function Manifesto() {
             className="text-lg md:text-xl lg:text-2xl font-serif text-foreground leading-relaxed font-medium"
             style={{ textShadow: "0px 1px 2px rgba(0,0,0,1), 0px 4px 12px rgba(0,0,0,0.6)" }}
           >
-            Every story is a threshold. Every frame, a passage. You enter one person. You leave another. That is the only measure that matters.
+            Every story is a threshold. Every frame, a passage. You enter one person. You leave another.<br />
+            That is the only measure that matters.
           </h2>
         </motion.div>
       </motion.div>
