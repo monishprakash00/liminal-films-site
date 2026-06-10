@@ -18,7 +18,7 @@ interface BokehParticle {
 
 export function BokehBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [, setLocation] = useLocation();
+  const [location, setLocation] = useLocation();
   const orbsContainerRef = useRef<HTMLDivElement>(null);
   
   // Initialize the 3 projects as floating orbs, starting spread out
@@ -76,7 +76,14 @@ export function BokehBackground() {
 
     const handleGlobalClick = (e: MouseEvent) => {
       // ONLY allow clicking if user is currently near the top of the page (Hero/About sections)
-      const isInteractiveArea = window.scrollY < window.innerHeight * 1.5;
+      let isInteractiveArea = false;
+      if (location === '/') {
+        isInteractiveArea = window.scrollY < window.innerHeight * 1.5;
+      } else if (location === '/contact') {
+        const inExclusionZone = Math.abs(e.clientX - window.innerWidth / 2) < 450 && Math.abs(e.clientY - window.innerHeight / 2) < 450;
+        isInteractiveArea = !inExclusionZone;
+      }
+      
       if (!isInteractiveArea) return;
 
       // Ignore if clicking on actual links or buttons in the foreground
@@ -128,7 +135,13 @@ export function BokehBackground() {
       let closestHoverIndex = -1;
       let minDistance = 150; // This is our hover radius
 
-      const isInteractiveArea = window.scrollY < window.innerHeight * 1.5;
+      let isInteractiveArea = false;
+      if (location === '/') {
+        isInteractiveArea = window.scrollY < window.innerHeight * 1.5;
+      } else if (location === '/contact') {
+        const inExclusionZone = Math.abs(mouseX - canvas.width / 2) < 450 && Math.abs(mouseY - canvas.height / 2) < 450;
+        isInteractiveArea = !inExclusionZone;
+      }
 
       projectOrbs.current.forEach((orb, i) => {
         const dx = orb.x - mouseX;
@@ -256,7 +269,7 @@ export function BokehBackground() {
       window.removeEventListener("click", handleGlobalClick);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [setLocation]);
+  }, [location, setLocation]);
 
   return (
     <motion.div
