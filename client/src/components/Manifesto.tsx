@@ -14,7 +14,7 @@ export function Manifesto() {
   return (
     <section ref={ref} id="manifesto" className="py-40 relative z-10 flex items-center min-h-[80vh]">
       <motion.div 
-        className="container mx-auto px-6 md:px-8 max-w-[70rem] relative z-10"
+        className="container mx-auto px-6 md:px-8 max-w-[85rem] relative z-10"
         style={{ y, opacity }}
       >
         <motion.div 
@@ -40,7 +40,7 @@ export function Manifesto() {
             className="text-lg md:text-xl lg:text-2xl font-serif text-foreground leading-relaxed font-medium"
             style={{ textShadow: "0px 1px 2px rgba(0,0,0,1), 0px 4px 12px rgba(0,0,0,0.6)" }}
           >
-            Liminal means a threshold. The point beyond which you are no longer the same person. That's what we're trying to make. Work that changes you. The kind that stays long after it's over.
+            Liminal means a threshold. The point beyond which you are no longer the same person. That's what we're trying to&nbsp;make. Work that changes you. The kind that stays long after it's over.
           </h2>
           <h2 
             className="text-lg md:text-xl lg:text-2xl font-serif text-foreground leading-relaxed font-medium"
