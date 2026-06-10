@@ -79,32 +79,32 @@ export default function ContactPage() {
           </motion.div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-12 max-w-xl mx-auto w-full">
-            <div className="space-y-3 group">
-              <label htmlFor="name" className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground group-focus-within:text-foreground transition-colors">Name</label>
+            <div className="space-y-4 group">
+              <label htmlFor="name" className="text-xs md:text-sm uppercase tracking-[0.3em] text-muted-foreground group-focus-within:text-foreground transition-colors font-semibold">Name</label>
               <Input 
                 id="name" 
                 required 
-                className="bg-transparent border-0 border-b border-foreground/20 rounded-none px-0 pb-4 text-lg focus-visible:ring-0 focus-visible:border-foreground transition-colors font-serif"
+                className="bg-transparent border-0 border-b-2 border-foreground/30 rounded-none px-0 pb-6 text-xl md:text-2xl focus-visible:ring-0 focus-visible:border-foreground transition-colors font-serif placeholder:text-muted-foreground/30"
                 placeholder="How should we address you?"
               />
             </div>
             
-            <div className="space-y-3 group">
-              <label htmlFor="subject" className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground group-focus-within:text-foreground transition-colors">Subject</label>
+            <div className="space-y-4 group">
+              <label htmlFor="subject" className="text-xs md:text-sm uppercase tracking-[0.3em] text-muted-foreground group-focus-within:text-foreground transition-colors font-semibold">Subject</label>
               <Input 
                 id="subject" 
                 required 
-                className="bg-transparent border-0 border-b border-foreground/20 rounded-none px-0 pb-4 text-lg focus-visible:ring-0 focus-visible:border-foreground transition-colors font-serif"
+                className="bg-transparent border-0 border-b-2 border-foreground/30 rounded-none px-0 pb-6 text-xl md:text-2xl focus-visible:ring-0 focus-visible:border-foreground transition-colors font-serif placeholder:text-muted-foreground/30"
                 placeholder="What is this regarding?"
               />
             </div>
             
-            <div className="space-y-3 group">
-              <label htmlFor="message" className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground group-focus-within:text-foreground transition-colors">Message</label>
+            <div className="space-y-4 group">
+              <label htmlFor="message" className="text-xs md:text-sm uppercase tracking-[0.3em] text-muted-foreground group-focus-within:text-foreground transition-colors font-semibold">Message</label>
               <Textarea 
                 id="message" 
                 required 
-                className="bg-transparent border-0 border-b border-foreground/20 rounded-none px-0 pb-4 text-lg focus-visible:ring-0 focus-visible:border-foreground transition-colors min-h-[120px] resize-none font-serif"
+                className="bg-transparent border-0 border-b-2 border-foreground/30 rounded-none px-0 pb-6 text-xl md:text-2xl focus-visible:ring-0 focus-visible:border-foreground transition-colors min-h-[160px] resize-none font-serif placeholder:text-muted-foreground/30"
                 placeholder="Tell us about your project..."
               />
             </div>
