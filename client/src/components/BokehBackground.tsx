@@ -35,6 +35,18 @@ export function BokehBackground() {
       "230, 170, 100"  // Soft Champagne
     ];
 
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let targetMouseX = mouseX;
+    let targetMouseY = mouseY;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      targetMouseX = e.clientX;
+      targetMouseY = e.clientY;
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -64,7 +76,30 @@ export function BokehBackground() {
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+      // Smoothly interpolate mouse position to match spotlight exactly
+      mouseX += (targetMouseX - mouseX) * 0.05;
+      mouseY += (targetMouseY - mouseY) * 0.05;
+
       particles.forEach((p) => {
+        // Calculate distance to mouse spotlight
+        const dx = p.x - mouseX;
+        const dy = p.y - mouseY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        // Spotlight interaction parameters
+        const interactionRadius = 400; // How far the mouse pushes particles
+        const pushStrength = 0.02;     // How hard it pushes them
+        
+        if (distance < interactionRadius) {
+          // Push particles away from the center of the spotlight
+          const force = (interactionRadius - distance) / interactionRadius;
+          // Apply a gentle curve to the force so it feels like soft fluid dynamics
+          const smoothForce = Math.pow(force, 2) * pushStrength;
+          
+          p.x += (dx / distance) * smoothForce * 100;
+          p.y += (dy / distance) * smoothForce * 100;
+        }
+
         // Complex wandering motion
         p.wobbleAngle += p.wobbleSpeed;
         p.y += p.speedY + Math.sin(p.wobbleAngle) * 0.5;
@@ -97,6 +132,7 @@ export function BokehBackground() {
 
     return () => {
       window.removeEventListener("resize", resize);
+      window.removeEventListener("mousemove", handleMouseMove);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
