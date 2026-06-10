@@ -63,8 +63,8 @@ export function BokehBackground() {
       "230, 170, 100"  // Soft Champagne
     ];
 
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
+    let mouseX = -1000;
+    let mouseY = -1000;
     let targetMouseX = mouseX;
     let targetMouseY = mouseY;
     let isAnyProjectHovered = false;
