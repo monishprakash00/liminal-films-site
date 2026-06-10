@@ -88,7 +88,7 @@ export function BokehBackground() {
         
         // Spotlight interaction parameters
         const interactionRadius = 350; // How far the mouse pushes particles
-        const pushStrength = 0.015;    // Gentle nudge
+        const pushStrength = 0.04;     // Slightly stronger nudge
         
         if (distance < interactionRadius && distance > 0) {
           // Push particles away from the center of the spotlight
