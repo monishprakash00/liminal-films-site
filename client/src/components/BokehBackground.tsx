@@ -104,12 +104,8 @@ export function BokehBackground() {
         
         return interactive;
       } else if (location === '/contact') {
-        const contactFormEl = document.getElementById('contact-form-container');
-        if (contactFormEl) {
-          const rect = contactFormEl.getBoundingClientRect();
-          return !(x > rect.left && x < rect.right && 
-                   y > rect.top && y < rect.bottom);
-        }
+        // Allow orbs to interact freely across the entire contact page
+        // so it senses the cursor smoothly just like the hero page.
         return true;
       } else if (location.startsWith('/project/')) {
         // Disable orb interactions on the Project Details pages
@@ -173,7 +169,7 @@ export function BokehBackground() {
 
       // Find which orb is closest to mouse (only allow ONE to be hovered)
       let closestHoverIndex = -1;
-      let minDistance = 150; // This is our hover radius
+      let minDistance = 250; // Increased hover radius to make sensing cursor much more responsive
 
       const isInteractiveArea = checkInteractiveArea(mouseX, mouseY);
 

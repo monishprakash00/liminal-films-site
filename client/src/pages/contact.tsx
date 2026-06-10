@@ -30,7 +30,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-background min-h-screen text-foreground pt-24 pb-24 px-6 md:px-12 flex flex-col items-center">
+    <div className="bg-transparent min-h-screen text-foreground pt-24 pb-24 px-6 md:px-12 flex flex-col items-center">
       <Navigation />
 
       <motion.div 
