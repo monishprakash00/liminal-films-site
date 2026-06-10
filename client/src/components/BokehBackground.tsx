@@ -53,7 +53,7 @@ export function BokehBackground() {
           color: colors[Math.floor(Math.random() * colors.length)],
           speedY: (Math.random() - 0.5) * 0.6, // Random up/down drift
           speedX: (Math.random() - 0.5) * 0.6, // Random left/right drift
-          opacity: Math.random() * 0.15 + 0.05, // 5% to 20% opacity (much more visible)
+          opacity: Math.random() * 0.12 + 0.03, // 3% to 15% opacity (slightly subtler)
           blurFalloff: Math.random() * 0.7 + 0.1, // Random blurriness (sharp core vs soft edge)
           wobbleAngle: Math.random() * Math.PI * 2,
           wobbleSpeed: (Math.random() - 0.5) * 0.02 // Random wandering motion

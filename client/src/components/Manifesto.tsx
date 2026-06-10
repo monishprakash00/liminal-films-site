@@ -24,16 +24,28 @@ export function Manifesto() {
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
           className="text-center space-y-10"
         >
-          <h2 className="text-lg md:text-xl lg:text-2xl font-serif text-foreground/90 leading-relaxed font-light">
+          <h2 
+            className="text-lg md:text-xl lg:text-2xl font-serif text-foreground leading-relaxed font-medium"
+            style={{ textShadow: "0px 1px 2px rgba(0,0,0,1), 0px 4px 12px rgba(0,0,0,0.6)" }}
+          >
             LIMINAL FILMS makes work that is grounded, human, and uncompromising.
           </h2>
-          <h2 className="text-lg md:text-xl lg:text-2xl font-serif text-foreground/90 leading-relaxed font-light">
+          <h2 
+            className="text-lg md:text-xl lg:text-2xl font-serif text-foreground leading-relaxed font-medium"
+            style={{ textShadow: "0px 1px 2px rgba(0,0,0,1), 0px 4px 12px rgba(0,0,0,0.6)" }}
+          >
             We believe the best work comes from genuine collaboration and an unrelenting commitment to story.
           </h2>
-          <h2 className="text-lg md:text-xl lg:text-2xl font-serif text-foreground/90 leading-relaxed font-light">
+          <h2 
+            className="text-lg md:text-xl lg:text-2xl font-serif text-foreground leading-relaxed font-medium"
+            style={{ textShadow: "0px 1px 2px rgba(0,0,0,1), 0px 4px 12px rgba(0,0,0,0.6)" }}
+          >
             Liminal means a threshold. The point beyond which you are no longer the same person. That's what we're trying to make, work that changes you. The kind that stays long after it's over.
           </h2>
-          <h2 className="text-lg md:text-xl lg:text-2xl font-serif text-foreground/90 leading-relaxed font-light">
+          <h2 
+            className="text-lg md:text-xl lg:text-2xl font-serif text-foreground leading-relaxed font-medium"
+            style={{ textShadow: "0px 1px 2px rgba(0,0,0,1), 0px 4px 12px rgba(0,0,0,0.6)" }}
+          >
             Every story is a threshold. Every frame, a passage. You enter one person. You leave another. That is the only measure that matters.
           </h2>
         </motion.div>
