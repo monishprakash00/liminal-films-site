@@ -107,10 +107,10 @@ export function BokehBackground() {
         const contactFormEl = document.getElementById('contact-form-container');
         if (contactFormEl) {
           const rect = contactFormEl.getBoundingClientRect();
-          return !(x > rect.left - 200 && x < rect.right + 200 && 
-                   y > rect.top - 150 && y < rect.bottom + 150);
+          return !(x > rect.left && x < rect.right && 
+                   y > rect.top && y < rect.bottom);
         }
-        return !(Math.abs(x - window.innerWidth / 2) < 400 && Math.abs(y - window.innerHeight / 2) < 350);
+        return true;
       } else if (location.startsWith('/project/')) {
         // Disable orb interactions on the Project Details pages
         return false;
