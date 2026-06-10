@@ -334,7 +334,7 @@ export function BokehBackground() {
             <img 
               src={orb.project.image} 
               alt={orb.project.title}
-              className="absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-screen"
+              className="absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-screen text-transparent"
             />
             
             <div 
