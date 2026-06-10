@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useLocation } from "wouter";
 import { projects } from "@/lib/data";
+import { motion } from "framer-motion";
 
 interface BokehParticle {
   x: number;
@@ -240,7 +241,11 @@ export function BokehBackground() {
   }, [setLocation]);
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.5, ease: "easeInOut" }}
+    >
       <canvas
         ref={canvasRef}
         className="fixed inset-0 pointer-events-none z-[-2]"
@@ -281,6 +286,6 @@ export function BokehBackground() {
           </div>
         ))}
       </div>
-    </>
+    </motion.div>
   );
 }
