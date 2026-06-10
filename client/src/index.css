@@ -31,9 +31,9 @@
 }
 
 :root {
-  /* Subtle, deep cinematic slate/charcoal for depth instead of pure black */
-  --background: 225 15% 3%;
-  --background-center: 225 15% 8%;
+  /* Dark twilight bluish-black / midnight blue */
+  --background: 228 45% 3%;
+  --background-center: 228 40% 8%;
   --foreground: 225 10% 90%;
 
   --card: 225 15% 6%;
