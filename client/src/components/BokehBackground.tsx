@@ -81,45 +81,46 @@ export function BokehBackground() {
       mouseY += (targetMouseY - mouseY) * 0.05;
 
       particles.forEach((p) => {
-        // Calculate distance to mouse spotlight
-        const dx = p.x - mouseX;
-        const dy = p.y - mouseY;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        
-        // Spotlight interaction parameters
-        const interactionRadius = 500; // How far the mouse pushes particles
-        const pushStrength = 0.15;     // How hard it pushes them (increased for more repulsion)
-        
-        if (distance < interactionRadius) {
-          // Push particles away from the center of the spotlight
-          const force = (interactionRadius - distance) / interactionRadius;
-          // Apply a gentle curve to the force so it feels like soft fluid dynamics
-          const smoothForce = Math.pow(force, 2) * pushStrength;
-          
-          p.x += (dx / distance) * smoothForce * 100;
-          p.y += (dy / distance) * smoothForce * 100;
-        }
-
-        // Complex wandering motion
+        // 1. Update true logical position (unaffected by mouse)
         p.wobbleAngle += p.wobbleSpeed;
         p.y += p.speedY + Math.sin(p.wobbleAngle) * 0.5;
         p.x += p.speedX + Math.cos(p.wobbleAngle) * 0.5;
 
-        // Wrap around smoothly
+        // 2. Wrap around smoothly
         if (p.y + p.size < 0) p.y = canvas.height + p.size;
         if (p.y - p.size > canvas.height) p.y = -p.size;
         if (p.x > canvas.width + p.size) p.x = -p.size;
         if (p.x < -p.size) p.x = canvas.width + p.size;
 
-        // Draw bokeh with varying levels of blurriness
+        // 3. Calculate visual position (temporarily pushed by mouse)
+        let renderX = p.x;
+        let renderY = p.y;
+        
+        const dx = p.x - mouseX;
+        const dy = p.y - mouseY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        const interactionRadius = 300; // Radius of repulsion
+        const maxPush = 80;           // Max pixels to push away visually
+        
+        if (distance < interactionRadius && distance > 0) {
+          const force = (interactionRadius - distance) / interactionRadius;
+          // Apply a gentle curve
+          const smoothForce = Math.pow(force, 2);
+          
+          renderX += (dx / distance) * smoothForce * maxPush;
+          renderY += (dy / distance) * smoothForce * maxPush;
+        }
+
+        // 4. Draw bokeh at visual position
         ctx.beginPath();
-        const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size);
+        const gradient = ctx.createRadialGradient(renderX, renderY, 0, renderX, renderY, p.size);
         gradient.addColorStop(0, `rgba(${p.color}, ${p.opacity})`);
         gradient.addColorStop(p.blurFalloff, `rgba(${p.color}, ${p.opacity * 0.6})`);
         gradient.addColorStop(1, `rgba(${p.color}, 0)`);
         
         ctx.fillStyle = gradient;
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.arc(renderX, renderY, p.size, 0, Math.PI * 2);
         ctx.fill();
       });
 
