@@ -35,10 +35,10 @@ function Router() {
             <PageWrapper><Home /></PageWrapper>
           </Route>
           <Route path="/project/:id">
-            {(params) => <PageWrapper><ProjectPage params={params} /></PageWrapper>}
+            <PageWrapper><ProjectPage /></PageWrapper>
           </Route>
           <Route path="/team/:id">
-            {(params) => <PageWrapper><TeamMemberPage params={params} /></PageWrapper>}
+            <PageWrapper><TeamMemberPage /></PageWrapper>
           </Route>
           <Route path="/contact">
             <PageWrapper><ContactPage /></PageWrapper>
