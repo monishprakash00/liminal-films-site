@@ -169,7 +169,7 @@ export function BokehBackground() {
 
       // Find which orb is closest to mouse (only allow ONE to be hovered)
       let closestHoverIndex = -1;
-      let minDistance = 250; // Increased hover radius to make sensing cursor much more responsive
+      let minDistance = 180; // Decreased hover radius slightly so it stops clinging too early
 
       const isInteractiveArea = checkInteractiveArea(mouseX, mouseY);
 
@@ -205,8 +205,8 @@ export function BokehBackground() {
         // Movement
         if (orb.isHovered) {
            // Magnetic pull: slowly draw the orb toward the cursor
-           orb.x += dx * -0.03;
-           orb.y += dy * -0.03;
+           orb.x += dx * -0.01;
+           orb.y += dy * -0.01;
         } else {
            // Wander randomly
            orb.x += orb.vx;
