@@ -169,7 +169,7 @@ export function BokehBackground() {
 
       // Find which orb is closest to mouse (only allow ONE to be hovered)
       let closestHoverIndex = -1;
-      let minDistance = 180; // Decreased hover radius slightly so it stops clinging too early
+      let minDistance = 50; // Decreased hover radius to match the physical radius of the unhovered orb (400px * 0.2 / 2 = 40px, plus a tiny margin)
 
       const isInteractiveArea = checkInteractiveArea(mouseX, mouseY);
 
