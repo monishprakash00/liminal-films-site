@@ -214,8 +214,8 @@ export function BokehBackground() {
                const odx = orb.x - otherOrb.x;
                const ody = orb.y - otherOrb.y;
                const odist = Math.sqrt(odx * odx + ody * ody);
-               if (odist < 500 && odist > 0) { // Push away if closer than 500px
-                 const force = (500 - odist) / 500;
+               if (odist < 250 && odist > 0) { // Push away if closer than 250px
+                 const force = (250 - odist) / 250;
                  orb.vx += (odx / odist) * force * 0.02;
                  orb.vy += (ody / odist) * force * 0.02;
                }
@@ -226,9 +226,9 @@ export function BokehBackground() {
            orb.x += orb.vx;
            orb.y += orb.vy;
 
-           // Soft boundary to keep them on screen but allow spreading out
-           const marginX = canvas.width * 0.05;
-           const marginY = canvas.height * 0.05;
+           // Soft boundary to keep them in the 80% center space
+           const marginX = canvas.width * 0.10;
+           const marginY = canvas.height * 0.10;
            
            if (orb.x < marginX) orb.vx += 0.015;
            if (orb.x > canvas.width - marginX) orb.vx -= 0.015;
