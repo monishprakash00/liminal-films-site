@@ -29,7 +29,7 @@ export function Contact() {
           <div className="space-y-6">
             <Link 
               href="/contact" 
-              className="block text-2xl md:text-4xl font-serif text-foreground hover:text-primary transition-colors duration-500"
+              className="block text-2xl md:text-4xl font-serif text-foreground transition-all duration-500 underline decoration-foreground/30 hover:decoration-foreground underline-offset-[8px]"
             >
               enquiry@liminalfilms.in
             </Link>
