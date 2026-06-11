@@ -208,13 +208,27 @@ export function BokehBackground() {
            orb.x += dx * -0.01;
            orb.y += dy * -0.01;
         } else {
+           // Orb-to-orb repulsion to prevent congregating
+           projectOrbs.current.forEach((otherOrb, j) => {
+             if (i !== j) {
+               const odx = orb.x - otherOrb.x;
+               const ody = orb.y - otherOrb.y;
+               const odist = Math.sqrt(odx * odx + ody * ody);
+               if (odist < 500 && odist > 0) { // Push away if closer than 500px
+                 const force = (500 - odist) / 500;
+                 orb.vx += (odx / odist) * force * 0.02;
+                 orb.vy += (ody / odist) * force * 0.02;
+               }
+             }
+           });
+
            // Wander randomly
            orb.x += orb.vx;
            orb.y += orb.vy;
 
-           // Soft boundary to keep them in the center-ish space (60%)
-           const marginX = canvas.width * 0.20;
-           const marginY = canvas.height * 0.20;
+           // Soft boundary to keep them on screen but allow spreading out
+           const marginX = canvas.width * 0.05;
+           const marginY = canvas.height * 0.05;
            
            if (orb.x < marginX) orb.vx += 0.015;
            if (orb.x > canvas.width - marginX) orb.vx -= 0.015;
