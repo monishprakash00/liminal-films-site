@@ -40,7 +40,7 @@ export function Manifesto() {
             className="text-xl md:text-2xl lg:text-3xl font-serif text-foreground leading-relaxed font-light tracking-wide"
             style={{ textShadow: "0px 1px 3px rgba(0,0,0,0.3)" }}
           >
-            Liminal means a threshold. The point beyond which you are no longer the same person. That's what we're trying to&nbsp;make.<br />
+            Liminal means a threshold. The point beyond which you are no longer the same person. That's what we're trying to make.<br />
             Work that changes you. The kind that stays long after it's over.
           </h2>
           <h2 
