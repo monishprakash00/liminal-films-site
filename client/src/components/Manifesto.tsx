@@ -37,13 +37,13 @@ export function Manifesto() {
             We believe the best work comes from genuine collaboration and an unrelenting commitment to story.
           </h2>
           <h2 
-            className="text-xl md:text-2xl lg:text-3xl font-serif text-foreground leading-relaxed font-light tracking-wide max-w-4xl mx-auto"
+            className="text-xl md:text-2xl lg:text-3xl font-serif text-foreground leading-relaxed font-light tracking-wide max-w-6xl mx-auto"
             style={{ textShadow: "0px 1px 3px rgba(0,0,0,0.3)" }}
           >
             Liminal means a threshold. The point beyond which you are no longer the same person. That's what we're trying to make. Work that changes you. The kind that stays long after it's over.
           </h2>
           <h2 
-            className="text-xl md:text-2xl lg:text-3xl font-serif text-foreground leading-relaxed font-light tracking-wide max-w-4xl mx-auto"
+            className="text-xl md:text-2xl lg:text-3xl font-serif text-foreground leading-relaxed font-light tracking-wide max-w-6xl mx-auto"
             style={{ textShadow: "0px 1px 3px rgba(0,0,0,0.3)" }}
           >
             Every story is a threshold. Every frame, a passage. You enter one person. You leave another. That is the only measure that matters.
