@@ -25,27 +25,27 @@ export function Manifesto() {
           className="text-center space-y-10"
         >
           <h2 
-            className="text-xl md:text-2xl lg:text-3xl font-serif text-foreground leading-relaxed font-medium"
-            style={{ textShadow: "0px 1px 1px rgba(255,255,255,0.1), 0px 2px 0px rgba(0,0,0,0.6), 0px 3px 0px rgba(0,0,0,0.4), 0px 4px 0px rgba(0,0,0,0.3), 0px 10px 20px rgba(0,0,0,0.8)" }}
+            className="text-xl md:text-2xl lg:text-3xl font-serif text-foreground leading-relaxed font-light tracking-wide"
+            style={{ textShadow: "0px 1px 3px rgba(0,0,0,0.3)" }}
           >
             LIMINAL FILMS makes work that is grounded, human, and uncompromising.
           </h2>
           <h2 
-            className="text-xl md:text-2xl lg:text-3xl font-serif text-foreground leading-relaxed font-medium"
-            style={{ textShadow: "0px 1px 1px rgba(255,255,255,0.1), 0px 2px 0px rgba(0,0,0,0.6), 0px 3px 0px rgba(0,0,0,0.4), 0px 4px 0px rgba(0,0,0,0.3), 0px 10px 20px rgba(0,0,0,0.8)" }}
+            className="text-xl md:text-2xl lg:text-3xl font-serif text-foreground leading-relaxed font-light tracking-wide"
+            style={{ textShadow: "0px 1px 3px rgba(0,0,0,0.3)" }}
           >
             We believe the best work comes from genuine collaboration and an unrelenting commitment to story.
           </h2>
           <h2 
-            className="text-xl md:text-2xl lg:text-3xl font-serif text-foreground leading-relaxed font-medium"
-            style={{ textShadow: "0px 1px 1px rgba(255,255,255,0.1), 0px 2px 0px rgba(0,0,0,0.6), 0px 3px 0px rgba(0,0,0,0.4), 0px 4px 0px rgba(0,0,0,0.3), 0px 10px 20px rgba(0,0,0,0.8)" }}
+            className="text-xl md:text-2xl lg:text-3xl font-serif text-foreground leading-relaxed font-light tracking-wide"
+            style={{ textShadow: "0px 1px 3px rgba(0,0,0,0.3)" }}
           >
             Liminal means a threshold. The point beyond which you are no longer the same person. That's what we're trying to&nbsp;make.<br />
             Work that changes you. The kind that stays long after it's over.
           </h2>
           <h2 
-            className="text-xl md:text-2xl lg:text-3xl font-serif text-foreground leading-relaxed font-medium"
-            style={{ textShadow: "0px 1px 1px rgba(255,255,255,0.1), 0px 2px 0px rgba(0,0,0,0.6), 0px 3px 0px rgba(0,0,0,0.4), 0px 4px 0px rgba(0,0,0,0.3), 0px 10px 20px rgba(0,0,0,0.8)" }}
+            className="text-xl md:text-2xl lg:text-3xl font-serif text-foreground leading-relaxed font-light tracking-wide"
+            style={{ textShadow: "0px 1px 3px rgba(0,0,0,0.3)" }}
           >
             Every story is a threshold. Every frame, a passage. You enter one person. You leave another.<br />
             That is the only measure that matters.
