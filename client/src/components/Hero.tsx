@@ -15,23 +15,10 @@ export function Hero() {
         transition={{ duration: 2, ease: "easeOut" }}
       >
         <motion.h1 
-          className="text-[27px] sm:text-[43px] md:text-[65px] lg:text-[86px] font-display tracking-[0.25em] font-light text-foreground mb-6 uppercase whitespace-nowrap overflow-visible relative group cursor-default"
+          className="text-[27px] sm:text-[43px] md:text-[65px] lg:text-[86px] font-display tracking-[0.25em] font-light text-foreground mb-6 uppercase whitespace-nowrap overflow-visible relative group cursor-default hero-title-shadow"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, delay: 0.5 }}
-          style={{
-            textShadow: `
-              0px 1px 0px rgba(255,255,255,0.3), 
-              0px 2px 0px rgba(255,255,255,0.25), 
-              0px 3px 0px rgba(255,255,255,0.2), 
-              0px 4px 0px rgba(255,255,255,0.15),
-              0px 5px 0px rgba(255,255,255,0.1),
-              0px 6px 0px rgba(255,255,255,0.05),
-              0px 15px 35px rgba(0,0,0,1),
-              0px 10px 20px rgba(0,0,0,0.8),
-              0px 5px 10px rgba(0,0,0,0.6)
-            `
-          }}
         >
           Liminal Films
         </motion.h1>
