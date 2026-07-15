@@ -150,8 +150,15 @@ iframe[title="Background Video"] {
 /* Hero title shadow: lighter on mobile to avoid a doubled/glitchy look on small screens, full effect preserved on desktop */
 .hero-title-shadow {
   text-shadow:
-    0px 1px 2px rgba(0,0,0,0.6),
-    0px 4px 10px rgba(0,0,0,0.7);
+    0px 0.5px 0px rgba(255,255,255,0.3),
+    0px 1px 0px rgba(255,255,255,0.25),
+    0px 1.5px 0px rgba(255,255,255,0.2),
+    0px 2px 0px rgba(255,255,255,0.15),
+    0px 2.5px 0px rgba(255,255,255,0.1),
+    0px 3px 0px rgba(255,255,255,0.05),
+    0px 6px 14px rgba(0,0,0,1),
+    0px 4px 8px rgba(0,0,0,0.8),
+    0px 2px 4px rgba(0,0,0,0.6);
 }
 
 @media (min-width: 768px) {
