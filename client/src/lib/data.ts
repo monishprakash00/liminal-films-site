@@ -30,7 +30,7 @@ export interface TeamMember {
 
 export const projects: Project[] = [
   {
-    id: "boy-and-river",
+    id: "the-boy-and-the-river",
     title: "The Boy and the River",
     year: "2025",
     type: "Feature Film",
