@@ -1,11 +1,11 @@
-import boyAndRiver from "@/assets/images/the-boy-and-the-river.png";
-import tgwtbe from "@/assets/images/tgwtbe.png";
-import witd3 from "@/assets/images/witd3.png";
-import monish from "@/assets/images/monish-latest.png";
-import shruti from "@/assets/images/shruti.jpeg";
+import boyAndRiver from "@/assets/images/the-boy-and-the-river.webp";
+import tgwtbe from "@/assets/images/tgwtbe.webp";
+import witd3 from "@/assets/images/witd3.webp";
+import monish from "@/assets/images/monish-latest.webp";
+import shruti from "@/assets/images/shruti.webp";
 import manas from "@/assets/images/manas-new.jpg";
-import rithwik from "@/assets/images/rithwik-new.png";
-import abhijit from "@/assets/images/abhijit.jpeg";
+import rithwik from "@/assets/images/rithwik-new.webp";
+import abhijit from "@/assets/images/abhijit.webp";
 
 export type ProjectType = "Feature Film" | "Short Film" | "Music Video";
 
