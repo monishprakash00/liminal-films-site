@@ -71,7 +71,7 @@ export default function ProjectPage() {
             transition={{ duration: 1 }}
             className="max-w-4xl mx-auto space-y-12"
           >
-            <div className="text-center space-y-4">
+            <div className="text-left space-y-4">
               <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
                 {project.type} · {project.year}
               </p>
@@ -94,7 +94,7 @@ export default function ProjectPage() {
               ></iframe>
             </div>
 
-            <div className="prose prose-invert prose-lg max-w-none text-center prose-p:font-light prose-p:leading-relaxed prose-p:text-muted-foreground prose-p:mb-8 mx-auto">
+            <div className="prose prose-invert prose-lg max-w-none text-left prose-p:font-light prose-p:leading-relaxed prose-p:text-muted-foreground prose-p:mb-8 mx-auto">
               {project.synopsis.split('\n').map((paragraph, index) => (
                 paragraph.trim() ? (
                   <p key={index}>{paragraph}</p>
