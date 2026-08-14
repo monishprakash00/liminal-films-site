@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { Manifesto } from "@/components/Manifesto";
@@ -18,9 +18,10 @@ export default function Home() {
     path: "/",
   });
 
-  // Arriving with a hash (from another page, or a shared link): land on that
-  // section instead of the hero.
-  useEffect(() => {
+  // Arriving with a hash (from another page, or a shared link): position the
+  // page on that section *before the browser paints*, so it fades in already
+  // there rather than showing the hero and then jumping.
+  useLayoutEffect(() => {
     const target = sectionFromHash(window.location.hash);
     if (target) scrollToSection(target);
   }, []);

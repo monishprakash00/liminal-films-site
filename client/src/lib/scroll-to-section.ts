@@ -30,7 +30,7 @@ export function scrollToSection(id: string, options: Options = {}) {
     smooth = false,
     findTimeoutMs = 4000,
     settleMs = 1000,
-    transitionMs = 550,
+    transitionMs = 0,
   } = options;
 
   if (!id) {
@@ -66,8 +66,9 @@ export function scrollToSection(id: string, options: Options = {}) {
 
     const el = document.getElementById(id);
     if (el) {
-      // Node is mounted, but the page may still be mid-transition. Wait it out.
-      window.setTimeout(() => {
+      // Node is mounted. Position immediately when there's no transition to
+      // wait out, so the first paint already shows the right section.
+      const run = () => {
         if (cancelled) return;
 
         const target = document.getElementById(id);
@@ -100,7 +101,13 @@ export function scrollToSection(id: string, options: Options = {}) {
           }
         };
         requestAnimationFrame(correct);
-      }, transitionMs);
+      };
+
+      if (transitionMs > 0) {
+        window.setTimeout(run, transitionMs);
+      } else {
+        run();
+      }
       return;
     }
 
@@ -109,7 +116,7 @@ export function scrollToSection(id: string, options: Options = {}) {
     }
   };
 
-  requestAnimationFrame(findNode);
+  findNode();
 }
 
 /** Reads a section id from a location hash, e.g. "#work" -> "work". */
