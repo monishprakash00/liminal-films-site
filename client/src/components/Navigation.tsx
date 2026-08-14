@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { motion } from "framer-motion";
 import logo from "@/assets/images/logo.webp";
+import { scrollToSection } from "@/lib/scroll-to-section";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,30 +19,25 @@ export function Navigation() {
   }, []);
 
   const handleNavClick = (targetId: string, path: string) => {
+    // Already on the right page — just move to the section.
     if (location === path) {
       if (targetId) {
-        const element = document.getElementById(targetId);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      } else {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.history.replaceState(null, "", `${path}#${targetId}`);
       }
+      scrollToSection(targetId);
       return;
     }
 
-    setLocation(path);
-    
+    // Coming from elsewhere: record the target in the hash first, so the
+    // destination page knows where to land even if this scroll is interrupted.
     if (targetId) {
-      setTimeout(() => {
-        const element = document.getElementById(targetId);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 100);
+      window.location.hash = targetId;
     } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.history.replaceState(null, "", path);
     }
+
+    setLocation(path);
+    scrollToSection(targetId);
   };
 
   return (

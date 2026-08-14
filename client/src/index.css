@@ -175,3 +175,9 @@ iframe[title="Background Video"] {
       0px 5px 10px rgba(0,0,0,0.6);
   }
 }
+
+
+/* Fixed nav sits over the top of the page — keep anchored sections clear of it. */
+section[id] {
+  scroll-margin-top: 6rem;
+}

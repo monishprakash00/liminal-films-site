@@ -8,6 +8,7 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { useMeta } from "@/hooks/use-meta";
+import { scrollToSection, sectionFromHash } from "@/lib/scroll-to-section";
 
 export default function Home() {
   useMeta({
@@ -18,18 +19,18 @@ export default function Home() {
   });
 
   useEffect(() => {
-    // Handle scrolling to hash after component mounts and page transition completes
-    const timer = setTimeout(() => {
-      const hash = window.location.hash;
-      if (hash && hash !== '#') {
-        const element = document.querySelector(hash);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-    }, 550); // Wait for the 0.5s framer-motion transition
+    const target = sectionFromHash(window.location.hash);
+    if (target) scrollToSection(target);
+  }, []);
 
-    return () => clearTimeout(timer);
+  // Respond to hash changes while already on the home page.
+  useEffect(() => {
+    const onHashChange = () => {
+      const target = sectionFromHash(window.location.hash);
+      if (target) scrollToSection(target);
+    };
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
   }, []);
 
   return (
