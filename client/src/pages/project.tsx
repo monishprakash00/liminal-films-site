@@ -71,7 +71,7 @@ export default function ProjectPage() {
             transition={{ duration: 1 }}
             className="max-w-4xl mx-auto space-y-12"
           >
-            <div className="text-left space-y-4">
+            <div className="text-center space-y-4">
               <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
                 {project.type} · {project.year}
               </p>
