@@ -7,8 +7,16 @@ import { Team } from "@/components/Team";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
+import { useMeta } from "@/hooks/use-meta";
 
 export default function Home() {
+  useMeta({
+    title: "Liminal Films | Independent Production House",
+    description:
+      "Shaped by artists and built around story. Realised through image and sound. An independent production house based in Bangalore, India.",
+    path: "/",
+  });
+
   useEffect(() => {
     // Handle scrolling to hash after component mounts and page transition completes
     const timer = setTimeout(() => {

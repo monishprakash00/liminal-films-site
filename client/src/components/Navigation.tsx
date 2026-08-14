@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { motion } from "framer-motion";
-import logo from "@assets/Lone_Tree_white_1777612235352.png";
+import logo from "@/assets/images/logo.webp";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);

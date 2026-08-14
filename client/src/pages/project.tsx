@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { projects } from "@/lib/data";
+import { useMeta } from "@/hooks/use-meta";
 
 export default function ProjectPage() {
   const [, params] = useRoute("/project/:id");
@@ -16,6 +17,17 @@ export default function ProjectPage() {
   };
   
   const project = projects.find(p => p.id === projectId);
+
+  useMeta({
+    title: project
+      ? `${project.title} (${project.year}) | Liminal Films`
+      : "Project | Liminal Films",
+    description: project
+      ? `${project.genre}. ${project.synopsis.replace(/\s+/g, " ").trim().slice(0, 150)}...`
+      : "A project by Liminal Films.",
+    path: `/project/${projectId ?? ""}`,
+  });
+
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 1000], [0, 300]);
 

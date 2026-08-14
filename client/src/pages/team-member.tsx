@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { team } from "@/lib/data";
+import { useMeta } from "@/hooks/use-meta";
 
 export default function TeamMemberPage() {
   const [, params] = useRoute("/team/:id");
@@ -16,6 +17,17 @@ export default function TeamMemberPage() {
   };
   
   const member = team.find(m => m.id === memberId);
+
+  useMeta({
+    title: member
+      ? `${member.name}, ${member.role} | Liminal Films`
+      : "Team | Liminal Films",
+    description: member
+      ? `${member.name} is ${member.role} at Liminal Films, an independent production house.`
+      : "The team behind Liminal Films.",
+    path: `/team/${memberId ?? ""}`,
+  });
+
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 1000], [0, 200]);
 

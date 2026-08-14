@@ -5,11 +5,19 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Navigation } from "@/components/Navigation";
+import { useMeta } from "@/hooks/use-meta";
 
 export default function ContactPage() {
   const [, setLocation] = useLocation();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useMeta({
+    title: "Contact | Liminal Films",
+    description:
+      "Get in touch with Liminal Films, an independent production house based in Bangalore, India.",
+    path: "/contact",
+  });
 
   const handleBack = (e: React.MouseEvent) => {
     e.preventDefault();
