@@ -12,8 +12,7 @@ export default function TeamMemberPage() {
 
   const handleBack = (e: React.MouseEvent) => {
     e.preventDefault();
-    window.location.hash = "team";
-    setLocation("/");
+    setLocation("/#team");
   };
   
   const member = team.find(m => m.id === memberId);

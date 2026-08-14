@@ -12,8 +12,7 @@ export default function ProjectPage() {
 
   const handleBack = (e: React.MouseEvent) => {
     e.preventDefault();
-    window.location.hash = "work";
-    setLocation("/");
+    setLocation("/#work");
   };
   
   const project = projects.find(p => p.id === projectId);
@@ -94,7 +93,7 @@ export default function ProjectPage() {
               ></iframe>
             </div>
 
-            <div className="prose prose-invert prose-lg max-w-none text-left prose-p:font-light prose-p:leading-relaxed prose-p:text-muted-foreground prose-p:mb-8 mx-auto">
+            <div className="prose prose-invert prose-lg max-w-none text-center prose-p:font-light prose-p:leading-relaxed prose-p:text-muted-foreground prose-p:mb-8 mx-auto">
               {project.synopsis.split('\n').map((paragraph, index) => (
                 paragraph.trim() ? (
                   <p key={index}>{paragraph}</p>

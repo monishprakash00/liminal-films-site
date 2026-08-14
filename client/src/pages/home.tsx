@@ -18,16 +18,18 @@ export default function Home() {
     path: "/",
   });
 
+  // Arriving with a hash (from another page, or a shared link): land on that
+  // section instead of the hero.
   useEffect(() => {
     const target = sectionFromHash(window.location.hash);
     if (target) scrollToSection(target);
   }, []);
 
-  // Respond to hash changes while already on the home page.
+  // Hash changing while already here is an in-page jump — animate it.
   useEffect(() => {
     const onHashChange = () => {
       const target = sectionFromHash(window.location.hash);
-      if (target) scrollToSection(target);
+      if (target) scrollToSection(target, { smooth: true });
     };
     window.addEventListener("hashchange", onHashChange);
     return () => window.removeEventListener("hashchange", onHashChange);
