@@ -7,6 +7,7 @@ import { scrollToSection } from "@/lib/scroll-to-section";
 const NAV_ITEMS: { label: string; targetId: string; path: string }[] = [
   { label: "Manifesto", targetId: "manifesto", path: "/" },
   { label: "Work", targetId: "work", path: "/" },
+  { label: "Development", targetId: "development", path: "/" },
   { label: "Team", targetId: "team", path: "/" },
   { label: "Contact", targetId: "", path: "/contact" },
 ];
@@ -75,7 +76,7 @@ export function Navigation() {
         <div className="container mx-auto px-6 md:px-12 flex justify-between items-center relative min-h-[40px]">
           {/* Desktop — left group */}
           <div className="hidden md:flex items-center space-x-12 text-[10px] uppercase tracking-[0.2em] flex-1">
-            {NAV_ITEMS.slice(0, 2).map((item) => (
+            {NAV_ITEMS.slice(0, 3).map((item) => (
               <a
                 key={item.label}
                 onClick={() => handleNavClick(item.targetId, item.path)}
@@ -124,7 +125,7 @@ export function Navigation() {
 
           {/* Desktop — right group */}
           <div className="hidden md:flex items-center space-x-12 text-[10px] uppercase tracking-[0.2em] flex-1 justify-end">
-            {NAV_ITEMS.slice(2).map((item) => (
+            {NAV_ITEMS.slice(3).map((item) => (
               <a
                 key={item.label}
                 onClick={() => handleNavClick(item.targetId, item.path)}

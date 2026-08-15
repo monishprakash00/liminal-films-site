@@ -20,6 +20,16 @@ export interface Project {
   videoId: string;
 }
 
+export interface DevelopmentProject {
+  id: string;
+  title: string;
+  format: string;
+  genre: string;
+  status: string;
+  logline: string;
+  synopsis: string;
+}
+
 export interface TeamMember {
   id: string;
   name: string;
@@ -97,4 +107,18 @@ export const team: TeamMember[] = [
     image: abhijit,
     bio: "Abhijit brings over a decade of experience in film distribution and marketing strategy. He has successfully navigated the complex landscape of independent cinema, ensuring that LIMINAL FILMS reaches the audiences it deserves."
   }
+];
+
+export const development: DevelopmentProject[] = [
+  {
+    id: "arthamadharsha",
+    title: "Arthamadharsha",
+    format: "Feature Film",
+    genre: "Supernatural Thriller",
+    status: "Treatment complete. Script in development.",
+    logline:
+      "Placeholder logline. One or two sentences establishing the world, the protagonist, and the thing that goes wrong.",
+    synopsis:
+      "Placeholder synopsis. Enough to establish tone, world, and the central tension, without resolving anything.\n\nA second paragraph can extend the world or introduce the complication, still stopping short of the ending.",
+  },
 ];

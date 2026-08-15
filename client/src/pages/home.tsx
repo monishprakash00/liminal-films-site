@@ -3,6 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { Manifesto } from "@/components/Manifesto";
 import { Portfolio } from "@/components/Portfolio";
+import { Development } from "@/components/Development";
 import { Team } from "@/components/Team";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
@@ -48,6 +49,7 @@ export default function Home() {
         <Hero />
         <Manifesto />
         <Portfolio />
+        <Development />
         <Team />
         <Contact />
         <Footer />

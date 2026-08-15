@@ -9,6 +9,7 @@ import { BokehBackground } from "@/components/BokehBackground";
 import { AnimatePresence, motion } from "framer-motion";
 import Home from "@/pages/home";
 import ProjectPage from "@/pages/project";
+import DevelopmentPage from "@/pages/development";
 import TeamMemberPage from "@/pages/team-member";
 import ContactPage from "@/pages/contact";
 import NotFound from "@/pages/not-found";
@@ -36,6 +37,9 @@ function Router() {
           </Route>
           <Route path="/project/:id">
             <PageWrapper><ProjectPage /></PageWrapper>
+          </Route>
+          <Route path="/development/:id">
+            <PageWrapper><DevelopmentPage /></PageWrapper>
           </Route>
           <Route path="/team/:id">
             <PageWrapper><TeamMemberPage /></PageWrapper>
