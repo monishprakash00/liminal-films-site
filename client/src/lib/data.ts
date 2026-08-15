@@ -25,7 +25,10 @@ export interface DevelopmentProject {
   title: string;
   format: string;
   genre: string;
-  status: string;
+  /** What exists and can be sent on request. */
+  materials: string[];
+  /** Where the script itself stands. */
+  stage: string;
   logline: string;
   synopsis: string;
 }
@@ -115,7 +118,32 @@ export const development: DevelopmentProject[] = [
     title: "Arthamadharsha",
     format: "Feature Film",
     genre: "Supernatural Thriller",
-    status: "Treatment complete. Script in development.",
+    materials: ["Treatment", "World bible", "Moodboard"],
+    stage: "Script in development",
+    logline:
+      "Placeholder logline. One or two sentences establishing the world, the protagonist, and the thing that goes wrong.",
+    synopsis:
+      "Placeholder synopsis. Enough to establish tone, world, and the central tension, without resolving anything.\n\nA second paragraph can extend the world or introduce the complication, still stopping short of the ending.",
+  },
+  {
+    id: "haunting-of-a-reverie",
+    title: "Haunting of a Reverie",
+    format: "Feature Film",
+    genre: "Surreal Psychological Thriller",
+    materials: ["Script"],
+    stage: "Script complete",
+    logline:
+      "Placeholder logline. One or two sentences establishing the world, the protagonist, and the thing that goes wrong.",
+    synopsis:
+      "Placeholder synopsis. Enough to establish tone, world, and the central tension, without resolving anything.\n\nA second paragraph can extend the world or introduce the complication, still stopping short of the ending.",
+  },
+  {
+    id: "dhund",
+    title: "Dhund!",
+    format: "Feature Film",
+    genre: "Crime Mystery Thriller",
+    materials: ["Lookbook"],
+    stage: "Script in final stages of development",
     logline:
       "Placeholder logline. One or two sentences establishing the world, the protagonist, and the thing that goes wrong.",
     synopsis:

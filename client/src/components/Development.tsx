@@ -26,7 +26,7 @@ export function Development() {
           In Development
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
           {development.map((project, i) => (
             <motion.div
               key={project.id}
@@ -52,7 +52,7 @@ export function Development() {
 
                   <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[10px] tracking-[0.2em] uppercase text-muted-foreground/70">
                     <span>{project.genre}</span>
-                    <span>{project.status}</span>
+                    <span>{project.stage}</span>
                   </div>
                 </a>
               </Link>

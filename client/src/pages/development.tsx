@@ -84,16 +84,27 @@ export default function DevelopmentPage() {
               )}
             </div>
 
-            <div className="max-w-2xl mx-auto mt-20 pt-12 border-t border-border/60 text-center space-y-6">
-              <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
-                Status
+            <div className="max-w-2xl mx-auto mt-20 pt-12 border-t border-border/60 text-center">
+              <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-6">
+                Available Materials
               </p>
-              <p className="text-sm font-light text-muted-foreground">
-                {project.status}
+              <ul className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-10">
+                {project.materials.map((item) => (
+                  <li
+                    key={item}
+                    className="text-sm font-light text-foreground/85"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground/80 mb-12">
+                {project.stage}
               </p>
 
-              <p className="text-sm font-light leading-relaxed text-muted-foreground pt-6">
-                Treatment, lookbook and further materials available on request.
+              <p className="text-sm font-light leading-relaxed text-muted-foreground mb-6">
+                Materials available on request.
               </p>
               <a
                 href="mailto:monish@liminalfilms.in"
