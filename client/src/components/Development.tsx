@@ -26,36 +26,32 @@ export function Development() {
           In Development
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 lg:gap-x-16 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {development.map((project, i) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9, delay: i * 0.12 }}
-              className="h-full"
-            >
-              <Link href={`/development/${project.id}`}>
-                <a className="group flex h-full flex-col border-t border-border/50 pt-8 cursor-pointer">
-                  <p className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground/60 mb-5">
-                    {project.genre}
+            <Link key={project.id} href={`/development/${project.id}`}>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.1 }}
+                className="group relative cursor-pointer overflow-hidden block aspect-[4/5] bg-white/[0.02] shadow-[0_10px_30px_rgba(0,0,0,0.8)] border border-white/5 hover:border-white/20 hover:shadow-[0_20px_40px_rgba(0,0,0,0.9)] hover:-translate-y-2 transition-all duration-700"
+              >
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <p className="text-white/50 text-xs tracking-[0.2em] uppercase mb-2">
+                    {project.format}
                   </p>
-
-                  <h3 className="text-2xl lg:text-3xl font-light tracking-wide leading-tight mb-6 group-hover:opacity-60 transition-opacity duration-500">
+                  <h3 className="text-2xl font-serif text-white">
                     {project.title}
                   </h3>
-
-                  <p className="text-sm font-light leading-relaxed text-muted-foreground mb-10">
-                    {project.logline}
+                  <p className="text-white/70 font-serif italic mt-1 text-sm">
+                    {project.genre}
                   </p>
-
-                  <p className="mt-auto text-[10px] tracking-[0.2em] uppercase text-muted-foreground/50">
+                  <p className="text-white/40 text-[10px] tracking-[0.2em] uppercase mt-5 pt-5 border-t border-white/10">
                     {project.stage}
                   </p>
-                </a>
-              </Link>
-            </motion.div>
+                </div>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </motion.div>
