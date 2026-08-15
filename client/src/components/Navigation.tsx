@@ -3,14 +3,21 @@ import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/images/logo.webp";
 import { scrollToSection } from "@/lib/scroll-to-section";
+import { SHOW_DEVELOPMENT } from "@/lib/data";
 
-const NAV_ITEMS: { label: string; targetId: string; path: string }[] = [
+const ALL_NAV_ITEMS: { label: string; targetId: string; path: string }[] = [
   { label: "Manifesto", targetId: "manifesto", path: "/" },
   { label: "Work", targetId: "work", path: "/" },
   { label: "Development", targetId: "development", path: "/" },
   { label: "Team", targetId: "team", path: "/" },
   { label: "Contact", targetId: "", path: "/contact" },
 ];
+
+const NAV_ITEMS = ALL_NAV_ITEMS.filter(
+  (item) => SHOW_DEVELOPMENT || item.targetId !== "development",
+);
+
+const SPLIT = Math.ceil(NAV_ITEMS.length / 2);
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -76,7 +83,7 @@ export function Navigation() {
         <div className="container mx-auto px-6 md:px-12 flex justify-between items-center relative min-h-[40px]">
           {/* Desktop — left group */}
           <div className="hidden md:flex items-center space-x-12 text-[10px] uppercase tracking-[0.2em] flex-1">
-            {NAV_ITEMS.slice(0, 3).map((item) => (
+            {NAV_ITEMS.slice(0, SPLIT).map((item) => (
               <a
                 key={item.label}
                 onClick={() => handleNavClick(item.targetId, item.path)}
@@ -125,7 +132,7 @@ export function Navigation() {
 
           {/* Desktop — right group */}
           <div className="hidden md:flex items-center space-x-12 text-[10px] uppercase tracking-[0.2em] flex-1 justify-end">
-            {NAV_ITEMS.slice(3).map((item) => (
+            {NAV_ITEMS.slice(SPLIT).map((item) => (
               <a
                 key={item.label}
                 onClick={() => handleNavClick(item.targetId, item.path)}

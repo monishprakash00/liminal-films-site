@@ -112,6 +112,13 @@ export const team: TeamMember[] = [
   }
 ];
 
+/**
+ * Set to true to publish the in-development slate (home section, nav item,
+ * detail pages, sitemap entries). Everything below stays in the repo; this
+ * flag is the only thing that needs flipping.
+ */
+export const SHOW_DEVELOPMENT = false;
+
 export const development: DevelopmentProject[] = [
   {
     id: "arthamadharsha",

@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "wouter";
-import { development } from "@/lib/data";
+import { development, SHOW_DEVELOPMENT } from "@/lib/data";
 
 export function Development() {
   const ref = useRef<HTMLElement>(null);
@@ -11,7 +11,7 @@ export function Development() {
   });
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
-  if (development.length === 0) return null;
+  if (!SHOW_DEVELOPMENT || development.length === 0) return null;
 
   return (
     <section ref={ref} id="development" className="py-40 relative z-10">

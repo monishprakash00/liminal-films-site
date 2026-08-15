@@ -2,7 +2,7 @@ import { useRoute, useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { development } from "@/lib/data";
+import { development, SHOW_DEVELOPMENT } from "@/lib/data";
 import { useMeta } from "@/hooks/use-meta";
 
 export default function DevelopmentPage() {
@@ -15,7 +15,9 @@ export default function DevelopmentPage() {
     setLocation("/#development");
   };
 
-  const project = development.find((p) => p.id === projectId);
+  const project = SHOW_DEVELOPMENT
+    ? development.find((p) => p.id === projectId)
+    : undefined;
 
   useMeta({
     title: project
