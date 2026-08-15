@@ -118,7 +118,7 @@ export const development: DevelopmentProject[] = [
     title: "Arthamadharsha",
     format: "Feature Film",
     genre: "Supernatural Thriller",
-    materials: ["Treatment", "World bible", "Moodboard"],
+    materials: ["Treatment", "World bible", "Moodboard", "Lookbook"],
     stage: "Script in development",
     logline:
       "Placeholder logline. One or two sentences establishing the world, the protagonist, and the thing that goes wrong.",
@@ -130,7 +130,7 @@ export const development: DevelopmentProject[] = [
     title: "Haunting of a Reverie",
     format: "Feature Film",
     genre: "Surreal Psychological Thriller",
-    materials: ["Script"],
+    materials: ["Script", "Lookbook"],
     stage: "Script complete",
     logline:
       "Placeholder logline. One or two sentences establishing the world, the protagonist, and the thing that goes wrong.",
